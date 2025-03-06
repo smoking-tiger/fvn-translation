@@ -8,8 +8,14 @@
 - 머독 루트 초벌번역 완료
 - 클리프 루트 초벌번역 완료
 
+### Credit
+- [늑발](https://x.com/frostwolfclaw)
+
+### License
+- [나눔폰트](https://help.naver.com/service/30016/contents/18088?osType=PC&lang=ko)
+
 ### CHANGELOG
 
-#### r1
+#### r1 (2025-03-05)
 
 - 빌드 36 니콜라이, 공용루트 번역 배포
