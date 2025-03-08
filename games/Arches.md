@@ -5,3 +5,8 @@
 - AI초벌번역 완료
 - 1-1 챕터 완료 (12%)
 
+### Credit
+- [늑발](https://x.com/frostwolfclaw)
+
+### License
+- [나눔폰트](https://help.naver.com/service/30016/contents/18088?osType=PC&lang=ko)
