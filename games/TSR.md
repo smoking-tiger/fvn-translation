@@ -2,6 +2,8 @@
 
 [itch.io](https://thegoodnightfellowship.itch.io/the-smoke-room) (빌드 36)
 
+[한글패치 다운로드(r3)](https://github.com/smoking-tiger/fvn-translation/releases/download/tsr_b36_r3/TSR_b36_r3.zip)
+
 - 공용루트 초발번역 및 1차 검수 완료
 - 니콜라이 루트 초벌번역 및 1,2차 검수 완료
 - 윌리엄 루트 초벌번역 완료
