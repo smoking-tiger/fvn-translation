@@ -2,7 +2,7 @@
 
 [itch.io](https://thegoodnightfellowship.itch.io/the-smoke-room) (빌드 36)
 
-[한글패치 다운로드(r3)](https://github.com/smoking-tiger/fvn-translation/releases/download/tsr_b36_r3/TSR_b36_r3.zip)
+[한글패치 다운로드(r4)](https://github.com/smoking-tiger/fvn-translation/releases/download/tsr_b36_r4/TSR_b36_r4.zip)
 
 - 공용루트 초발번역 및 1차 검수 완료
 - 니콜라이 루트 초벌번역 및 1,2차 검수 완료
@@ -17,6 +17,12 @@
 - [나눔폰트](https://help.naver.com/service/30016/contents/18088?osType=PC&lang=ko)
 
 ### CHANGELOG
+
+#### r4 (2025-03-13)
+
+- 기존 번역 자동생성을 전반적으로 개선했습니다.
+- 초벌번역 루트에서 크래시가 나는 현상을 수정했습니다.
+- 진지한 상황에서도 다들 휘파람 불던 현상을 흠 하게 수정했습니다.
 
 #### r3 (2025-03-10)
 
