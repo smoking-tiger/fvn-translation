@@ -3,7 +3,7 @@
 [link](https://echoproject.itch.io/arches)
 
 - AI초벌번역 완료
-- 1-2 챕터 완료 (24%)
+- 1-3 챕터 완료 (40%)
 
 ### Credit
 - [늑발](https://x.com/frostwolfclaw)
