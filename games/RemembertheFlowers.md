@@ -1,6 +1,9 @@
 # Remember the Flowers
 
-[link](https://jerichowo.itch.io/remember-the-flowers)
+[itch.io](https://thegoodnightfellowship.itch.io/remember-the-flowers)
 
-- 메뉴 한글화 완료
-- 나머지 진척도 없음
+- 작업 중
+
+### Credit
+- 레드벨
+- Dorurung
