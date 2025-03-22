@@ -1,8 +1,8 @@
 # Khemia
 
-[itch.io](https://echoproject.itch.io/khemia) (빌드 2)
+[itch.io](https://echoproject.itch.io/khemia) (빌드 1(2025 리빌드))
 
-[한글패치](https://github.com/smoking-tiger/fvn-translation/releases/download/Khemia_b2_r1/Khemia_b2_r1.zip)
+[한글패치](https://github.com/smoking-tiger/fvn-translation/releases/download/Khemia_b2_r1/Khemia_b1_r1.zip)
 
 ### Credit
 
