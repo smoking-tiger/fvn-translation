@@ -2,6 +2,8 @@
 
 [itch.io](https://echoproject.itch.io/khemia) (빌드 2)
 
+[한글패치](https://github.com/smoking-tiger/fvn-translation/releases/download/Khemia_b2_r1/Khemia_b2_r1.zip)
+
 ### Credit
 
 - 도루룽
