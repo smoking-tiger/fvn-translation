@@ -1,1 +1,0 @@
-import{a as t}from"./with-props-DdaL1P3I.js";import{l as o}from"./chunk-7R3XDUXW-B18EFlhY.js";function e({}){return[{title:"털겜번역단: 패치 하는 법 > iOS"}]}const s=t(function(){return o.jsx("p",{children:"iOS 아직 작성 중 입니다."})});export{s as default,e as meta};
