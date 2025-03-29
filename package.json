@@ -1,0 +1,39 @@
+{
+  "name": "turl-game-bunyeokdan",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --bun react-router dev",
+    "build": "NODE_ENV=production bun --bun react-router build",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@floating-ui/react": "^0.27.5",
+    "@react-router/node": "^7.4.1",
+    "clsx": "^2.1.1",
+    "isbot": "^5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "react-router": "^7.4.1",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@react-router/dev": "^7.4.1",
+    "@tailwindcss/vite": "^4.0.9",
+    "@types/bun": "^1.2.8",
+    "@types/js-yaml": "^4.0.9",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "js-yaml": "^4.1.0",
+    "tailwindcss": "^4.0.9",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
