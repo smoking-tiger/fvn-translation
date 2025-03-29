@@ -2,12 +2,8 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme {
-  --default-font-family: 'NanumGothic' ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+body {
+  background-color:#efefef;color:#171819;transition: background-color 150ms ease-out;
+  font-family: 'Noto Sans KR', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
-
-body {background-color:#efefef;color:#171819;transition: background-color 150ms ease-out;} .dark body {background-color:#171819; color:#efefef;}
-
-@media (prefers-color-scheme: dark) {
-  .loading body { background-color:#171819; color:#efefef;}
-}
+.dark body {background-color:#171819; color:#efefef;}
