@@ -16,7 +16,7 @@ export default defineConfig({
       },
     },
   ],
-  base: process.env.NODE_ENV === 'development' ? '/fvn-translation' : '/',
+  base: '/fvn-translation/',
   resolve: process.env.NODE_ENV === 'development' ? {} : {
 		alias: {
 			'react-dom/server': 'react-dom/server.node',
