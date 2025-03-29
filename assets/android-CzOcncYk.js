@@ -1,1 +1,0 @@
-import{w as t}from"./with-props-CTLuppze.js";import{n}from"./chunk-XJI4KG32-C9KX5wsS.js";function e({}){return[{title:"털겜번역단: 패치 하는 법 > 안드로이드"}]}const s=t(function(){return n.jsx("p",{children:"안드로이드 아직 작성 중 입니다."})});export{s as default,e as meta};
