@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm';
 
 import Button, { AnchorButton } from 'components/Button';
 import IconExternalLink from 'components/Icons/ExternalLink';
@@ -87,7 +88,9 @@ export default function GameInfo({ loaderData: info }: Route.ComponentProps) {
         {info.changelog ? (
           <div className="p-2 pb-4">
             <h3 className="text-xl font-semibold pb-2">패치노트</h3>
-            <Markdown>{info.changelog}</Markdown>
+            <div className="bg-slate-100 dark:bg-slate-800 dark:text-slate-200 p-2 rounded">
+              <Markdown remarkPlugins={[remarkGfm]}>{info.changelog}</Markdown>
+            </div>
           </div>
         ) : null}
         <div className="p-2">

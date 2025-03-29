@@ -4,14 +4,14 @@ import Button, { ButtonNav, ButtonLink } from './Button';
 import Sun from './Icons/Sun';
 import Moon from './Icons/Moon';
 
-import { useThemeMode, toggleThemeMode, IS_SSR } from '../ui';
+import { useThemeMode, toggleThemeMode } from '../ui';
 import Tooltip from './Tooltip';
 
 function ToggleMode() {
   const themeMode = useThemeMode();
   const isDark = themeMode === 'dark';
   return (
-    <Tooltip position="bottom" label={isDark ? '라이트 모드로' : '다크 모드로'}>
+    <Tooltip className="bg-slate-100 dark:bg-slate-800" position="bottom" label={isDark ? '라이트 모드로' : '다크 모드로'}>
       <Button onClick={() => toggleThemeMode()}>
         {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
       </Button>
