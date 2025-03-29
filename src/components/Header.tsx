@@ -13,7 +13,7 @@ function ToggleMode() {
   return (
     <Tooltip className="bg-slate-100 dark:bg-slate-800" position="bottom" label={isDark ? '라이트 모드로' : '다크 모드로'}>
       <Button onClick={() => toggleThemeMode()}>
-        {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+        {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
       </Button>
     </Tooltip>
   );

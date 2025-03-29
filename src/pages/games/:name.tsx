@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm';
 
@@ -6,30 +6,23 @@ import Button, { AnchorButton } from 'components/Button';
 import IconExternalLink from 'components/Icons/ExternalLink';
 import ChevronLeft from 'components/Icons/ChevronLeft';
 import Member from 'components/Member';
+import Tag from 'components/Tag';
 
 import type { Route } from './+types/:name';
 
 import { license } from '../../metadata';
-import Tag from 'components/Tag';
+import { loadGame } from '../../loaders';
 
 export async function loader({ params }: Route.LoaderArgs) {
-  const { resolve } = await import('node:path');
-  const { load } = await import('js-yaml');
-  const cwd = resolve(import.meta.dirname, import.meta.env.DEV ? '../../../games' : '../../games');
-  const file = Bun.file(resolve(cwd, `./${params.name}.yaml`));
-  const txt = await file.text();
-
-  const info = load(txt);
-  if (!info) throw new Error('invalid config');
-
-  return info as GameInfoType;
+  return loadGame(params.name) as GameInfoType;
 }
 
 export function meta({ data }: Route.MetaArgs) {
   return [{ title: `털겜번역단: ${data.title}` }];
 }
 
-export default function GameInfo({ loaderData: info }: Route.ComponentProps) {
+export default function GameInfo() {
+  const info = useLoaderData<Route.ComponentProps['loaderData']>();
   return (
     <div className="pb-12">
       <section className="relative w-full bg-slate-200 dark:bg-slate-700">
@@ -48,7 +41,7 @@ export default function GameInfo({ loaderData: info }: Route.ComponentProps) {
           )}
           <div className="absolute top-0 container mx-auto">
             <Link className="inline-flex items-center p-1 text-slate-200 hover:underline" to="../games">
-              <ChevronLeft className="w-4 h-4 mr-1" />
+              <ChevronLeft className="size-4 mr-1" />
               뒤로
             </Link>
           </div>
@@ -67,7 +60,7 @@ export default function GameInfo({ loaderData: info }: Route.ComponentProps) {
           <div className="space-x-2">
             <AnchorButton className="inline-flex items-center" href={info.url} target="_blank">
               게임 다운로드
-              <IconExternalLink className="w-4 h-4 ml-1" />
+              <IconExternalLink className="size-4 ml-1" />
             </AnchorButton>
             {info.patch_url ? (
               <AnchorButton href={info.patch_url} target="_blank">한글패치</AnchorButton>

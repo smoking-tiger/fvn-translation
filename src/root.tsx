@@ -1,11 +1,45 @@
 
 import { useLayoutEffect } from 'react';
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse } from 'react-router';
 
 import Header from './components/Header';
-import { useThemeMode, uiStore, THEME_STORAGE_KEY, IS_SSR } from './ui';
+import { useThemeMode, uiStore, THEME_STORAGE_KEY, COLOR_SCHEME_QUERY, IS_SSR } from './ui';
+import type { Route } from "./+types/root";
 
 import './App.css';
+
+export const links: Route.LinksFunction = () => [
+  { rel: "preconnect", href: "https://hangeul.pstatic.net" },
+  {
+    rel: "stylesheet",
+    href: "https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css",
+  },
+];
+
+export function HydrateFallback() {
+  return (
+    <div className="container mx-auto pt-64 flex justify-center">
+      <svg className="mr-3 -ml-1 size-8 animate-spin text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+      </svg>
+    </div>
+  );
+}
+
+export function clientLoader() {
+  const getCurrentModeStatus = () => {
+      const status = window.localStorage.getItem(THEME_STORAGE_KEY);
+      if (status) return status === '1';
+    
+      return window.matchMedia?.(COLOR_SCHEME_QUERY).matches || false;
+  };
+  const isDark = getCurrentModeStatus();
+
+  document.documentElement.classList.toggle('dark', isDark);
+  document.documentElement.classList.remove('loading');
+  uiStore.setState({ theme: isDark ? 'dark' : 'light' });
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const theme = useThemeMode();
@@ -42,4 +76,33 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return <Outlet />;
+}
+
+export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+  let message = "Oops!";
+  let details = "An unexpected error occurred.";
+  let stack: string | undefined;
+
+  if (isRouteErrorResponse(error)) {
+    message = error.status === 404 ? "404" : "Error";
+    details =
+      error.status === 404
+        ? "The requested page could not be found."
+        : error.statusText || details;
+  } else if (import.meta.env.DEV && error && error instanceof Error) {
+    details = error.message;
+    stack = error.stack;
+  }
+
+  return (
+    <main className="pt-16 p-4 container mx-auto">
+      <h1>{message}</h1>
+      <p>{details}</p>
+      {stack ? (
+        <pre className="w-full p-4 overflow-x-auto">
+          <code>{stack}</code>
+        </pre>
+      ) : null}
+    </main>
+  );
 }

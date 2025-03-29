@@ -1,5 +1,5 @@
 import { useCallback, useMemo } from 'react';
-import { Link, useSearchParams } from 'react-router';
+import { Link, useSearchParams, useLoaderData } from 'react-router';
 
 import Button from 'components/Button';
 import Popover from 'components/Popover';
@@ -8,43 +8,20 @@ import IconClose from 'components/Icons/Close';
 
 import type { Route } from "./+types/index";
 
+import { loadList } from '../../loaders';
+
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "털겜번역단: 게임 목록" },
   ];
 }
 
-
-interface ListItem extends Pick<GameInfoType, 'title' | 'banner_url' | 'logo_url' | 'tags'> {
-  name: string;
-}
-
 export async function loader() {
-  const { resolve } = await import('node:path');
-  const { load } = await import('js-yaml');
-  const cwd = resolve(import.meta.dirname, import.meta.env.DEV ? '../../../games' : '../../games');
-  const glob = new Bun.Glob('*.yaml');
-
-  const tags = new Set<string>();
-  const list = [] as ListItem[];
-
-  for await (const filename of glob.scanSync({ cwd })) {
-    const f = Bun.file(resolve(cwd, filename));
-    const txt = await f.text();
-    const conf = load(txt) as GameInfoType;
-    list.push({
-      name: filename.substring(0, filename.length - 5),
-      title: conf.title,
-      banner_url: conf.banner_url,
-      logo_url: conf.logo_url,
-      tags: conf.tags,
-    });
-    conf.tags.forEach((tag) => tags.add(tag));
-  }
-  return { list, tags } as { list: ListItem[]; tags: Set<string>; };
+  return loadList();
 }
 
-export default function GameList({ loaderData: { list, tags } }: Route.ComponentProps) {
+export default function GameList() {
+  const { list, tags } = useLoaderData<Route.ComponentProps['loaderData']>();
   const [search, setSearchParams] = useSearchParams();
 
   const tagList = useMemo<string[]>(() => {
@@ -115,7 +92,7 @@ export default function GameList({ loaderData: { list, tags } }: Route.Component
               <IconClose className="w-4 h-4 ml-1" />
             </Button>
           ))}
-          {tagList.length < tags.size ? (
+          {tagList.length < tags.length ? (
             <Popover
               label={(
                 <Button className="flex items-center">
