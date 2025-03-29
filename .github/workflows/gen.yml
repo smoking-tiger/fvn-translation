@@ -6,7 +6,7 @@ on:
     paths:
       - games/*.yaml
 
-  deploy:
+  jobs:
     permissions:
       contents: read
       pages: write
