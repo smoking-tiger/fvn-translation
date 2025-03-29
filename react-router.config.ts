@@ -39,6 +39,10 @@ export default {
         `./build/client/${p}`,
       );
     }
+    // 이게 없으면 SPA가 안됨
+    if (fs.existsSync('./build/client/.vite/manifest.json')) {
+      fs.renameSync('./build/client/.vite/manifest.json', './build/client/__manifest');
+    }
     if (fs.existsSync('./build/client/fvn-translation')) {
       fs.rmdirSync('./build/client/fvn-translation', { recursive: true });
     }

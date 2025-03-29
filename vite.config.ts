@@ -5,18 +5,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    reactRouter(),
-    tsconfigPaths(),
-    {
-      name: 'after-build-fvn',
-      buildEnd: () => {
-        console.log('???');
-      },
-    },
-  ],
   base: '/fvn-translation/',
+  plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
   resolve: process.env.NODE_ENV === 'development' ? {} : {
 		alias: {
 			'react-dom/server': 'react-dom/server.node',
