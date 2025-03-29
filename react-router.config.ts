@@ -4,7 +4,7 @@ import * as fs from 'node:fs';
 import type { Config } from '@react-router/dev/config';
 
 export default {
-  // ssr: true,
+  // ssr: false,
   basename: '/fvn-translation/',
   appDirectory: 'src',
   prerender() {
