@@ -1,0 +1,1 @@
+import{w as t}from"./with-props-CTLuppze.js";import{n}from"./chunk-XJI4KG32-C9KX5wsS.js";function i({}){return[{title:"털겜번역단: 패치 하는 법 > PC"}]}const p=t(function(){return n.jsx("p",{children:"PC 아직 작성 중 입니다."})});export{p as default,i as meta};

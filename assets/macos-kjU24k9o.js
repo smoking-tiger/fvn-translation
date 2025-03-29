@@ -1,0 +1,1 @@
+import{w as t}from"./with-props-CTLuppze.js";import{n as o}from"./chunk-XJI4KG32-C9KX5wsS.js";function a({}){return[{title:"털겜번역단: 패치 하는 법 > MacOS"}]}const i=t(function(){return o.jsx("p",{children:"MacOS 아직 작성 중 입니다."})});export{i as default,a as meta};
