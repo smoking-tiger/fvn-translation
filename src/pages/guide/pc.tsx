@@ -9,7 +9,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function MacOSGuide() {
+export default function PcGuide() {
   return (
     <div className="prose dark:prose-invert w-full p-2">
       <Markdown remarkPlugins={[remarkGfm]}>
