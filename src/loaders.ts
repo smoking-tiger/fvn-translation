@@ -24,6 +24,7 @@ export function loadList() {
      });
      conf.tags.forEach((tag) => tags.add(tag));
    });
+   list.sort((a, b) => a.name > b.name ? 1 : -1);
    return { list, tags: Array.from(tags) } as { list: ListItem[]; tags: string[]; }; 
 }
 

@@ -3,14 +3,12 @@ import type { Route } from "./+types/index";
 import { member } from '../metadata';
 
 export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "털겜번역단" },
-  ];
+  return [{ title: "털겜번역단" }];
 }
 
 export default function Layout() {
   return (
-    <div className="container mx-auto pt-8 space-y-5">
+    <div className="container mx-auto p-2 pt-8 space-y-5">
       <section>
         <h2 className="text-2xl font-semibold py-2">우리는...</h2>
         <p>퍼리 비주얼 노벨을 너무나 사랑해서 한국어로 번역하고 싶어하는 사람들입니다.</p>
@@ -41,19 +39,19 @@ export default function Layout() {
                   ) : null}
                   <div className="space-x-2 flex pt-2">
                     {data.twitter ? (
-                      <a className="flex items-center hover:underline" href={`https://x.com/${data.twitter}`} target="_blank">
+                      <a className="flex items-center hover:underline text-sm" href={`https://x.com/${data.twitter}`} target="_blank">
                         <img className="size-6 mr-1" src="/fvn-translation/assets/icons/twitter_icon.jpg" alt="x" />
                         {`@${data.twitter}`}
                       </a>
                     ) : null}
                     {data.discord ? (
-                      <span className="flex items-center">
+                      <span className="flex items-center text-sm">
                         <img className="size-6 mr-2" src="/fvn-translation/assets/icons/discord_icon.png" alt="discord" />
                         {data.discord}
                       </span>
                     ) : null}
                     {data.telegram ? (
-                      <span className="flex items-center">
+                      <span className="flex items-center text-sm">
                         <img className="size-6 mr-2" src="/fvn-translation/assets/icons/telegram_icon.png" alt="telegram" />
                         {`@${data.telegram}`}
                       </span>

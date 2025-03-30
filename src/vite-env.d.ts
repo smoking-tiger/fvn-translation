@@ -7,6 +7,8 @@ declare interface GameInfoType {
   patch_url?: string;
   logo_url?: string;
   banner_url?: string;
+  status?: string;
+  status_note?: string;
   members: string[];
   tags: string[];
   license: string[];

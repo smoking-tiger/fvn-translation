@@ -13,7 +13,7 @@ export default function Member({ name, ...rest }: Props) {
   if (!data) return null;
   return (
     <Tooltip
-      className="bg-slate-100 dark:bg-slate-800 rounded"
+      className="bg-stone-100 dark:bg-stone-800 rounded"
       label={(
         <div className="flex p-2">
           <figure className="size-16 mr-2">

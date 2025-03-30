@@ -5,6 +5,9 @@ desc: |
 url: https://thegoodnightfellowship.itch.io/the-smoke-room
 patch_url: https://github.com/smoking-tiger/fvn-translation/releases/download/tsr_b36_r4/TSR_b36_r4.zip
 status: 작업중
+status_note: |
+  공용루트와 니콜라이 루트만 검수 완료 상태입니다.
+  다른 루트는 AI 번역만 되어있는 상태기에, 정상적으로 작동하지 않을 가능성이 있습니다.
 members: ["Husky", "늑발", "도루룽"]
 tags: ["18금", "로맨스", "공포", "미스터리"]
 logo_url: /fvn-translation/assets/games/tsr_logo.png

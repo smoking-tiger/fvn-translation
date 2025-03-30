@@ -11,7 +11,7 @@ function ToggleMode() {
   const themeMode = useThemeMode();
   const isDark = themeMode === 'dark';
   return (
-    <Tooltip className="bg-slate-100 dark:bg-slate-800" position="bottom" label={isDark ? '라이트 모드로' : '다크 모드로'}>
+    <Tooltip className="bg-stone-100 dark:bg-stone-800" position="bottom" label={isDark ? '라이트 모드로' : '다크 모드로'}>
       <Button onClick={() => toggleThemeMode()}>
         {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
       </Button>
@@ -24,7 +24,7 @@ export default function Header() {
     <header
       className={clsx(
         'shadow border-b',
-        'border-slate-300 bg-slate-200 dark:bg-slate-800 dark:border-slate-700',
+        'border-stone-300 bg-stone-200 dark:bg-stone-800 dark:border-stone-700',
       )}
     >
       <nav className="container flex justify-between items-center h-14 px-1 mx-auto">

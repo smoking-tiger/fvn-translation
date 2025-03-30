@@ -81,11 +81,11 @@ export default function GameList() {
     <div className="container mx-auto p-2">
       <h1 className="text-3xl pt-2 pb-4">게임 목록</h1>
       <header>
-        <div className="flex items-center pb-2 space-x-2">
+        <div className="flex flex-nowrap whitespace-nowrap items-center pb-2 space-x-2 max-w-full overflow-x-auto">
           {tagList.map((tag) => (
             <Button
               key={tag}
-              className="flex items-center border-slate-100 border-1 bg-slate-200 dark:border-slate-800 dark:bg-slate-700"
+              className="flex items-center border-stone-100 border-1 bg-stone-200 dark:border-stone-800 dark:bg-stone-700"
               onClick={() => removeTag(tag)}
             >
               {tag}
@@ -101,7 +101,7 @@ export default function GameList() {
                 </Button>
               )}
             >
-              <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded">
+              <div className="p-2 bg-stone-100 dark:bg-stone-800 rounded">
                 {unselected.map((tag) => (
                   <Button key={tag} onClick={() => addTag(tag)}>
                     {tag}
@@ -117,7 +117,7 @@ export default function GameList() {
           <Link key={item.name} to={item.name} className="p-2 hover:opacity-65">
             {item.banner_url?.endsWith('.mp4') ? (
               <figure className="relative overflow-hidden w-64 h-64 rounded-xl shadow-xl">
-                <video autoPlay loop muted className="min-h-64 w-auto object-cover">
+                <video autoPlay loop muted playsInline className="min-h-64 w-auto object-cover">
                   <source src={item.banner_url} type="video/mp4" />
                 </video>
               </figure>

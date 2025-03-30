@@ -7,7 +7,7 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
 
 export default function Tag({ name, className, ...rest }: Props) {
   const n = useMemo(() => clsx(
-    'px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 border-1 border-slate-50 dark:border-slate-800',
+    'px-2 py-1 rounded-lg bg-stone-50 dark:bg-stone-700 border-1 border-stone-200 dark:border-stone-800',
     className,
   ), [className]);
   return (

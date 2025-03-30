@@ -4,7 +4,7 @@ import clsx from 'clsx/lite';
 
 export function getButtonStyle(className?: string) {
   return clsx(
-    'cursor-pointer p-2 px-3 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600',
+    'cursor-pointer p-2 px-3 rounded-lg hover:bg-stone-300 dark:hover:bg-stone-600',
     'disabled:opacity-50 disabled:pointer-events-none disabled:select-none',
     className,
   );
