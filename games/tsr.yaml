@@ -13,9 +13,17 @@ tags: ["18금", "로맨스", "공포", "미스터리"]
 logo_url: /fvn-translation/assets/games/tsr_logo.png
 banner_url: /fvn-translation/assets/games/tsr.jpg
 license: ["나눔폰트"]
-updated: 20250325
+updated: 20250330
 
 changelog: |
+  #### r5 (2025-03-30)
+
+  - 공용루트, 닉 루트를 최종 검수 및 수정했습니다.
+  - 닉 루트의 동영상에 자막기능을 추가했습니다.
+  - 주석 기능을 추가했습니다.
+  - 메뉴 한글화를 했습니다.
+  - 안드로이드 버전에서 문제가 생기는 점을 수정했습니다.
+  
   #### r4 (2025-03-13)
 
   - 기존 번역 자동생성을 전반적으로 개선했습니다.
