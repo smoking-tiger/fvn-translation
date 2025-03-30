@@ -1,4 +1,4 @@
-import{a as s}from"./with-props-DRo28uWY.js";import{n as a}from"./chunk-IR6S3I6Y-Cb60dFvd.js";import{M as n,r}from"./index-DERu-wsG.js";function p({}){return[{title:"털겜번역단: 패치 하는 법 > PC"}]}const m=s(function(){return a.jsx("div",{className:"prose dark:prose-invert w-full p-2",children:a.jsx(n,{remarkPlugins:[r],children:`
+import{a}from"./with-props-DRo28uWY.js";import{n as s}from"./chunk-IR6S3I6Y-Cb60dFvd.js";import{M as n,r}from"./index-DERu-wsG.js";function p({}){return[{title:"털겜번역단: 패치 하는 법 > PC"}]}const m=a(function(){return s.jsx("div",{className:"prose dark:prose-invert w-full p-2",children:s.jsx(n,{remarkPlugins:[r],children:`
 ## PC 한글 패치 방법
 
 ### 1. 게임을 다운로드 받기.
