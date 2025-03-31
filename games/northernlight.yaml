@@ -1,10 +1,13 @@
 title: Northern Lights
 desc: |
-  80년대의 아마추어 필름메이커로 호러무비를 찍으려 합니다.
+  당신은 80년대의 아마추어 필름메이커로 호러무비를 찍으려 합니다.  
   (이 게임은 기본적으로 성인물에 NSFW 장면들이 포함되어있으나, SFW옵션이 존재합니다.)
 url: https://splitpeakstudio.itch.io/northern-lights
+status: 개발중
+status_note: |
+  원작이 아직 개발 완료가 되지 않은 상태이며, 한글화도 진행 중입니다.
 members: ["늑발"]
-tags: ["18금", "로맨스", "미스터리", "공포"]
+tags: ["18금", "로맨스", "미스터리", "공포", "성적묘사"]
 logo_url: /fvn-translation/assets/games/nl_logo.jpg
 banner_url: /fvn-translation/assets/games/northernlight.jpg
 license: ["나눔폰트"]

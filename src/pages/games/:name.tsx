@@ -13,6 +13,7 @@ import type { Route } from './+types/:name';
 
 import { license } from '../../metadata';
 import { loadGame } from '../../loaders';
+import clsx from 'clsx';
 
 export async function loader({ params }: Route.LoaderArgs) {
   return loadGame(params.name) as GameInfoType;
@@ -27,7 +28,7 @@ export default function GameInfo() {
   return (
     <div className="pb-12">
       <section className="relative w-full bg-stone-200 dark:bg-stone-700">
-        <div className="relative container h-128 mx-auto shadow-sm">
+        <div className="relative container h-128 mx-auto shadow-lg">
           {info.banner_url?.endsWith('.mp4') ? (
             <div className="absolute top-0 left-0 right-0 bottom-0 overflow-y-hidden">
               <video autoPlay muted loop playsInline className="object-cover w-full min-h-128">
@@ -36,7 +37,7 @@ export default function GameInfo() {
             </div>
           ) : (
             <figure
-              className="absolute top-0 left-0 right-0 bottom-0 bg-cover"
+              className="absolute top-0 left-0 right-0 bottom-0 bg-cover bg-center md:bg-top"
               style={{ backgroundImage: `url(${info.banner_url})` }}
             />
           )}
@@ -77,18 +78,30 @@ export default function GameInfo() {
           {info.tags.map((tag) => <Tag key={tag} name={tag} />)}
         </div>
         {info.status ? (
-          <div className="my-2">
-            <div className="inline-block rounded-lg p-4 bg-slate-300 dark:bg-slate-700 space-y-2">
-              <h3 className="flex items-center font-semibold text-xl">
+          <div className="my-2 p-2">
+            <div className="inline-block">
+              <h3
+                className={clsx(
+                  'flex items-center font-semibold text-xl p-4 pb-3 rounded-t-lg shadow bg-slate-300 dark:bg-slate-800',
+                )}
+              >
                 <IconAlert className="size-6 mr-2" />
                 {info.status}
               </h3>
-              {info.status_note ? <p className="opacity-85 whitespace-pre-wrap">{info.status_note}</p> : null}
+              {info.status_note ? (
+                <p
+                  className={clsx(
+                    'rounded-b-lg opacity-85 whitespace-pre-wrap p-4 pt-3 bg-slate-200 dark:bg-slate-700',
+                  )}
+                >
+                  {info.status_note}
+                </p>
+              ) : null}
             </div>
           </div>
         ) : null}
-        <div className="p-2 pb-4">
-          <p className="whitespace-pre-wrap">{info.desc}</p>
+        <div className="p-2 pb-4 min-w-full prose dark:prose-invert">
+          <Markdown remarkPlugins={[remarkGfm]}>{info.desc}</Markdown>
         </div>
         {info.changelog ? (
           <div className="p-2 pb-4">

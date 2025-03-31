@@ -1,11 +1,20 @@
 title: Interea
 desc: |
-  인테레아는 아다스트라의 미드퀄입니다.
+  인테레아는 [아다스트라](./adastra)의 미드퀄입니다.  
   아다스트라의 황제 아미쿠스와 그의 동반자 주인공의 사이드 에피소드들을 담고 있습니다.
 url: https://echoproject.itch.io/interea
 patch_url: https://github.com/smoking-tiger/fvn-translation/releases/download/Khemia_b2_r1/Interea_b4_r1.zip
+status: 얼리 억세스
+status_note: |
+  원작이 아직 개발 완료가 되지 않은 상태입니다.
+  한글 패치는 현재 공개중인 버전(빌드 4)까지 완료된 상태입니다.
 members: ["도루룽", "Husky"]
-tags: ["18금", "SF", "로맨스"]
+tags: ["18금", "SF", "로맨스", "성적묘사"]
 banner_url: /fvn-translation/assets/games/interea.mp4
 license: ["나눔폰트"]
-updated: 20250301
+updated: 20250222
+
+changelog: |
+  #### r1 (2025-02-22)
+
+  - 빌드 4 한글 패치 배포
