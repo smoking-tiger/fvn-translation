@@ -6,7 +6,7 @@ desc: |
   하지만 그는 곧 그게 불가능할지도 모른다는 걸 깨닫는다...  
   에코 그 자체가 그가 저지른 일을 알고 있는 것 같고, 잊어버리는 것조차 허락하지 않았다.
 url: https://thegoodnightfellowship.itch.io/the-smoke-room
-patch_url: https://github.com/smoking-tiger/fvn-translation/releases/download/tar_r5/TSR_r5.zip
+patch_url: https://github.com/smoking-tiger/fvn-translation/releases/download/tar_r5/TSR_r6.zip
 status: 일부 한글화
 status_note: |
   공용루트와 니콜라이 루트만 검수 완료 상태입니다.
@@ -19,6 +19,11 @@ license: ["나눔폰트"]
 updated: 20250330
 
 changelog: |
+  #### r6 (2025-03-31)
+
+  - 모바일 환경에서 설정 폰트중 일부가 비 이상적으로 큰 문제를 수정했습니다.
+  - 안드로이드판에서 일부 대사가 영어로 표시되는 문제를 수정했습니다.
+  
   #### r5 (2025-03-30)
 
   - 공용루트, 닉 루트를 최종 검수 및 수정했습니다.
