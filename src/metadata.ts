@@ -35,6 +35,7 @@ export const member = {
   },
   '레드벨': {
     avatar: '/fvn-translation/assets/members/redbell.jpg',
+    message: '누군가 이미 열심히 일궈놓은 농사 도우면 될 줄 알았는데 내가 쟁기끄는 소일줄은 몰랐죠',
     role: '번역가',
   },
   'Autumn': {
