@@ -12,7 +12,7 @@ interface MemberType {
 
 export const member = {
   '도루룽': {
-    avatar: '/fvn-translation/assets/members/dorurung.png',
+    avatar: '/fvn-translation/assets/members/dorurung.jpg',
     message: '아다스트라를 너무 감명 깊게 플레이해서 시작한 번역 프로젝트인데.. 스케일이 끝도없이 커지고 있다!',
     role: '프로그래머',
     discord: 'Dorurung#6690',
