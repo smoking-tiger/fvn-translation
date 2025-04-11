@@ -44,9 +44,21 @@ export const member = {
     twitter: 'Autumnfop',
     external: true,
   },
+  '박호랑': {
+    avatar: '/fvn-translation/assets/members/parkhorang.jpg',
+    role: '번역가',
+    external: true,
+  },
+  'RugeeMetee': {
+    avatar: '/fvn-translation/assets/members/rugeemetee.jpg',
+    role: '번역가',
+    external: true,
+  },
 } as Record<string, MemberType>;
 
 export const license = {
   '나눔폰트': 'https://help.naver.com/service/30016/contents/18088?osType=PC&lang=ko',
+  '프리텐다드': 'https://github.com/orioncactus/pretendard/blob/main/LICENSE',
   '인천교육힘찬체': '',
+  '제주한라산': '',
 } as Record<string, string>;
