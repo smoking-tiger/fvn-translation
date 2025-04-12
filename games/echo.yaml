@@ -1,6 +1,6 @@
 title: Echo
 desc: |
-  에코는 남서부 어딘가에 위치한 작고 외딴 사막 마을을 배경으로 한 호러 비주얼 노벨입니다.  
+  에코는 남서부 어딘가에 위치한 작고 외딴 사막 마을을 배경으로 한 호러 비주얼 노벨.  
   봄 방학 동안 에코에서 자란 어린 수달인 체이스는 마을의 쇠락을 초래했을 수도 있는 1870년대의 사건을 기록하는 학교 프로젝트를 위해 돌아왔다.  
   그는 에코에서 함께 자란 다섯 명의 친구들과 합류하여 작은 재회를 가졌다.  
   불행이도 체이스는 에코에 대한 그들의 기억이 다소 미화되었을 수 있다는 걸 깨닫기 시작했다.
@@ -8,9 +8,9 @@ url: https://echoproject.itch.io/echo
 status: 주의
 status_note: |
   이 게임은 폭력, 고문, 약물 사용, 폭언 등의 요소가 포함되어있습니다.
-members: ["Nelson", "늑발"]
+members: ["Nelson", "Husky", "늑발"]
 tags: ["18금", "공포", "심리적 공포", "로맨스", "순애", "성적묘사"]
 logo_url: /fvn-translation/assets/games/echo_logo.png
 banner_url: /fvn-translation/assets/games/echo.jpg
-license: ["나눔폰트", "프리텐다드"]
+license: ["나눔폰트", "프리텐다드", "제주한라산"]
 updated: 20250301
