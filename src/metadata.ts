@@ -25,7 +25,7 @@ export const member = {
   '늑발': {
     avatar: '/fvn-translation/assets/members/nukbal.jpg',
     message: '직접 번역해서 영업해야...',
-    role: '프로그래머',
+    role: '프로그래머/번역가',
     twitter: 'frostwolfclaw',
   },
   'Nelson': {
