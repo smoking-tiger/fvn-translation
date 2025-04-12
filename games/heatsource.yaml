@@ -3,7 +3,7 @@ desc: |
   다양한 큰 종족들 사이에서 수달을 플레이하게 되며,  
   신체 크기 차이, 로맨스, 드라마, 일상 생활이 있고 성인 콘텐츠가 많이 포함되어 있습니다!
 url: https://ari-guardian.itch.io/heat-source
-patch_url: https://github.com/smoking-tiger/fvn-translation/releases/download/hs_r1/HeatSource_r1.zip
+patch_url: https://github.com/smoking-tiger/fvn-translation/releases/download/hs_r1/HeatSource_r2.zip
 members: ["RugeeMetee", "박호랑"]
 tags: ["18금", "성적묘사", "크기차이", "로맨스"]
 banner_url: /fvn-translation/assets/games/heatsource.jpg
@@ -12,6 +12,11 @@ updated: 20250301
 
 
 changelog: |
+  #### r2 (2025-04-12)
+
+  - 일부 환경에서 한글이 기본적으로 설정 안되는 문제를 수정했습니다.
+  - 혹시라도 그래도 한글이 기본적으로 설정 안되는 경우를 대비해, 메뉴에 언어 선택을 추가했습니다.
+
   #### r1 (2025-04-06)
 
   - 한글 패치 배포
