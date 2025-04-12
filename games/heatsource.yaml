@@ -6,6 +6,10 @@ url: https://ari-guardian.itch.io/heat-source
 patch_url: https://github.com/smoking-tiger/fvn-translation/releases/download/hs_r1/HeatSource_r2.zip
 members: ["RugeeMetee", "박호랑"]
 tags: ["18금", "성적묘사", "크기차이", "로맨스"]
+status: 주의
+status_note: |
+  이 게임을 시작하자마자 NSFW요소가 표시됩니다.
+  주변을 확인한 후에 게임을 즐겨주세요.
 banner_url: /fvn-translation/assets/games/heatsource.jpg
 license: ["나눔폰트"]
 updated: 20250301
