@@ -120,17 +120,17 @@ export default function GameList() {
             to={item.name}
             className={clsx(
               'p-2',
-              item.patched ? 'hover:opacity-65' : 'opacity-50 pointer-events-none'
+              item.patched ? 'hover:opacity-65' : 'pointer-events-none'
             )}
             aria-disabled={!item.patched}
           >
             <figure className="relative overflow-hidden w-64 h-64 rounded-xl shadow-xl">
               {item.banner_url?.endsWith('.mp4') ? (
-                  <video autoPlay loop muted playsInline className="min-h-64 w-auto object-cover">
+                  <video autoPlay loop muted playsInline className={clsx('min-h-64 w-auto object-cover', item.patched ? '' : 'opacity-50')}>
                     <source src={item.banner_url} type="video/mp4" />
                   </video>
               ) : (
-                <img className="min-h-64 w-auto object-cover" src={item.banner_url} alt={item.name} />
+                <img className={clsx('min-h-64 w-auto object-cover', item.patched ? '' : 'opacity-50')} src={item.banner_url} alt={item.name} />
               )}
               {item.patched ? null : <img className="absolute bottom-5 right-2" width="85" src="/fvn-translation/assets/sorry_wip.png" alt="작업중" />}
             </figure>
