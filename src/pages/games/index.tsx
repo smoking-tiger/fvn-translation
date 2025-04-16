@@ -118,10 +118,7 @@ export default function GameList() {
           <Link
             key={item.name}
             to={item.name}
-            className={clsx(
-              'p-2',
-              item.patched ? 'hover:opacity-65' : 'pointer-events-none'
-            )}
+            className="p-2 hover:opacity-65"
             aria-disabled={!item.patched}
           >
             <figure className="relative overflow-hidden w-64 h-64 rounded-xl shadow-xl">

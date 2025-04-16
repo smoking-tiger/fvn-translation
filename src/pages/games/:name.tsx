@@ -54,7 +54,7 @@ export default function GameInfo() {
             </Link>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-white dark:from-black to-transparent pb-2">
+        <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-white dark:from-black to-transparent pb-2" style={{ zIndex: '1' }}>
           <div className="relative container flex p-2 pt-6 mx-auto items-center">
             {info.logo_url ? (
               <img className="w-auto h-11 rounded mr-2" src={info.logo_url} />
@@ -62,6 +62,11 @@ export default function GameInfo() {
             <h1 className="text-5xl text-black dark:text-white">{info.title}</h1>
           </div>
         </div>
+        {info.patch_url ? null : (
+          <div className="relative container mx-auto" style={{ zIndex: '0' }}>
+            <img className="absolute bottom-1 right-2" width="85" src="/fvn-translation/assets/sorry_wip.png" alt="작업중" />
+          </div>
+        )}
       </section>
       <section className="container mx-auto">
         <div className="flex justify-between p-2 bg-slate-300 dark:bg-slate-700 rounded-b-md mb-4">
