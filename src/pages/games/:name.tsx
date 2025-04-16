@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from 'react-router';
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm';
+import clsx from 'clsx';
 
 import Button, { AnchorButton } from 'components/Button';
 import IconExternalLink from 'components/Icons/ExternalLink';
@@ -13,14 +14,19 @@ import type { Route } from './+types/:name';
 
 import { license } from '../../metadata';
 import { loadGame } from '../../loaders';
-import clsx from 'clsx';
 
 export async function loader({ params }: Route.LoaderArgs) {
   return loadGame(params.name) as GameInfoType;
 }
 
 export function meta({ data }: Route.MetaArgs) {
-  return [{ title: `털겜번역단: ${data.title}` }];
+  return [
+    { title: `털겜번역단: ${data.title}` },
+    { description: data.desc.replaceAll('  ', ' ') },
+    { 'og:title': `털겜번역단: ${data.title}` },
+    { 'og:description': data.desc.replaceAll('  ', ' ') },
+    data.logo_url ? { 'og:image': data.logo_url } : null,
+  ].filter(Boolean);
 }
 
 export default function GameInfo() {

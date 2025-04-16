@@ -3,7 +3,11 @@ import type { Route } from "./+types/index";
 import { member } from '../metadata';
 
 export function meta({}: Route.MetaArgs) {
-  return [{ title: "털겜번역단" }];
+  return [
+    { title: '털겜번역단' },
+    { 'og:site_name': '털겜번역단' },
+    { 'og:type': 'website' },
+  ];
 }
 
 export default function Layout() {

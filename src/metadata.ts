@@ -59,6 +59,7 @@ export const member = {
 export const license = {
   '나눔폰트': 'https://help.naver.com/service/30016/contents/18088?osType=PC&lang=ko',
   '프리텐다드': 'https://github.com/orioncactus/pretendard/blob/main/LICENSE',
+  '리디바탕체': 'https://ridicorp.com/ridibatang/',
   '인천교육힘찬체': '',
   '제주한라산': '',
 } as Record<string, string>;
