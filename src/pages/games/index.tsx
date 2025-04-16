@@ -9,6 +9,7 @@ import IconClose from 'components/Icons/Close';
 import type { Route } from "./+types/index";
 
 import { loadList } from '../../loaders';
+import clsx from 'clsx';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -114,16 +115,25 @@ export default function GameList() {
       </header>
       <ul className="flex flex-wrap space-x-2">
         {listItems.map((item) => (
-          <Link key={item.name} to={item.name} className="p-2 hover:opacity-65">
-            {item.banner_url?.endsWith('.mp4') ? (
-              <figure className="relative overflow-hidden w-64 h-64 rounded-xl shadow-xl">
-                <video autoPlay loop muted playsInline className="min-h-64 w-auto object-cover">
-                  <source src={item.banner_url} type="video/mp4" />
-                </video>
-              </figure>
-            ) : (
-              <figure className="bg-cover bg-center w-64 h-64 rounded-xl shadow-xl" style={{ backgroundImage: `url(${item.banner_url})` }} />
+          <Link
+            key={item.name}
+            to={item.name}
+            className={clsx(
+              'p-2',
+              item.patched ? 'hover:opacity-65' : 'opacity-50 pointer-events-none'
             )}
+            aria-disabled={!item.patched}
+          >
+            <figure className="relative overflow-hidden w-64 h-64 rounded-xl shadow-xl">
+              {item.banner_url?.endsWith('.mp4') ? (
+                  <video autoPlay loop muted playsInline className="min-h-64 w-auto object-cover">
+                    <source src={item.banner_url} type="video/mp4" />
+                  </video>
+              ) : (
+                <img className="min-h-64 w-auto object-cover" src={item.banner_url} alt={item.name} />
+              )}
+              {item.patched ? null : <img className="absolute bottom-5 right-2" width="85" src="/fvn-translation/assets/sorry_wip.png" alt="작업중" />}
+            </figure>
             <span className="block pt-1">{item.title}</span>
           </Link>
         ))}
