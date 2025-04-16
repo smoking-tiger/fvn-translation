@@ -15,3 +15,8 @@ logo_url: /fvn-translation/assets/games/arches_logo.png
 banner_url: /fvn-translation/assets/games/arches.jpg
 license: ["나눔폰트", "인천교육힘찬체"]
 updated: 20250330
+
+changelog: |
+  #### r1 (2025-04-16)
+
+  - 한글 패치 배포
