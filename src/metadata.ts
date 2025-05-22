@@ -62,4 +62,5 @@ export const license = {
   '리디바탕체': 'https://ridicorp.com/ridibatang/',
   '인천교육힘찬체': '',
   '제주한라산': '',
+  '경기천년체': 'https://www.gg.go.kr/contents/contents.do?ciIdx=679&menuId=2457',
 } as Record<string, string>;
