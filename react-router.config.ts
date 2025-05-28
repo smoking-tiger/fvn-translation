@@ -4,7 +4,6 @@ import * as fs from 'node:fs';
 import type { Config } from '@react-router/dev/config';
 
 export default {
-  ssr: false,
   appDirectory: 'src',
   prerender() {
     const cwd = resolve(__dirname, './games');
