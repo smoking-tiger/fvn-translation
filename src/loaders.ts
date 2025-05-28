@@ -10,7 +10,7 @@ interface ListItem extends Pick<GameInfoType, 'title' | 'banner_url' | 'logo_url
 }
 
 export function loadList() {
-  const cwd = resolve(import.meta.dirname, import.meta.env.DEV ? '../games' : '../../games');
+  const cwd = resolve(import.meta.dirname, import.meta.env.DEV ? '../games' : '../../../games');
 
   const tags = new Set<string>();
   const list = [] as ListItem[];
@@ -37,7 +37,7 @@ export function loadList() {
 }
 
 export function loadGame(name: string) {
-  const cwd = resolve(import.meta.dirname, import.meta.env.DEV ? '../games' : '../../games');
+  const cwd = resolve(import.meta.dirname, import.meta.env.DEV ? '../games' : '../../../games');
   const txt = fs.readFileSync(resolve(cwd, `./${name}.yaml`), 'utf-8');
   const cfg = load(txt) as GameInfoType;
   const members = cfg.members?.map((name) => ({ name, ...(m.member[name] || {}) })) as Array<MemberType & { name: string; }> || [];
@@ -46,7 +46,8 @@ export function loadGame(name: string) {
 }
 
 export function loadMembers() {
-  const cwd = resolve(import.meta.dirname, import.meta.env.DEV ? '../games' : '../../games');
+  const cwd = resolve(import.meta.dirname, import.meta.env.DEV ? '../games' : '../../../games');
+  console.log(cwd);
   const members = {} as Record<string, MemberType & { name: string; count: number; }>;
   const names = new Set<string>();
 
