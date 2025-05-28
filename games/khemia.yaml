@@ -3,15 +3,15 @@ desc: |
   케미아는 [아다스트라](./adastra)의 시퀄입니다.  
   멘헤라? 주인공 스키피오와 능글능글한 네페루의 케미를 감상해봐요.
 url: https://echoproject.itch.io/khemia
-patch_url: https://github.com/smoking-tiger/fvn-translation/releases/download/Khemia_b2_r1/Khemia_b1_r1.zip
+patch_url: https://github.com/smoking-tiger/releases/download/Khemia_b2_r1/Khemia_b1_r1.zip
 status: 얼리 억세스
 status_note: |
   원작이 아직 개발 완료가 되지 않은 상태입니다.
   한글 패치는 현재 공개중인 버전(0.1 버전)까지 완료된 상태입니다.
 members: ["도루룽", "Husky"]
 tags: ["18금", "SF", "로맨스", "판타지", "성적묘사"]
-logo_url: /fvn-translation/assets/games/khemia_logo.png
-banner_url: /fvn-translation/assets/games/khemia.jpg
+logo_url: /assets/games/khemia_logo.png
+banner_url: /assets/games/khemia.jpg
 license: ["나눔폰트"]
 updated: 20250219
 

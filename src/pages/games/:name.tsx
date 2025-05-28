@@ -9,17 +9,19 @@ import ChevronLeft from 'components/Icons/ChevronLeft';
 import IconAlert from 'components/Icons/Alert';
 import Member from 'components/Member';
 import Tag from 'components/Tag';
+import IconItchIO from 'components/Icons/ItchIO';
+import IconDownload from 'components/Icons/Download';
+import Tooltip from 'components/Tooltip';
 
 import type { Route } from './+types/:name';
 
-import { license } from '../../metadata';
-import { loadGame } from '../../loaders';
-
 export async function loader({ params }: Route.LoaderArgs) {
-  return loadGame(params.name) as GameInfoType;
+  const { loadGame } = await import('../../loaders');
+  return loadGame(params.name);
 }
 
 export function meta({ data }: Route.MetaArgs) {
+  if (!data) return [];
   return [
     { title: `털겜번역단: ${data.title}` },
     { description: data.desc.replaceAll('  ', ' ') },
@@ -64,28 +66,33 @@ export default function GameInfo() {
         </div>
         {info.patch_url ? null : (
           <div className="relative container mx-auto" style={{ zIndex: '0' }}>
-            <img className="absolute bottom-1 right-2" width="85" src="/fvn-translation/assets/sorry_wip.png" alt="작업중" />
+            <img className="absolute bottom-1 right-2" width="85" src="/assets/sorry_wip.png" alt="작업중" />
           </div>
         )}
       </section>
       <section className="container mx-auto">
         <div className="flex justify-between p-2 bg-slate-300 dark:bg-slate-700 rounded-b-md mb-4">
-          <div className="space-x-2">
-            <AnchorButton className="inline-flex items-center" href={info.url} target="_blank">
-              게임 다운로드
-              <IconExternalLink className="size-4 ml-1" />
-            </AnchorButton>
+          <div className="flex space-x-2 items-center">
+            <span className="pl-2">게임 다운로드:</span>
+            {info.url?.includes('itch.io') ? (
+              <Tooltip label="Itch.io" position="top">
+                <AnchorButton className="inline-flex items-center" href={info.url} target="_blank">
+                  <IconItchIO className="size-4" />
+                </AnchorButton>
+              </Tooltip>
+            ) : null}
+            <hr className="w-px self-stretch opacity-25" />
             {info.patch_url ? (
-              <AnchorButton href={info.patch_url} target="_blank">한글패치</AnchorButton>
+              <AnchorButton className="flex items-center" href={info.patch_url} target="_blank">
+                한글패치
+                <IconDownload className="size-4 ml-2" />
+              </AnchorButton>
             ) : (
               <Button disabled>작업중</Button>
             )}
           </div>
-          <div className="flex items-center pr-2">
-            {info.members.map((m, i) => <Member key={m} name={m} style={{ zIndex: info.members.length - i, marginLeft: i * -8 }} />)}
-          </div>
         </div>
-        <div className="p-2 pb-4 space-x-1">
+        <div className="flex items-center flex-wrap p-2 pb-4 space-x-1">
           {info.tags.map((tag) => <Tag key={tag} name={tag} />)}
         </div>
         {info.status ? (
@@ -114,6 +121,12 @@ export default function GameInfo() {
         <div className="p-2 pb-4 min-w-full prose dark:prose-invert">
           <Markdown remarkPlugins={[remarkGfm]}>{info.desc}</Markdown>
         </div>
+        <div className="p-2 pb-4">
+          <h3 className="text-xl font-semibold pb-2">번역 맴버</h3>
+          <div className="flex items-center pr-2 space-x-1 flex-wrap">
+            {info.members.map(({ name, ...rest }, i) => <Member key={name} name={name} data={rest} />)}
+          </div>
+        </div>
         {info.changelog ? (
           <div className="p-2 pb-4">
             <h3 className="text-xl font-semibold pb-2">패치노트</h3>
@@ -125,19 +138,18 @@ export default function GameInfo() {
         <div className="p-2">
           <h3 className="text-xl font-semibold pb-2">라이센스</h3>
           <ul className="list-disc pl-6">
-            {info.license?.map((n) => {
-              if (!(n in license)) return null;
-              const name = license[n];
-              if (!name) return <li key={n}>{n}</li>;
-              return (
-                <li key={n}>
-                  <a className="inline-flex items-center hover:underline" href={name} target="_blank">
-                    {n}
+            {info.license?.map(({ name, url }) => (
+              <li key={name}>
+                {url ? (
+                  <a className="inline-flex items-center hover:underline" href={url} target="_blank">
+                    {name}
                     <IconExternalLink className="w-3 h-3 ml-1" />
                   </a>
-                </li>
-              );
-            })}
+                ) : (
+                  <span>{name}</span>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
       </section>

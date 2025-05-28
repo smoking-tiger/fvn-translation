@@ -24,7 +24,7 @@ export default function PcGuide() {
 ### 3. 게임 압축을 풀어 패키지를 열기.
 게임 압축을 풀면, 게임 폴더에 game폴더가 있을겁니다.
 
-![pc-1](/fvn-translation/assets/guide/pc_1.jpg)
+![pc-1](/assets/guide/pc_1.jpg)
 
 ### 4. 파일 옮기기
 
@@ -32,7 +32,7 @@ export default function PcGuide() {
 
 |  |  |
 | --- | --- |
-| ![pc-2](/fvn-translation/assets/guide/pc_2.jpg) | ![pc-3](/fvn-translation/assets/guide/pc_3.jpg) |
+| ![pc-2](/assets/guide/pc_2.jpg) | ![pc-3](/assets/guide/pc_3.jpg) |
 
 ### 5. 게임을 실행했는데 한글이 안 보여요
 
@@ -40,7 +40,7 @@ export default function PcGuide() {
 
 각자 게임에 들어가, [Korean]을 선택해 한글로 즐겨주세요.
 
-![final](/fvn-translation/assets/guide/final.jpg)
+![final](/assets/guide/final.jpg)
         `}
       </Markdown>
     </div>

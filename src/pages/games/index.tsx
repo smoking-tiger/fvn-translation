@@ -1,5 +1,6 @@
 import { useCallback, useMemo } from 'react';
 import { Link, useSearchParams, useLoaderData } from 'react-router';
+import clsx from 'clsx';
 
 import Button from 'components/Button';
 import Popover from 'components/Popover';
@@ -8,9 +9,6 @@ import IconClose from 'components/Icons/Close';
 
 import type { Route } from "./+types/index";
 
-import { loadList } from '../../loaders';
-import clsx from 'clsx';
-
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "털겜번역단: 게임 목록" },
@@ -18,6 +16,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader() {
+  const { loadList } = await import('../../loaders');
   return loadList();
 }
 
@@ -129,7 +128,7 @@ export default function GameList() {
               ) : (
                 <img className={clsx('min-h-64 w-auto object-cover', item.patched ? '' : 'opacity-50')} src={item.banner_url} alt={item.name} />
               )}
-              {item.patched ? null : <img className="absolute bottom-5 right-2" width="85" src="/fvn-translation/assets/sorry_wip.png" alt="작업중" />}
+              {item.patched ? null : <img className="absolute bottom-5 right-2" width="85" src="/assets/sorry_wip.png" alt="작업중" />}
             </figure>
             <span className="block pt-1">{item.title}</span>
           </Link>

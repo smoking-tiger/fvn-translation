@@ -33,29 +33,29 @@ export default function IOSGuide() {
 
 둘 다 압축을 풀어주세요.
 
-![](/fvn-translation/assets/guide/ios-1.jpg)
+![](/assets/guide/ios-1.jpg)
 
 ### 3. 파일 복사하기
 
 덮어씌우기를 하면 멋대로 바꾸기 때문에 일단 복사를 하고 게임 폴더안에 game폴더에 덮어쓰기를 합니다.  
 게임에 따라 screen.rpy가 없는 경우도 있습니다.
 
-![](/fvn-translation/assets/guide/ios-2.jpg)
+![](/assets/guide/ios-2.jpg)
 복사 하기를 누르고,
 
-![](/fvn-translation/assets/guide/ios-3.jpg)
+![](/assets/guide/ios-3.jpg)
 game 폴더에 가서,
 
-![](/fvn-translation/assets/guide/ios-4.jpg)
+![](/assets/guide/ios-4.jpg)
 붙여넣기를 하고,
 
-![](/fvn-translation/assets/guide/ios-5.jpg)
+![](/assets/guide/ios-5.jpg)
 덮어씌웁니다.
 
-![](/fvn-translation/assets/guide/ios-6.jpg)
+![](/assets/guide/ios-6.jpg)
 그 다음엔 tl/korean 폴더를 복사해서
 
-![](/fvn-translation/assets/guide/ios-7.jpg)
+![](/assets/guide/ios-7.jpg)
 게임폴더의 game/tl 에 덮어씌웁니다.  
 해당 폴더에 korean폴더가 이미 있으면(한패 업데이트 적용이라던가) 지우고 덮어씌워주세요 혹시 모를 파일이 남을 수 있으니.
 
@@ -63,11 +63,11 @@ game 폴더에 가서,
 
 이제 게임 폴더 외에는 필요가 없으니 다 지우셔도 됩니다. (혹시 모르면, 이름을 바꿔서 백업 해 두세요!)
 
-![](/fvn-translation/assets/guide/ios-8.jpg)
+![](/assets/guide/ios-8.jpg)
 
 폴더를 압축합니다.
 
-![](/fvn-translation/assets/guide/ios-9.jpg)
+![](/assets/guide/ios-9.jpg)
 
 이것으로, 사전 준비는 다 끝났습니다.
 
@@ -75,19 +75,19 @@ game 폴더에 가서,
 
 앱을 키면 제일 위에 나오는 버튼을 눌러주세요.
 
-![](/fvn-translation/assets/guide/ios-10.jpg)
+![](/assets/guide/ios-10.jpg)
 
 [아카이브 선택]을 누르고
 
-![](/fvn-translation/assets/guide/ios-11.jpg)
+![](/assets/guide/ios-11.jpg)
 
 방금 만든 압축파일을 선택합니다.
 
-![](/fvn-translation/assets/guide/ios-12.jpg)
+![](/assets/guide/ios-12.jpg)
 
 이제 게임을 즐기시면 됩니다.
 
-![](/fvn-translation/assets/guide/ios-13.jpg)
+![](/assets/guide/ios-13.jpg)
 
 ### 6. 게임을 실행했는데 한글이 안 보여요
 
@@ -95,7 +95,7 @@ game 폴더에 가서,
 
 각자 게임에 들어가, [Korean]을 선택해 한글로 즐겨주세요.
 
-![final](/fvn-translation/assets/guide/final.jpg)
+![final](/assets/guide/final.jpg)
         `}
       </Markdown>
     </div>
