@@ -15,8 +15,6 @@ members: ["한글화하는 갤럼", "도루룽", "늑발"]
 tags: ["18금", "로맨스", "RPG", "성적묘사"]
 logo_url: /assets/games/tos_logo.jpg
 banner_url: /assets/games/tos.jpg
-license: []
-
 
 changelog: |
   #### r1 (2025-06-04)

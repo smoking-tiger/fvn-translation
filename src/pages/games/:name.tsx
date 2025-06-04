@@ -21,14 +21,26 @@ export async function loader({ params }: Route.LoaderArgs) {
   return loadGame(params.name);
 }
 
+function getStaticImagePath(path?: string, fallback?: string) {
+  if (path?.endsWith('.mp4') || path?.endsWith('.webm')) {
+    return `https://kemovn.pages.dev${fallback || '/assets/fallback_logo.png'}`
+  }
+  return `https://kemovn.pages.dev${path || '/assets/fallback_logo.png'}`
+}
+
 export function meta({ data }: Route.MetaArgs) {
   if (!data) return [];
   return [
     { title: `털겜번역단: ${data.title}` },
-    { description: data.desc.replaceAll('  ', ' ') },
     { 'og:title': `털겜번역단: ${data.title}` },
+    { 'twitter:title': `털겜번역단: ${data.title}` },
+    { 'twitter:site': '털겜번역단' },
+    { 'twitter:card': 'summary_large_image' },
+    { description: data.desc.replaceAll('  ', ' ') },
     { 'og:description': data.desc.replaceAll('  ', ' ') },
-    data.logo_url ? { 'og:image': data.logo_url } : null,
+    { 'twitter:description': data.desc.replaceAll('  ', ' ') },
+    { 'og:image': getStaticImagePath(data.banner_url, data.logo_url) },
+    { 'twitter:image': getStaticImagePath(data.banner_url, data.logo_url) },
   ].filter(Boolean);
 }
 
@@ -135,31 +147,33 @@ export default function GameInfo() {
             {info.members.map(({ name, ...rest }, i) => <Member key={name} name={name} data={rest} />)}
           </div>
         </div>
+        {info.license?.length ? (
+          <div className="p-2 pb-4">
+            <h3 className="text-xl font-semibold pb-2">라이센스</h3>
+            <ul className="list-disc pl-6">
+              {info.license?.map(({ name, url }) => (
+                <li key={name}>
+                  {url ? (
+                    <a className="inline-flex items-center hover:underline" href={url} target="_blank">
+                      {name}
+                      <IconExternalLink className="w-3 h-3 ml-1" />
+                    </a>
+                  ) : (
+                    <span>{name}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
         {info.changelog ? (
           <div className="p-2 pb-4">
             <h3 className="text-xl font-semibold pb-2">패치노트</h3>
-            <div className="bg-stone-100 dark:bg-stone-800 dark:text-stone-200 p-2 rounded prose dark:prose-invert">
+            <div className="bg-stone-100 dark:bg-stone-800 dark:text-stone-200 py-2 px-4 rounded prose dark:prose-invert">
               <Markdown remarkPlugins={[remarkGfm]}>{info.changelog}</Markdown>
             </div>
           </div>
         ) : null}
-        <div className="p-2">
-          <h3 className="text-xl font-semibold pb-2">라이센스</h3>
-          <ul className="list-disc pl-6">
-            {info.license?.map(({ name, url }) => (
-              <li key={name}>
-                {url ? (
-                  <a className="inline-flex items-center hover:underline" href={url} target="_blank">
-                    {name}
-                    <IconExternalLink className="w-3 h-3 ml-1" />
-                  </a>
-                ) : (
-                  <span>{name}</span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
       </section>
     </div>
   );

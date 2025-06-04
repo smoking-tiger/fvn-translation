@@ -64,10 +64,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <html lang="ko" className={theme || 'loading'}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" type="image/png" href="/window_icon.png" />
         <style type="text/css">{'@media (prefers-color-scheme: dark) {.loading body { background-color:#171819; color:#efefef;}}'}</style>
         <Meta />
+        <meta name="robot" content="index,follow" />
+        <meta name="googlebot" content="index,follow" />
         <Links />
       </head>
       <body>
