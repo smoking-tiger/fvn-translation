@@ -32,15 +32,14 @@ export function meta({ data }: Route.MetaArgs) {
   if (!data) return [];
   return [
     { title: `털겜번역단: ${data.title}` },
-    { 'og:title': `털겜번역단: ${data.title}` },
-    { 'twitter:title': `털겜번역단: ${data.title}` },
-    { 'twitter:site': '털겜번역단' },
-    { 'twitter:card': 'summary_large_image' },
-    { description: data.desc.replaceAll('  ', ' ') },
-    { 'og:description': data.desc.replaceAll('  ', ' ') },
-    { 'twitter:description': data.desc.replaceAll('  ', ' ') },
-    { 'og:image': getStaticImagePath(data.banner_url, data.logo_url) },
-    { 'twitter:image': getStaticImagePath(data.banner_url, data.logo_url) },
+    { name: 'keywords', content: ['퍼리', '수인', '케모노', '수연시', '게임', '퍼리 비쥬얼 노벨', 'FVN', 'Furry visual Novel', ...(data.tags || [])].join(',') },
+    { name: 'description', content: data.desc.replaceAll('  ', ' ') },
+    { name: 'og:title', content: `털겜번역단: ${data.title}` },
+    { name: 'twitter:title', content: `털겜번역단: ${data.title}` },
+    { name: 'twitter:site', content: '털겜번역단' },
+    { name: 'card:site', content: 'summary_large_image' },
+    { name: 'image:site', content: getStaticImagePath(data.banner_url, data.logo_url) },
+    { name: 'twitter:image', content: getStaticImagePath(data.banner_url, data.logo_url) },
   ].filter(Boolean);
 }
 
@@ -72,7 +71,7 @@ export default function GameInfo() {
         <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-white dark:from-black to-transparent pb-2" style={{ zIndex: '1' }}>
           <div className="relative container flex p-2 pt-6 mx-auto items-center">
             {info.logo_url ? (
-              <img className="w-auto h-11 rounded mr-2" src={info.logo_url} />
+              <img className="w-auto h-11 rounded mr-2" src={info.logo_url} alt={info.title} />
             ) : null}
             <h1 className="text-5xl text-black dark:text-white">{info.title}</h1>
           </div>
