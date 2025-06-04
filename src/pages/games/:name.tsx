@@ -10,6 +10,7 @@ import IconAlert from 'components/Icons/Alert';
 import Member from 'components/Member';
 import Tag from 'components/Tag';
 import IconItchIO from 'components/Icons/ItchIO';
+import IconPatreon from 'components/Icons/Patreon';
 import IconDownload from 'components/Icons/Download';
 import Tooltip from 'components/Tooltip';
 
@@ -78,6 +79,13 @@ export default function GameInfo() {
               <Tooltip label="Itch.io" position="top">
                 <AnchorButton className="inline-flex items-center" href={info.url} target="_blank">
                   <IconItchIO className="size-4" />
+                </AnchorButton>
+              </Tooltip>
+            ) : null}
+            {info.patreon_url ? (
+              <Tooltip label="패트리온" position="top">
+                <AnchorButton className="inline-flex items-center" href={info.url} target="_blank">
+                  <IconPatreon className="size-4" />
                 </AnchorButton>
               </Tooltip>
             ) : null}

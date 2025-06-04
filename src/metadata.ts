@@ -43,6 +43,11 @@ export const member = {
     role: '번역가',
     external: true,
   },
+  '한글화하는 갤럼': {
+    avatar: '/assets/members/hangul_galler.webp',
+    role: '번역가',
+    external: true,
+  },
 } as Record<string, MemberType>;
 
 export const license = {

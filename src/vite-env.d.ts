@@ -4,6 +4,7 @@ declare interface GameInfoType {
   title: string;
   desc: string;
   url: string;
+  patreon_url?: string;
   patch_url?: string;
   logo_url?: string;
   banner_url?: string;
