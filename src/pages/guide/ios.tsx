@@ -6,6 +6,12 @@ import type { Route } from './+types/index';
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "털겜번역단: 패치 하는 법 > iOS" },
+    { name: 'og:title', content: '털겜번역단: 패치 하는 법 > iOS' },
+    { name: 'twitter:title', content: '털겜번역단: 패치 하는 법 > iOS' },
+    { name: 'keywords', content: ['퍼리', '수인', '케모노', '수연시', '게임', '퍼리 비쥬얼 노벨', 'FVN', 'Furry visual Novel', '가이드', '설명', 'iOS'].join(',') },
+    { name: 'card:site', content: 'summary' },
+    { name: 'image:site', content: 'https://kemovn.pages.dev/assets/fallback_logo.png' },
+    { name: 'twitter:image', content: 'https://kemovn.pages.dev/assets/fallback_logo.png' },
   ];
 }
 

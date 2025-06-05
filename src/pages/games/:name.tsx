@@ -33,8 +33,9 @@ export function meta({ data }: Route.MetaArgs) {
   return [
     { title: `털겜번역단: ${data.title}` },
     { name: 'keywords', content: ['퍼리', '수인', '케모노', '수연시', '게임', '퍼리 비쥬얼 노벨', 'FVN', 'Furry visual Novel', ...(data.tags || [])].join(',') },
-    { name: 'description', content: data.desc.replaceAll('  ', ' ') },
+    { name: 'description', content: data.desc.replaceAll('  ', ' ').split('\n').join(' ') },
     { name: 'og:title', content: `털겜번역단: ${data.title}` },
+    { name: 'og:description', content: data.desc.replaceAll('  ', ' ').split('\n').join(' ') },
     { name: 'twitter:title', content: `털겜번역단: ${data.title}` },
     { name: 'twitter:site', content: '털겜번역단' },
     { name: 'card:site', content: 'summary_large_image' },
