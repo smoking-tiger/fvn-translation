@@ -41,6 +41,6 @@ export default {
     arr.push('</urlset>');
 
     const dist = resolve(__dirname, './build/client/sitemap.xml');
-    await Bun.file(dist).write(arr.join('\n'));
+    await Bun.file(dist).write(arr.join('\r\n'));
   },
 } satisfies Config;
