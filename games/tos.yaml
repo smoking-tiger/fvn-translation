@@ -4,7 +4,7 @@ desc: |
   하지만 모험은 나를 안개 낀 숲 속에 깊숙이 자리한 낯선 주점으로 이끌었다.
 url: https://fd-caro.itch.io/tavern-of-spear
 patreon_url: https://www.patreon.com/CaroZalt
-patch_url: https://pub-282d60d4cfd64ad89b2edd64eaa9ac92.r2.dev/ToS_r2.zip
+patch_url: https://pub-282d60d4cfd64ad89b2edd64eaa9ac92.r2.dev/ToS_r3.zip
 status: 얼리억세스
 status_note: |
   0.35a버전으로 한글화가 되어있어, 현재 공개버전으로는 일부 번역이 누락될 가능성이 있습니다.  
@@ -17,6 +17,10 @@ logo_url: /assets/games/tos_logo.jpg
 banner_url: /assets/games/tos.jpg
 
 changelog: |
+  #### r3 (2025-06-06)
+
+  - 각종 번역 이슈 수정
+
   #### r2 (2025-06-05)
 
   - 갤러리, 이름 미설정의 경우 에러가 나는 현상 수정
