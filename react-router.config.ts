@@ -19,7 +19,7 @@ export default {
   ssr: false,
   appDirectory: 'src',
   prerender: list,
-  async buildEnd(args) {
+  async buildEnd(arg) {
     const arr = ['<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'];
     let latest: Date | null = null;
 
@@ -42,5 +42,9 @@ export default {
 
     const dist = resolve(__dirname, './build/client/sitemap.xml');
     await Bun.file(dist).write(arr.join('\r\n'));
+
+    if (fs.existsSync(resolve(__dirname, './build/client/__spa-fallback.html'))) {
+      fs.renameSync(resolve(__dirname, './build/client/__spa-fallback.html'), resolve(__dirname, './build/client/404.html'));
+    }
   },
 } satisfies Config;
