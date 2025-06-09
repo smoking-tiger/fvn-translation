@@ -32,11 +32,11 @@ export default function Layout() {
       </section>
       <section>
         <h2 className="text-2xl font-semibold py-2">번역에 참여주해주신 분들</h2>
-        <ul className="flex space-x-2 space-y-2 flex-wrap">
+        <div className="flex space-x-2 space-y-2 flex-wrap">
           {member.map((d) => (
             <Member key={d.name} name={d.name} data={d} full />
           ))}
-        </ul>
+        </div>
       </section>
     </div>
   );
