@@ -25,15 +25,15 @@ export default {
 
     for await (const name of list.reverse()) {
       if (name === '/') {
-        arr.push(`<url><loc>https://kemovn.pages.dev</loc><lastmod>${(latest || new Date()).toISOString()}</lastmod></url>`)
+        arr.push(`<url><loc>https://kemovn.cc</loc><lastmod>${(latest || new Date()).toISOString()}</lastmod></url>`)
       } else if (name.startsWith('/games/')) {
         const f = fs.statSync(resolve(cwd, name.replace('/games/', './')) + '.yaml');
         if (!latest || latest < f.mtime) {
           latest = new Date(f.mtime);
         }
-        arr.push(`<url><loc>https://kemovn.pages.dev${name}</loc><lastmod>${f.mtime.toISOString()}</lastmod></url>`)
+        arr.push(`<url><loc>https://kemovn.cc${name}</loc><lastmod>${f.mtime.toISOString()}</lastmod></url>`)
       } else {
-        arr.push(`<url><loc>https://kemovn.pages.dev${name}</loc><lastmod>${(latest || new Date()).toISOString()}</lastmod></url>`)
+        arr.push(`<url><loc>https://kemovn.cc${name}</loc><lastmod>${(latest || new Date()).toISOString()}</lastmod></url>`)
       }
     }
 

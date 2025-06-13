@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kemovn.pages.dev/sitemap.xml
+Sitemap: https://kemovn.cc/sitemap.xml

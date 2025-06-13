@@ -23,9 +23,9 @@ export async function loader({ params }: Route.LoaderArgs) {
 
 function getStaticImagePath(path?: string, fallback?: string) {
   if (path?.endsWith('.mp4') || path?.endsWith('.webm')) {
-    return `https://kemovn.pages.dev${fallback || '/assets/fallback_logo.png'}`
+    return `https://kemovn.cc${fallback || '/assets/fallback_logo.png'}`
   }
-  return `https://kemovn.pages.dev${path || '/assets/fallback_logo.png'}`
+  return `https://kemovn.cc${path || '/assets/fallback_logo.png'}`
 }
 
 export function meta({ data }: Route.MetaArgs) {
