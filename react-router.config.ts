@@ -31,9 +31,9 @@ export default {
         if (!latest || latest < f.mtime) {
           latest = new Date(f.mtime);
         }
-        arr.push(`<url><loc>https://kemovn.cc${name}</loc><lastmod>${f.mtime.toISOString()}</lastmod></url>`)
+        arr.push(`<url><loc>https://kemovn.cc${name}/</loc><lastmod>${f.mtime.toISOString()}</lastmod></url>`)
       } else {
-        arr.push(`<url><loc>https://kemovn.cc${name}</loc><lastmod>${(latest || new Date()).toISOString()}</lastmod></url>`)
+        arr.push(`<url><loc>https://kemovn.cc${name}/</loc><lastmod>${(latest || new Date()).toISOString()}</lastmod></url>`)
       }
     }
 
