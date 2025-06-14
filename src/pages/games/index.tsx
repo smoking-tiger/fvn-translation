@@ -112,7 +112,7 @@ export default function GameList() {
           ) : null}
         </div>
       </header>
-      <ul className="flex flex-wrap space-x-2">
+      <ul className="flex flex-wrap space-x-2 justify-center xl:justify-start">
         {listItems.map((item) => (
           <Link
             key={item.name}
@@ -130,10 +130,20 @@ export default function GameList() {
               )}
               {item.patched ? null : <img className="absolute bottom-5 right-2" width="85" src="/assets/sorry_wip.png" alt="작업중" />}
             </figure>
-            <span className="block pt-1">{item.title}</span>
+            <GameTitle title={item.kr_title} fallback={item.title} />
           </Link>
         ))}
       </ul>
     </div>
+  );
+}
+
+function GameTitle({ title, fallback }: { title?: string; fallback: string; }) {
+  if (!title) return <span className="block pt-1">{fallback}</span>;
+  return (
+    <span className="block pt-1">
+      <span className="block leading-1.5 pt-1">{title}</span>
+      <small className="opacity-35">{fallback}</small>
+    </span>
   );
 }

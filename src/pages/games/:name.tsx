@@ -31,13 +31,19 @@ function getStaticImagePath(path?: string, fallback?: string) {
 export function meta({ data }: Route.MetaArgs) {
   if (!data) return [];
   const desc = data.desc.replaceAll('  ', ' ').split('\n').map((txt) => txt.trim()).join(' ');
+  let title = '';
+  if (data.kr_title) {
+    title = `${data.kr_title} (${data.title})`;
+  } else {
+    title = data.title;
+  }
   return [
-    { title: `털겜번역단: ${data.title}` },
+    { title: `털겜번역단: ${title}` },
     { name: 'keywords', content: ['퍼리', '수인', '케모노', '수연시', '퍼리 비쥬얼 노벨', '한글', '한국어', '한글화', '한패', '한국어 패치', ...(data.tags || [])].join(',') },
     { name: 'description', content: desc },
-    { name: 'og:title', content: `털겜번역단: ${data.title}` },
+    { name: 'og:title', content: `털겜번역단: ${title}` },
     { name: 'og:description', content: desc },
-    { name: 'twitter:title', content: `털겜번역단: ${data.title}` },
+    { name: 'twitter:title', content: `털겜번역단: ${title}` },
     { name: 'twitter:site', content: '털겜번역단' },
     { name: 'card:site', content: 'summary_large_image' },
     { name: 'image:site', content: getStaticImagePath(data.banner_url, data.logo_url) },
@@ -73,9 +79,9 @@ export default function GameInfo() {
         <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-white dark:from-black to-transparent pb-2" style={{ zIndex: '1' }}>
           <div className="relative container flex p-2 pt-6 mx-auto items-center">
             {info.logo_url ? (
-              <img className="w-auto h-11 rounded mr-2" src={info.logo_url} alt={info.title} />
+              <img className="w-auto h-11 rounded mr-2 max-[385px]:hidden" src={info.logo_url} alt={info.title} />
             ) : null}
-            <h1 className="text-5xl text-black dark:text-white">{info.title}</h1>
+            <GameTitle title={info.kr_title} fallback={info.title} />
           </div>
         </div>
         {info.patch_url ? null : (
@@ -179,3 +185,14 @@ export default function GameInfo() {
     </div>
   );
 }
+
+function GameTitle({ title, fallback }: { title?: string; fallback: string; }) {
+  if (!title) return <h1 className="text-5xl text-black dark:text-white">{fallback}</h1>
+  return (
+    <h1 className="flex text-black dark:text-white flex-col md:items-end md:flex-row">
+      <span className="text-5xl">{title}</span>
+      <small className="pl-2 opacity-35 text-2xl">{fallback}</small>
+    </h1>
+  );
+}
+

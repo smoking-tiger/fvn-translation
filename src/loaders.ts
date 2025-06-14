@@ -6,6 +6,7 @@ import * as m from './metadata';
 
 interface ListItem extends Pick<GameInfoType, 'title' | 'banner_url' | 'logo_url' | 'tags'> {
   name: string;
+  kr_title?: string;
   patched?: boolean;
 }
 
@@ -21,6 +22,7 @@ export function loadList() {
     list.push({
       name: filename.substring(0, filename.length - 5),
       title: conf.title,
+      kr_title: conf.kr_title,
       banner_url: conf.banner_url,
       logo_url: conf.logo_url,
       tags: conf.tags,

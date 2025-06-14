@@ -2,6 +2,7 @@
 
 declare interface GameInfoType {
   title: string;
+  kr_title?: string;
   desc: string;
   url: string;
   patreon_url?: string;
