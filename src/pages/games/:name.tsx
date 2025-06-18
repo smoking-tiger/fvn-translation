@@ -65,9 +65,10 @@ export default function GameInfo() {
             </div>
           ) : (
             <figure
-              className="absolute top-0 left-0 right-0 bottom-0 bg-cover bg-center md:bg-top"
-              style={{ backgroundImage: `url(${info.banner_url})` }}
-            />
+              className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden"
+            >
+              <img className="object-cover w-full min-h-128" src={info.banner_url} loading="lazy" alt={info.title} />
+            </figure>
           )}
           <div className="absolute top-0 container mx-auto">
             <Link className="inline-flex items-center p-1 text-stone-200 hover:underline" to="../games">
