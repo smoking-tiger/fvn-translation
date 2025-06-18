@@ -30,7 +30,7 @@ export default function Header() {
     >
       <nav className="container flex justify-between items-center h-14 px-1 mx-auto">
         <ButtonLink className="flex items-center" to="/">
-          <IconLogo className="size-8" />
+          <IconLogo className="size-8" width="32" height="32" />
         </ButtonLink>
         <div className="space-x-2">
           <ButtonNav className={({ isActive }) => isActive ? 'text-red' : ''} to="/guide">패치 하는 법</ButtonNav>

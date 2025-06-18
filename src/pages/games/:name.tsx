@@ -30,7 +30,7 @@ function getStaticImagePath(path?: string, fallback?: string) {
 
 export function meta({ data }: Route.MetaArgs) {
   if (!data) return [];
-  const desc = data.desc.replaceAll('  ', ' ').split('\n').map((txt) => txt.trim()).join(' ');
+  const desc = data.desc.replaceAll('  ', ' ').split('\n').map((txt) => txt.trim()).join(' ').trim();
   let title = '';
   if (data.kr_title) {
     title = `${data.kr_title} (${data.title})`;
