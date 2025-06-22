@@ -39,7 +39,13 @@ export function meta({ data }: Route.MetaArgs) {
   }
   return [
     { title: `털겜번역단: ${title}` },
-    { name: 'keywords', content: ['퍼리', '수인', '케모노', '수연시', '퍼리 비쥬얼 노벨', '한글', '한국어', '한글화', '한패', '한국어 패치', ...(data.tags || [])].join(',') },
+    {
+      name: 'keywords',
+      content: [
+        '퍼리', '수인', '케모노', '수연시', '퍼리 비쥬얼 노벨', '한글', '한국어', '한글화', '한패', '한국어 패치',
+        data.title.trim(), data.kr_title?.trim(), ...(data.tags || []),
+      ].filter(Boolean).join(',')
+    },
     { name: 'description', content: desc },
     { name: 'og:title', content: `털겜번역단: ${title}` },
     { name: 'og:description', content: desc },
