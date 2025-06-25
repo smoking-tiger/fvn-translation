@@ -4,7 +4,7 @@ desc: |
   다양한 큰 종족들 사이에서 수달을 플레이하게 되며,  
   신체 크기 차이, 로맨스, 드라마, 일상 생활이 있고 성인 콘텐츠가 많이 포함되어 있습니다!
 url: https://ari-guardian.itch.io/heat-source
-patch_url: https://files.kemovn.cc/HeatSource_r3.zip
+patch_url: https://files.kemovn.cc/HeatSource_r4.zip
 members: ["RugeeMetee", "박호랑"]
 tags: ["18금", "성적묘사", "크기차이", "로맨스"]
 status: 주의
@@ -17,6 +17,10 @@ updated: 20250412
 
 
 changelog: |
+  #### r4 (2025-06-25)
+
+  - 최신 공개 버전 0.26.0 대응 수정했습니다.
+
   #### r3 (2025-04-14)
 
   - 번역 이전 작업에서 28챕터가 누락된 문제를 수정했습니다.
