@@ -19,6 +19,7 @@ export function loadList() {
   fs.readdirSync(cwd).forEach((filename) => {
     const txt = fs.readFileSync(resolve(cwd, filename), 'utf-8');
     const conf = load(txt) as GameInfoType;
+    if (conf.hidden) return;
     list.push({
       name: filename.substring(0, filename.length - 5),
       title: conf.title,
@@ -49,7 +50,6 @@ export function loadGame(name: string) {
 
 export function loadMembers() {
   const cwd = resolve(import.meta.dirname, import.meta.env.DEV ? '../games' : '../../../games');
-  console.log(cwd);
   const members = {} as Record<string, MemberType & { name: string; count: number; }>;
   const names = new Set<string>();
 

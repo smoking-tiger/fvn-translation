@@ -15,6 +15,7 @@ declare interface GameInfoType {
   tags: string[];
   license: string[];
   changelog?: string;
+  hidden?: boolean;
   updates: number;
 }
 

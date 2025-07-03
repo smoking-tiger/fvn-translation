@@ -58,4 +58,5 @@ export const license = {
   '제주한라산': '',
   '경기천년체': 'https://www.gg.go.kr/contents/contents.do?ciIdx=679&menuId=2457',
   '학교안심 나들이': 'https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202408200000000000002',
+  '갈무리': 'https://quiple.dev/galmuri',
 } as Record<string, string>;
