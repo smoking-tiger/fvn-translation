@@ -69,11 +69,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="googlebot" content="index,follow" />
         <Links />
       </head>
-      <body className="relative min-h-screen">
+      <body className="flex flex-col min-h-screen">
         <Header />
-        {children}
-        <footer className="sticky bottom-0 left-0 right-0 z-20 w-full p-4 mt-6">
-          <div className="container p-2 m-auto flex items-center justify-between">
+        <main className="flex-grow">
+          {children}
+        </main>
+        <footer className="w-full p-2 mt-2">
+          <div className="container p-1 m-auto flex items-center justify-between">
             <small className="opacity-55">털겜번역단은 비공식 팬 번역을 하는 팀입니다.</small>
             <div className="flex mt-4 sm:justify-center sm:mt-0">
               <AnchorButton href="https://discord.com/invite/U7XsRUc83T">
