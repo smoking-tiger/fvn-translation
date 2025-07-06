@@ -59,4 +59,5 @@ export const license = {
   '경기천년체': 'https://www.gg.go.kr/contents/contents.do?ciIdx=679&menuId=2457',
   '학교안심 나들이': 'https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202408200000000000002',
   '갈무리': 'https://quiple.dev/galmuri',
+  '프리젠테이션': 'https://freesentation.blog',
 } as Record<string, string>;
