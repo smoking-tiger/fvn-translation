@@ -70,8 +70,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body className="relative min-h-screen pb-5">
         <Header />
         {children}
-        <footer className="sticky bottom-0">
-          <small className="container p-2 m-auto opacity-55">모든 번역의 권리는 원 게임 제작자(혹은 제작사)에게 있습니다. 털겜번역단은 비공식 팬 번역을 하는 팀입니다.</small>
+        <footer className="absolute sticky bottom-0">
+          <div className="container p-2 m-auto">
+            <small className="opacity-55">모든 번역의 권리는 원 게임 제작자(혹은 제작사)에게 있습니다. 털겜번역단은 비공식 팬 번역을 하는 팀입니다.</small>
+          </div>
         </footer>
         <ScrollRestoration />
         <Scripts />
