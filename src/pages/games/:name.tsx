@@ -12,6 +12,7 @@ import Tag from 'components/Tag';
 import IconItchIO from 'components/Icons/ItchIO';
 import IconPatreon from 'components/Icons/Patreon';
 import IconDownload from 'components/Icons/Download';
+import IconSteam from 'components/Icons/Steam';
 import Tooltip from 'components/Tooltip';
 
 import type { Route } from './+types/:name';
@@ -105,6 +106,13 @@ export default function GameInfo() {
               <Tooltip label="Itch.io" position="top">
                 <AnchorButton className="inline-flex items-center" href={info.url} target="_blank">
                   <IconItchIO className="size-4" />
+                </AnchorButton>
+              </Tooltip>
+            ) : null}
+            {info.url?.includes('store.steampowered.com') ? (
+              <Tooltip label="스팀" position="top">
+                <AnchorButton className="inline-flex items-center" href={info.url} target="_blank">
+                  <IconSteam className="size-4" />
                 </AnchorButton>
               </Tooltip>
             ) : null}
