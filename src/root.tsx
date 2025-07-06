@@ -68,10 +68,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="googlebot" content="index,follow" />
         <Links />
       </head>
-      <body className="relative min-h-screen pb-12">
+      <body className="relative min-h-screen">
         <Header />
         {children}
-        <footer className="fixed bottom-0 left-0 right-0 z-20 w-full p-4">
+        <footer className="sticky bottom-0 left-0 right-0 z-20 w-full p-4 mt-6">
           <div className="container p-2 m-auto flex items-center justify-between">
             <small className="opacity-55">모든 번역의 권리는 원 게임 제작자(혹은 제작사)에게 있습니다. 털겜번역단은 비공식 팬 번역을 하는 팀입니다.</small>
             <div className="flex mt-4 sm:justify-center sm:mt-0">
