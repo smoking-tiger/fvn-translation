@@ -21,7 +21,7 @@ export default function Layout() {
     <div className="container mx-auto p-2 pt-8 space-y-5 pb-16">
       <section>
         <h2 className="text-2xl font-semibold py-2">털겜번역단</h2>
-        <p>우리는 퍼리 비주얼 노벨을 너무나 사랑해서 한국어로 번역하고 싶어하는 사람들입니다.</p>
+        <p>우리는 퍼리 게임, 특히 퍼리 비쥬얼 노벨(일명 수연시) 너무나 사랑해서 한국어로 번역해, 다 같이 공유하고 싶어하는 사람들입니다.</p>
       </section>
       <section>
         <h2 className="text-2xl font-semibold py-2">커뮤니티</h2>
