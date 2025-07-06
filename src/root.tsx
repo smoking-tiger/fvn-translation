@@ -3,6 +3,7 @@ import { useLayoutEffect } from 'react';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse } from 'react-router';
 
 import Header from './components/Header';
+import { AnchorButton } from './components/Button';
 import IconDiscord from './components/Icons/Discord';
 import { useThemeMode, uiStore, THEME_STORAGE_KEY, COLOR_SCHEME_QUERY, IS_SSR } from './ui';
 import type { Route } from "./+types/root";
@@ -73,12 +74,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <footer className="sticky bottom-0 left-0 right-0 z-20 w-full p-4 mt-6">
           <div className="container p-2 m-auto flex items-center justify-between">
-            <small className="opacity-55">모든 번역의 권리는 원 게임 제작자(혹은 제작사)에게 있습니다. 털겜번역단은 비공식 팬 번역을 하는 팀입니다.</small>
+            <small className="opacity-55">털겜번역단은 비공식 팬 번역을 하는 팀입니다.</small>
             <div className="flex mt-4 sm:justify-center sm:mt-0">
-              <a href="https://discord.com/invite/U7XsRUc83T" className="ms-5">
+              <AnchorButton href="https://discord.com/invite/U7XsRUc83T">
                 <IconDiscord className="w-4 h-4" />
                 <span className="sr-only">털겜번역단 디스코드</span>
-              </a>
+              </AnchorButton>
             </div>
           </div>
         </footer>
