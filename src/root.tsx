@@ -62,7 +62,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="icon" type="image/png" href="/falback_icon.png" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <style type="text/css">{'@media (prefers-color-scheme: dark) {.loading body { background-color:#171819; color:#efefef;}} .loading header { background-color:#171819; color:#efefef; }'}</style>
         <Meta />
         <meta name="robot" content="index,follow" />
