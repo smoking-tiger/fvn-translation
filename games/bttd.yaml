@@ -10,10 +10,16 @@ patch_url: https://files.kemovn.cc/BTTD_r1.zip
 status: 얼리 억세스
 status_note: |
   AI를 사용한 번역에 기본적인 동작 확인만 되어있는 상태입니다.  
-  일본어(日本語)를 선택하면 한국어가 적용됩니다.  
+  압축을 풀면 나오는 exe 파일을 실행해 패치를 적용해주세요.  
   현재 게임은 얼리 억세스 중입니다. 7월 18일에 출시하니, 기대해주세요!  
   번역이 매끄럽지 않거나, 이상한 부분은 재보해주시면 적용해두도록 하겠습니다.
 tags: ["18금", "RPG", "추리", "임시공개"]
 members: ["늑발"]
 logo_url: /assets/games/bttd_logo.jpg
 banner_url: /assets/games/bttd.jpg
+
+
+changelog: |
+  #### r1 (2025-07-09)
+
+  - 정식 출시 전, AI번역 패치 임시 배포
