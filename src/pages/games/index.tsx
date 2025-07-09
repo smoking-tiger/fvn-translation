@@ -101,7 +101,7 @@ export default function GameList() {
                 </Button>
               )}
             >
-              <div className="p-2 bg-stone-100 dark:bg-stone-800 rounded">
+              <div className="p-2 bg-stone-100 dark:bg-stone-800 rounded" style={{ maxWidth: '565px' }}>
                 {unselected.map((tag) => (
                   <Button key={tag} onClick={() => addTag(tag)}>
                     {tag}
