@@ -14,7 +14,7 @@ status_note: |
   혹시 에러 등 버그가 생겼을 시엔, 털겜번역단 디스코드에 문의해주세요.  
   이전 한패에서(r3 이전) 저장한 세이브 파일을 새 게임을 시작한 이후에 로드할때는 게임을 다시 시작하셔야 로드가 됩니다.
 members: ["한글화하는 갤럼", "도루룽", "늑발"]
-tags: ["18금", "로맨스", "RPG", "성적묘사"]
+tags: ["18금", "성적묘사:많음", "로맨스", "RPG"]
 logo_url: /assets/games/tos_logo.jpg
 banner_url: /assets/games/tos.jpg
 

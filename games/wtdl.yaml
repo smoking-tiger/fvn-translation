@@ -8,10 +8,10 @@ url: https://bokedaidu.itch.io/where-the-demon-lurks
 patch_url: https://files.kemovn.cc/incubator/WTDL_r1_alpha.zip
 status: 체험판
 status_note: |
-  간단한 체험판만 배포중입니다.  
+  간단한 AI번역본 입니다. 동작 확인만 된 상태입니다.  
   아 게임은, 경미한 언어적/신체적 폭력의 묘사가 있습니다.  
   15세 미만의 플레이어는 플레이를 자제해 주시기 바랍니다.
-tags: ["코메디", "일상물", "마법"]
+tags: ["코메디", "일상물", "마법", "임시공개"]
 members: ["늑발"]
 banner_url: /assets/games/wtdl.jpg
 license: ["나눔폰트", "학교안심 나들이", "갈무리", "프리텐다드"]

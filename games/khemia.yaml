@@ -10,7 +10,7 @@ status_note: |
   원작이 아직 개발 완료가 되지 않은 상태입니다.
   한글 패치는 현재 공개중인 버전(0.1 버전)까지 완료된 상태입니다.
 members: ["도루룽", "Husky"]
-tags: ["18금", "SF", "로맨스", "판타지", "성적묘사"]
+tags: ["18금", "성적묘사", "SF", "로맨스", "판타지"]
 logo_url: /assets/games/khemia_logo.png
 banner_url: /assets/games/khemia.jpg
 license: ["나눔폰트"]
