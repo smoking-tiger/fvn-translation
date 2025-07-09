@@ -1,0 +1,20 @@
+title: Kelipot
+kr_title: 캘리폿
+desc: |
+  정체불명의 재앙이 작은 마을 셀레파이스를 갑자기 덮쳤다. 재앙에 휘말린 백호족 쌍둥이는 어떻게 맞설 것인가?  
+  플랫폼 로그라이트 게임 Kelipot(켈리폿)이 드디어 찾아온다! 방대한 스토리, 프레임마다 섬세한 터치로 그려낸 그래픽, 웅장한 음악. 미쳐버린 세상을 돌파하고, 진실을 파헤쳐라.
+
+url: https://store.steampowered.com/app/1090440/Kelipot/
+patch_url: https://files.kemovn.cc/Kelipot_r1.zip
+status: 패치 적용 방법
+status_note: |
+  다운로드한 파일 en_fan.xml을 Steam\steamapps\common\Kelipot\kelipot_Data\StreamingAssets\Localization 경로에 덮어씌우면 됩니다.  
+  게임을 시작해 Settings 에 들어가, Gameplay -> Language를 한국어(팬 번역) 으로 바꾸시면 됩니다.
+tags: ["로그라이크", "액션"]
+members: ["펄킹"]
+banner_url: /assets/games/kelipot.jpg
+
+changelog: |
+  #### r1 (2024-10-16)
+
+  - 한패 배포 (25-07-09 털겜번역단으로 이전)
