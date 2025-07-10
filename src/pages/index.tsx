@@ -38,7 +38,6 @@ export default function Layout() {
           ))}
         </div>
       </section>
-      <small className="mt-4 opacity-55">모든 번역의 권리는 원 게임 제작자(혹은 제작사)에게 있습니다.</small>
     </div>
   );
 }
