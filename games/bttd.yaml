@@ -6,7 +6,7 @@ desc: |
   당신의 목숨뿐 아니라 도시 전체를 위협할 수 있는 거대한 음모를 파헤쳐라. 이 스릴 넘치는 모험에서 당신의 선택은 중요하며, 탈출만이 유일한 구원이다!
 
 url: https://store.steampowered.com/app/1735700/Back_to_the_Dawn/
-patch_url: https://files.kemovn.cc/BTTD_r6.zip
+patch_url: https://files.kemovn.cc/BTTD_r7.zip
 status: 얼리 억세스
 status_note: |
   실제 게임 파일에 번역을 적용하는 방식이기 때문에, 윈도우 디펜더가 바이러스로 인식하는 경우가 있습니다.  
@@ -21,6 +21,10 @@ banner_url: /assets/games/bttd.jpg
 
 
 changelog: |
+  #### r7 (2025-07-16)
+
+  - 어색한 표현 등을 수정했습니다
+
   #### r6 (2025-07-14)
 
   - 각종 번역 이슈 수정
