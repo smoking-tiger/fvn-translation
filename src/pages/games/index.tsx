@@ -27,7 +27,7 @@ export default function GameList() {
   const tagList = useMemo<string[]>(() => {
     const arr = search.get('tags');
     if (!arr) return [];
-    return arr.split(',').filter((tag) => !tag.startsWith('성적묘사'));
+    return arr.split(',');
   }, [search]);
 
   const showExplict = search.has('explict');

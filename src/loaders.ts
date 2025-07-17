@@ -30,7 +30,10 @@ export function loadList() {
       patched: !!conf.patch_url,
       hidden: conf.hidden,
     });
-    conf.tags.forEach((tag) => tags.add(tag));
+    conf.tags.forEach((tag) => {
+      if (tag.startsWith('성적묘사')) return;
+      tags.add(tag);
+    });
   });
 
   list.sort((a, b) => {
