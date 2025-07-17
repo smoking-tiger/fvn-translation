@@ -10,7 +10,7 @@ status: 주의
 status_note: |
   이 게임은 폭력, 고문, 약물 사용, 폭언 등의 요소가 포함되어있습니다.
 members: ["Nelson", "Husky", "늑발", "오목눈이"]
-tags: ["18금", "성적묘사:적음", "공포", "심리적 공포", "로맨스", "순애"]
+tags: ["18금", "공포", "심리적 공포", "로맨스", "순애"]
 logo_url: /assets/games/echo_logo.png
 banner_url: /assets/games/echo.jpg
 license: ["나눔폰트", "프리텐다드", "제주한라산"]
