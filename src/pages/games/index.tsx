@@ -115,7 +115,10 @@ export default function GameList() {
 
   return (
     <div className="container mx-auto p-2">
-      <h1 className="text-3xl pt-2 pb-4">게임 목록</h1>
+      <header className="flex items-end pt-2 pb-4">
+        <h1 className="text-3xl">게임 목록</h1>
+        <small className="ml-3 opacity-65">{`(${listItems.length} / ${list.length})`}</small>
+      </header>
       <header>
         <div className="flex flex-nowrap whitespace-nowrap items-center pb-2 space-x-2 max-w-full overflow-x-auto">
           {tagList.map((tag) => (
