@@ -1,4 +1,5 @@
 import clsx from 'clsx/lite';
+import { useSearchParams } from 'react-router';
 
 import Button, { ButtonNav, ButtonLink } from './Button';
 import Sun from './Icons/Sun';
@@ -21,6 +22,7 @@ function ToggleMode() {
 }
 
 export default function Header() {
+  const [search] = useSearchParams();
   return (
     <header
       className={clsx(
@@ -34,7 +36,12 @@ export default function Header() {
         </ButtonLink>
         <div className="space-x-2">
           <ButtonNav className={({ isActive }) => isActive ? 'text-red' : ''} to="/guide">패치 하는 법</ButtonNav>
-          <ButtonNav className={({ isActive }) => isActive ? 'text-red' : ''} to="/games">게임 목록</ButtonNav>
+          <ButtonNav
+            className={({ isActive }) => isActive ? 'text-red' : ''}
+            to={{ pathname: '/games', search: search.toString() }}
+          >
+            게임 목록
+          </ButtonNav>
         </div>
         <div className="space-x-2">
           <ToggleMode />

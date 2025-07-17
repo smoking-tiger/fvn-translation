@@ -27,8 +27,11 @@ export default function GameList() {
   const tagList = useMemo<string[]>(() => {
     const arr = search.get('tags');
     if (!arr) return [];
-    return arr.split(',');
+    return arr.split(',').filter((tag) => !tag.startsWith('성적묘사'));
   }, [search]);
+
+  const showExplict = search.has('explict');
+  const showHidden = search.has('hidden');
 
   const unselected = useMemo(() => {
     const arr = [] as string[];
@@ -42,32 +45,63 @@ export default function GameList() {
 
   const addTag = useCallback((tag: string) => {
     setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
       let list = (prev.get('tags') || '').split(',');
       if (!list.includes(tag)) {
         list.push(tag);
       }
       list = list.filter(Boolean);
-      prev.set('tags', list.join(','));
-      return prev;
+      next.set('tags', list.join(','));
+      return next;
     });
   }, [setSearchParams]);
 
   const removeTag = useCallback((tag: string) => {
     setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
       let list = new Set((prev.get('tags') || '').split(','));
       list.delete(tag);
       if (list.size === 0) {
-        prev.delete('tags');
+        next.delete('tags');
       } else {
-        prev.set('tags', Array.from(list).join(','));
+        next.set('tags', Array.from(list).join(','));
       }
-      return prev;
+      return next;
     });
   }, [setSearchParams]);
 
-  const listItems = useMemo(() => {
-    if (!tagList.length) return list;
+  const handleExplict = useCallback(() => setSearchParams((prev) => {
+    const next = new URLSearchParams(prev);
+    if (next.has('explict')) {
+      next.delete('explict');
+    } else {
+      next.set('explict', '1');
+    }
+    return next;
+  }), [setSearchParams]);
+
+  const handleHidden = useCallback(() => setSearchParams((prev) => {
+    const next = new URLSearchParams(prev);
+    if (next.has('hidden')) {
+      next.delete('hidden');
+    } else {
+      next.set('hidden', '1');
+    }
+    return next;
+  }), [setSearchParams]);
+
+  const filteres = useMemo(() => {
+    if (showExplict && showHidden) return list;
     return list.filter((item) => {
+      if (item.tags.find((tag) => tag.startsWith('성적묘사')) && !showExplict) return item.hidden && !showHidden;
+      if (item.hidden && !showHidden) return false;
+      return true;
+    });
+  }, [list, showExplict, showHidden]);
+
+  const listItems = useMemo(() => {
+    if (!tagList.length) return filteres;
+    return filteres.filter((item) => {
       if (!item.tags.length) return false;
       const itemTags = new Set(item.tags);
       for (let i = 0, len = tagList.length; i < len; i += 1) {
@@ -75,7 +109,9 @@ export default function GameList() {
       }
       return true;
     });
-  }, [list, tagList]);
+  }, [filteres, tagList]);
+
+  const searchStr = useMemo(() => search.toString(), [search]);
 
   return (
     <div className="container mx-auto p-2">
@@ -110,13 +146,31 @@ export default function GameList() {
               </div>
             </Popover>
           ) : null}
+          <Button
+            className={useMemo(() => clsx(
+              'flex items-center border-1',
+              showExplict ? 'bg-amber-100 border-amber-600 dark:bg-amber-900' : 'border-stone-800 dark:border-stone-200',
+            ), [showExplict])}
+            onClick={handleExplict}
+          >
+            {showExplict ? '성적 묘사 표시' : '성적 묘사 숨김'}
+          </Button>
+          <Button
+            className={useMemo(() => clsx(
+              'flex items-center border-1',
+              showHidden ? 'bg-indigo-100 border-indigo-600 dark:bg-indigo-900' : 'border-stone-800 dark:border-stone-200',
+            ), [showHidden])}
+            onClick={handleHidden}
+          >
+            {showHidden ? '임시 공개 표시' : '임시 공개 숨김'}
+          </Button>
         </div>
       </header>
       <ul className="flex flex-wrap space-x-2 justify-center xl:justify-start">
         {listItems.map((item) => (
           <Link
             key={item.name}
-            to={item.name}
+            to={{ pathname: item.name, search: searchStr }}
             className="p-2 hover:opacity-65"
             aria-disabled={!item.patched}
           >

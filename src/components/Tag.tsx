@@ -11,7 +11,8 @@ export default function Tag({ name, className, ...rest }: Props) {
     className,
     {
       'bg-red-100 dark:bg-red-700 border-red-500 dark:border-red-800': name === '18금',
-      'bg-stone-50 dark:bg-stone-700 border-stone-200 dark:border-stone-800': name !== '18금',
+      'bg-amber-100 dark:bg-amber-700 border-amber-500 dark:border-amber-800': name.startsWith('성적묘사'),
+      'bg-stone-50 dark:bg-stone-700 border-stone-200 dark:border-stone-800': name !== '18금' && !name.startsWith('성적묘사'),
     },
   ), [className, name]);
   return (

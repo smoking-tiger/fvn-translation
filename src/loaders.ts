@@ -8,6 +8,7 @@ interface ListItem extends Pick<GameInfoType, 'title' | 'banner_url' | 'logo_url
   name: string;
   kr_title?: string;
   patched?: boolean;
+  hidden?: boolean;
 }
 
 export function loadList() {
@@ -19,7 +20,6 @@ export function loadList() {
   fs.readdirSync(cwd).forEach((filename) => {
     const txt = fs.readFileSync(resolve(cwd, filename), 'utf-8');
     const conf = load(txt) as GameInfoType;
-    if (conf.hidden) return;
     list.push({
       name: filename.substring(0, filename.length - 5),
       title: conf.title,
@@ -28,6 +28,7 @@ export function loadList() {
       logo_url: conf.logo_url,
       tags: conf.tags,
       patched: !!conf.patch_url,
+      hidden: conf.hidden,
     });
     conf.tags.forEach((tag) => tags.add(tag));
   });
