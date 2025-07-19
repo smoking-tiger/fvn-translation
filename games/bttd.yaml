@@ -6,7 +6,7 @@ desc: |
   당신의 목숨뿐 아니라 도시 전체를 위협할 수 있는 거대한 음모를 파헤쳐라. 이 스릴 넘치는 모험에서 당신의 선택은 중요하며, 탈출만이 유일한 구원이다!
 
 url: https://store.steampowered.com/app/1735700/Back_to_the_Dawn/
-patch_url: https://files.kemovn.cc/BTTD_r8.zip
+patch_url: https://files.kemovn.cc/BTTD_r9.zip
 status: 주의
 status_note: |
   실제 게임 파일에 번역을 적용하는 방식이기 때문에, 윈도우 디펜더가 바이러스로 인식하는 경우가 있습니다.  
@@ -21,6 +21,10 @@ banner_url: /assets/games/bttd.jpg
 
 
 changelog: |
+  #### r9 (2025-07-19)
+
+  - 각종 번역 이슈 수정
+
   #### r8 (2025-07-18)
 
   - 정식 발매 (2.0.0.20-RC) 대응 (밥 루트는 AI 초벌번역, 미검수)
