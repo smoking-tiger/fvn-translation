@@ -163,6 +163,14 @@ export default function GameInfo() {
         <div className="p-2 pb-4 min-w-full prose dark:prose-invert">
           <Markdown remarkPlugins={[remarkGfm]}>{info.desc}</Markdown>
         </div>
+        {info.tutorial ? (
+          <div className="p-2 pb-4">
+            <h3 className="text-xl font-semibold pb-2">설치 방법</h3>
+            <div className="bg-stone-100 dark:bg-stone-800 dark:text-stone-200 py-2 px-4 rounded prose dark:prose-invert">
+              <Markdown remarkPlugins={[remarkGfm]}>{info.tutorial}</Markdown>
+            </div>
+          </div>
+        ) : null}
         <div className="p-2 pb-4">
           <h3 className="text-xl font-semibold pb-2">번역 맴버</h3>
           <div className="flex items-center pr-2 space-x-1 flex-wrap">
