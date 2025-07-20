@@ -78,7 +78,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="container p-1 m-auto flex items-center justify-between">
             <small className="opacity-55">털겜번역단은 퍼리 게임 비공식 번역을 합니다.</small>
             <div className="flex mt-4 sm:justify-center sm:mt-0 opacity-55">
-              <AnchorButton href="https://discord.com/invite/U7XsRUc83T">
+              <AnchorButton href=" https://discord.gg/cmd2kcKHsY">
                 <IconDiscord className="w-4 h-4" />
                 <span className="sr-only">털겜번역단 디스코드</span>
               </AnchorButton>

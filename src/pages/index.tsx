@@ -26,7 +26,7 @@ export default function Layout() {
       <section>
         <h2 className="text-2xl font-semibold py-2">커뮤니티</h2>
         <p>디스코드 서버에서 최신 배포와 소식을 알아보세요.</p>
-        <a className="inline-block" href="https://discord.com/invite/U7XsRUc83T" target="_blank">
+        <a className="inline-block" href=" https://discord.gg/cmd2kcKHsY" target="_blank">
           <img className="size-12" src="/assets/icons/discord_icon.png" alt="discord" />
         </a>
       </section>
