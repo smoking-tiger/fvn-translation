@@ -10,7 +10,9 @@ patch_url: https://files.kemovn.cc/BTTD_r12.zip
 status: 주의
 status_note: |
   본 페이지 이외의 장소에서 다운받은 파일은 절대 실행 하지 마시기 바랍니다!  
-  번역이 매끄럽지 않거나, 이상한 부분은 재보해주시면 적용해두도록 하겠습니다.
+
+  게임 패스 버전에는 적용이 안된다는 제보가 있습니다.  
+  현 패치는 버전 [2.0.0.21-RC] 이후 대응이므로, 잠시 패치를 기다려 주세요.  
 tags: ["추리", "시뮬레이션", "어드벤처", "RPG"]
 members: ["늑발"]
 logo_url: /assets/games/bttd_logo.jpg
