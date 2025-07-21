@@ -9,7 +9,7 @@ desc: |
   여러분의 행동에 따라, 탈출하는 방법에 따라 결말이 달라집니다.  
 
 url: https://store.steampowered.com/app/1735700/Back_to_the_Dawn/
-patch_url: https://files.kemovn.cc/BTTD_r12.zip
+patch_url: https://files.kemovn.cc/BTTD_r13.zip
 status: 주의
 status_note: |
   본 페이지 이외의 장소에서 다운받은 파일은 절대 실행 하지 마시기 바랍니다!
@@ -31,6 +31,10 @@ tutorial: |
 
 
 changelog: |
+  #### r13 (2025-07-21)
+
+  - 밥 루트와 토마스에서 쓰는 단어가 다른 문제를 수정했습니다. 쓰이는 어휘 등을 통일했습니다.
+
   #### r12 (2025-07-21)
 
   - UI버그와 가독성 문제를 해결하기 위해 부득이하게 패치 적용 언어를 일본어에서 영어로 번경하였습니다.
