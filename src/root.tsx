@@ -76,7 +76,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         </main>
         <footer className="w-full p-2 mt-2">
           <div className="container p-1 m-auto flex items-center justify-between">
-            <small className="opacity-55">털겜번역단은 퍼리 게임 비공식 번역을 합니다.</small>
+            <small className="opacity-55">털겜번역단은 퍼리 게임 비공식 번역을 소개합니다.</small>
             <div className="flex mt-4 sm:justify-center sm:mt-0 opacity-55">
               <AnchorButton href=" https://discord.gg/cmd2kcKHsY">
                 <IconDiscord className="w-4 h-4" />
