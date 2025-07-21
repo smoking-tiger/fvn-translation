@@ -61,6 +61,7 @@ export function loadMembers() {
     const txt = fs.readFileSync(resolve(cwd, filename), 'utf-8');
     const conf = load(txt) as GameInfoType;
     conf.members.forEach((name) => {
+      if (!m.member[name] || m.member[name]?.external) return;
       if (members[name]) {
         members[name].count += 1;
       } else {

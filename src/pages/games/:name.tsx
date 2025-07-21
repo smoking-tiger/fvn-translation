@@ -58,6 +58,8 @@ export function meta({ data }: Route.MetaArgs) {
   ].filter(Boolean);
 }
 
+const plugins = [remarkGfm];
+
 export default function GameInfo() {
   const info = useLoaderData<Route.ComponentProps['loaderData']>();
   return (
@@ -149,30 +151,26 @@ export default function GameInfo() {
                 {info.status}
               </h3>
               {info.status_note ? (
-                <p
-                  className={clsx(
-                    'rounded-b-lg opacity-85 whitespace-pre-wrap p-4 pt-3 bg-slate-200 dark:bg-slate-700',
-                  )}
-                >
-                  {info.status_note}
+                <p className="rounded-b-lg opacity-85 whitespace-pre-wrap p-4 pt-3 bg-slate-200 dark:bg-slate-700 [&_a]:underline">
+                  <Markdown remarkPlugins={plugins}>{info.status_note}</Markdown>
                 </p>
               ) : null}
             </div>
           </div>
         ) : null}
         <div className="p-2 pb-4 min-w-full prose dark:prose-invert">
-          <Markdown remarkPlugins={[remarkGfm]}>{info.desc}</Markdown>
+          <Markdown remarkPlugins={plugins}>{info.desc}</Markdown>
         </div>
         {info.tutorial ? (
           <div className="p-2 pb-4">
             <h3 className="text-xl font-semibold pb-2">설치 방법</h3>
             <div className="bg-stone-100 dark:bg-stone-800 dark:text-stone-200 py-2 px-4 rounded prose dark:prose-invert">
-              <Markdown remarkPlugins={[remarkGfm]}>{info.tutorial}</Markdown>
+              <Markdown remarkPlugins={plugins}>{info.tutorial}</Markdown>
             </div>
           </div>
         ) : null}
         <div className="p-2 pb-4">
-          <h3 className="text-xl font-semibold pb-2">번역 맴버</h3>
+          <h3 className="text-xl font-semibold pb-2">번역에 참여주해주신 분들</h3>
           <div className="flex items-center pr-2 space-x-1 flex-wrap">
             {info.members.map(({ name, ...rest }, i) => <Member key={name} name={name} data={rest} />)}
           </div>
@@ -200,7 +198,7 @@ export default function GameInfo() {
           <div className="p-2 pb-4">
             <h3 className="text-xl font-semibold pb-2">패치노트</h3>
             <div className="bg-stone-100 dark:bg-stone-800 dark:text-stone-200 py-2 px-4 rounded prose dark:prose-invert">
-              <Markdown remarkPlugins={[remarkGfm]}>{info.changelog}</Markdown>
+              <Markdown remarkPlugins={plugins}>{info.changelog}</Markdown>
             </div>
           </div>
         ) : null}
