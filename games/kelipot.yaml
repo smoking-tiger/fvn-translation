@@ -6,13 +6,13 @@ desc: |
 
 url: https://store.steampowered.com/app/1090440/Kelipot/
 patch_url: https://files.kemovn.cc/Kelipot_r1.zip
-status: 패치 적용 방법
-status_note: |
-  다운로드한 파일 en_fan.xml을 Steam\steamapps\common\Kelipot\kelipot_Data\StreamingAssets\Localization 경로에 덮어씌우면 됩니다.  
-  게임을 시작해 Settings 에 들어가, Gameplay -> Language를 한국어(팬 번역) 으로 바꾸시면 됩니다.
 tags: ["로그라이크", "액션"]
 members: ["펄킹"]
 banner_url: /assets/games/kelipot.jpg
+
+tutorial: |
+  1. 다운로드한 파일 en_fan.xml을 Steam\steamapps\common\Kelipot\kelipot_Data\StreamingAssets\Localization 경로에 덮어씌우면 됩니다.  
+  2. 게임을 시작해 Settings 에 들어가, Gameplay -> Language를 한국어(팬 번역) 으로 바꾸시면 됩니다.
 
 changelog: |
   #### r1 (2024-10-16)
