@@ -9,7 +9,7 @@ desc: |
   여러분의 행동에 따라, 탈출하는 방법에 따라 결말이 달라집니다.  
 
 url: https://store.steampowered.com/app/1735700/Back_to_the_Dawn/
-patch_url: https://files.kemovn.cc/BTTD_r15.zip
+patch_url: https://files.kemovn.cc/BTTD_r16.zip
 status: 주의
 status_note: |
   본 페이지 이외의 장소에서 다운받은 파일은 절대 실행 하지 마시기 바랍니다!
@@ -31,6 +31,10 @@ tutorial: |
 
 
 changelog: |
+  #### r16 (2025-07-23)
+
+  - 2.0.0.24-RC 버전 대응.
+
   #### r15 (2025-07-22)
 
   - 2.0.0.23-RC 버전 대응.
