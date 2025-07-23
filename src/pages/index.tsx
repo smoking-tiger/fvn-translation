@@ -1,11 +1,5 @@
 import { useLoaderData } from "react-router";
 import type { Route } from "./+types/index";
-import Member from "components/Member";
-
-export async function loader() {
-  const { loadMembers } = await import('../loaders');
-  return loadMembers();
-}
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -32,14 +26,6 @@ export default function Layout() {
         <small className="block opacity-75">
           2025년 7월부터 서버 역할이 지급안되던 문제를 수정했습니다
         </small>
-      </section>
-      <section>
-        <h2 className="text-2xl font-semibold py-2">번역에 참여주해주신 분들</h2>
-        <div className="flex space-x-2 space-y-2 flex-wrap">
-          {member.map((d) => (
-            <Member key={d.name} name={d.name} data={d} full />
-          ))}
-        </div>
       </section>
     </div>
   );
