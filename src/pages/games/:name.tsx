@@ -198,7 +198,7 @@ export default function GameInfo() {
         {info.changelog ? (
           <div className="p-2 pb-4">
             <h3 className="text-xl font-semibold pb-2">패치노트</h3>
-            <div className="bg-stone-100 dark:bg-stone-800 dark:text-stone-200 py-2 px-4 rounded prose dark:prose-invert">
+            <div className="bg-stone-100 overflow-y-auto dark:bg-stone-800 dark:text-stone-200 py-2 px-4 rounded prose dark:prose-invert" style={{ maxHeight: '500px' }}>
               <Markdown remarkPlugins={plugins}>{info.changelog}</Markdown>
             </div>
           </div>
