@@ -7,6 +7,7 @@ import Button, { AnchorButton } from 'components/Button';
 import IconExternalLink from 'components/Icons/ExternalLink';
 import ChevronLeft from 'components/Icons/ChevronLeft';
 import IconAlert from 'components/Icons/Alert';
+import IconMegaphone from 'components/Icons/Megaphone';
 import Member from 'components/Member';
 import Tag from 'components/Tag';
 import IconItchIO from 'components/Icons/ItchIO';

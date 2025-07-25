@@ -3,12 +3,14 @@ import { useLayoutEffect } from 'react';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse } from 'react-router';
 
 import Header from './components/Header';
+import Tooltip from './components/Tooltip';
 import { AnchorButton } from './components/Button';
 import IconDiscord from './components/Icons/Discord';
 import { useThemeMode, uiStore, THEME_STORAGE_KEY, COLOR_SCHEME_QUERY, IS_SSR } from './ui';
 import type { Route } from "./+types/root";
 
 import './App.css';
+import IconMegaphone from 'components/Icons/Megaphone';
 
 export const links: Route.LinksFunction = () => [
   {
@@ -78,10 +80,19 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="container p-1 m-auto flex items-center justify-between">
             <small className="opacity-55">털겜번역단은 퍼리 게임 비공식 번역을 소개합니다.</small>
             <div className="flex mt-4 sm:justify-center sm:mt-0 opacity-55">
-              <AnchorButton href=" https://discord.gg/cmd2kcKHsY">
-                <IconDiscord className="w-4 h-4" />
-                <span className="sr-only">털겜번역단 디스코드</span>
-              </AnchorButton>
+              <Tooltip label="털겜번역단 디스코드">
+                <AnchorButton href=" https://discord.gg/cmd2kcKHsY" target="_blank">
+                  <IconDiscord className="w-4 h-4" />
+                </AnchorButton>
+              </Tooltip>
+              <Tooltip label="문의하기">
+                <AnchorButton
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdrx0Az_HQs9sEdMoG73o2ubOdZKEtf1ymtcBkv5oRC3T9dMA/viewform?usp=header"
+                  target="_blank"
+                >
+                  <IconMegaphone className="w-4 h-4" />
+                </AnchorButton>
+              </Tooltip>
             </div>
           </div>
         </footer>
