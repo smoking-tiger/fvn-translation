@@ -25,6 +25,9 @@ export default function Layout() {
         <a className="inline-block" href=" https://discord.gg/cmd2kcKHsY" target="_blank">
           <img className="size-12" src="/assets/icons/discord_icon.png" alt="discord" />
         </a>
+      </section>
+      <section>
+        <h2 className="text-2xl font-semibold py-2">사이트 업데이트</h2>
         <small className="block opacity-75">
           2025년 7월부터 서버 역할이 지급안되던 문제를 수정했습니다
         </small>
