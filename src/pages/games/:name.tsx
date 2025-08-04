@@ -17,6 +17,7 @@ import IconSteam from 'components/Icons/Steam';
 import Tooltip from 'components/Tooltip';
 
 import type { Route } from './+types/:name';
+import { useMemo } from 'react';
 
 export async function loader({ params }: Route.LoaderArgs) {
   const { loadGame } = await import('../../loaders');
@@ -63,6 +64,8 @@ const plugins = [remarkGfm];
 
 export default function GameInfo() {
   const info = useLoaderData<Route.ComponentProps['loaderData']>();
+  const urlsafeTitle = useMemo(() => window.encodeURIComponent(info.title), [info.title]);
+  console.log(urlsafeTitle);
   return (
     <div className="pb-12">
       <section className="relative w-full bg-stone-200 dark:bg-stone-700">
@@ -104,7 +107,7 @@ export default function GameInfo() {
       <section className="container mx-auto">
         <div className="flex justify-between p-2 bg-slate-300 dark:bg-slate-700 rounded-b-md mb-4">
           <div className="flex space-x-2 items-center">
-            <span className="pl-2">게임 다운로드:</span>
+            <span className="pl-2">게임:</span>
             {info.url?.includes('itch.io') ? (
               <Tooltip label="Itch.io" position="top">
                 <AnchorButton className="inline-flex items-center" href={info.url} target="_blank">
@@ -129,12 +132,23 @@ export default function GameInfo() {
             <hr className="w-px self-stretch opacity-25" />
             {info.patch_url ? (
               <AnchorButton className="flex items-center" href={info.patch_url} target="_blank">
-                한글패치
+                한패받기
                 <IconDownload className="size-4 ml-2" />
               </AnchorButton>
             ) : (
               <Button disabled>작업중</Button>
             )}
+          </div>
+          <div className="flex space-x-2 items-center">
+            <Tooltip label="문의/제보하기">
+              <AnchorButton
+                className="flex items-center"
+                href={`https://docs.google.com/forms/d/e/1FAIpQLSdrx0Az_HQs9sEdMoG73o2ubOdZKEtf1ymtcBkv5oRC3T9dMA/viewform?usp=pp_url&entry.2118121111=${urlsafeTitle}`}
+                target="_blank"
+              >
+                <IconMegaphone className="w-4 h-4" />
+              </AnchorButton>
+            </Tooltip>
           </div>
         </div>
         <div className="flex items-center flex-wrap p-2 pb-4 space-x-1">
