@@ -12,7 +12,7 @@ export default function Tag({ name, className, ...rest }: Props) {
       'px-2 py-1 rounded-lg border-1',
       className,
       {
-        'bg-red-100 dark:bg-red-700 border-red-500 dark:border-red-800': mode === '18금',
+        'bg-red-100 dark:bg-red-700 border-red-500 dark:border-red-800': mode === '19',
         'bg-amber-100 dark:bg-amber-700 border-amber-500 dark:border-amber-800': mode === 'sexual',
         'bg-blue-100 dark:bg-blue-700 border-blue-500 dark:border-blue-800': mode === 'kor',
         'bg-sky-100 dark:bg-sky-700 border-sky-500 dark:border-sky-800': mode === 'official',
