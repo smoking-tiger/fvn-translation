@@ -14,4 +14,6 @@ tags: ["18금", "공포", "심리적 공포", "로맨스", "순애"]
 logo_url: /assets/games/echo_logo.png
 banner_url: /assets/games/echo.jpg
 license: ["나눔폰트", "프리텐다드", "제주한라산"]
+tutorial: |
+  [렌파이 패치 하는 법](/guide) 를 참고해주세요.
 updated: 20250301

@@ -14,4 +14,6 @@ tags: ["SF", "18금"]
 logo_url: /assets/games/rtf_logo.png
 banner_url: /assets/games/rtf.mp4
 license: ["나눔폰트"]
+tutorial: |
+  [렌파이 패치 하는 법](/guide) 를 참고해주세요.
 updated: 20250322

@@ -14,6 +14,8 @@ tags: ["18금", "성적묘사", "SF", "로맨스", "판타지"]
 logo_url: /assets/games/khemia_logo.png
 banner_url: /assets/games/khemia.jpg
 license: ["나눔폰트"]
+tutorial: |
+  [렌파이 패치 하는 법](/guide) 를 참고해주세요.
 updated: 20250219
 
 changelog: |

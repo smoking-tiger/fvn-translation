@@ -11,7 +11,7 @@ import type { Route } from "./+types/index";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "털겜번역단: 게임 목록" },
+    { title: "털겜번역단: 게임 소개" },
   ];
 }
 
@@ -116,7 +116,7 @@ export default function GameList() {
   return (
     <div className="container mx-auto p-2">
       <header className="flex items-end pt-2 pb-4">
-        <h1 className="text-3xl">게임 목록</h1>
+        <h1 className="text-3xl">게임 소개</h1>
         <small className="ml-3 opacity-65">{`(${listItems.length} / ${list.length})`}</small>
       </header>
       <header>
@@ -174,19 +174,19 @@ export default function GameList() {
           <Link
             key={item.name}
             to={{ pathname: item.name, search: searchStr }}
-            className="p-2 hover:opacity-65"
-            aria-disabled={!item.patched}
+            className="relative p-2 hover:opacity-65"
           >
             <figure className="relative overflow-hidden w-64 h-64 rounded-xl shadow-xl">
               {item.banner_url?.endsWith('.mp4') ? (
-                  <video autoPlay loop muted playsInline className={clsx('min-h-64 w-auto object-cover', item.patched ? '' : 'opacity-50')}>
+                  <video autoPlay loop muted playsInline className={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')}>
                     <source src={item.banner_url} type="video/mp4" />
                   </video>
               ) : (
-                <img className={clsx('min-h-64 w-auto object-cover', item.patched ? '' : 'opacity-50')} src={item.banner_url} alt={item.name} />
+                <img className={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')} src={item.banner_url} alt={item.name} />
               )}
-              {item.patched ? null : <img className="absolute bottom-5 right-2" width="85" src="/assets/sorry_wip.png" alt="작업중" />}
+              {item.mode === 'wip' ? <img className="absolute bottom-5 right-2" width="85" src="/assets/sorry_wip.png" alt="작업중" /> : null}
             </figure>
+            {item.mode === 'official' ? <img className="absolute -top-0.5 -right-0.5" width="50" src="/assets/kuma.png" alt="공식한글화" /> : null}
             <GameTitle title={item.kr_title} fallback={item.title} />
           </Link>
         ))}

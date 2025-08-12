@@ -65,7 +65,6 @@ const plugins = [remarkGfm];
 export default function GameInfo() {
   const info = useLoaderData<Route.ComponentProps['loaderData']>();
   const urlsafeTitle = useMemo(() => window.encodeURIComponent(info.title), [info.title]);
-  console.log(urlsafeTitle);
   return (
     <div className="pb-12">
       <section className="relative w-full bg-stone-200 dark:bg-stone-700">
@@ -130,14 +129,13 @@ export default function GameInfo() {
               </Tooltip>
             ) : null}
             <hr className="w-px self-stretch opacity-25" />
-            {info.patch_url ? (
+            {info.patch_url && info.patch_url !== 'official' ? (
               <AnchorButton className="flex items-center" href={info.patch_url} target="_blank">
                 한패받기
                 <IconDownload className="size-4 ml-2" />
               </AnchorButton>
-            ) : (
-              <Button disabled>작업중</Button>
-            )}
+            ) : null}
+            {info.patch_url ? null : <Button disabled>작업중</Button>}
           </div>
           <div className="flex space-x-2 items-center">
             <Tooltip label="문의/제보하기">
@@ -184,12 +182,14 @@ export default function GameInfo() {
             </div>
           </div>
         ) : null}
-        <div className="p-2 pb-4">
-          <h3 className="text-xl font-semibold pb-2">번역에 참여주해주신 분들</h3>
-          <div className="flex items-center pr-2 space-x-1 flex-wrap">
-            {info.members.map(({ name, ...rest }, i) => <Member key={name} name={name} data={rest} />)}
+        {info.members?.length ? (
+          <div className="p-2 pb-4">
+            <h3 className="text-xl font-semibold pb-2">번역에 참여주해주신 분들</h3>
+            <div className="flex items-center pr-2 space-x-1 flex-wrap">
+              {info.members.map(({ name, ...rest }, i) => <Member key={name} name={name} data={rest} />)}
+            </div>
           </div>
-        </div>
+        ) : null}
         {info.license?.length ? (
           <div className="p-2 pb-4">
             <h3 className="text-xl font-semibold pb-2">라이센스</h3>

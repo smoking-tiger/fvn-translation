@@ -15,6 +15,10 @@ tags: ["18금", "공포", "심리적 공포", "순애"]
 logo_url: /assets/games/arches_logo.png
 banner_url: /assets/games/arches.jpg
 license: ["나눔폰트", "인천교육힘찬체"]
+
+tutorial: |
+  [렌파이 패치 하는 법](/guide) 를 참고해주세요.
+
 updated: 20250330
 
 changelog: |

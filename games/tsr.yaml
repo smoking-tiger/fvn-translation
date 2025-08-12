@@ -17,6 +17,8 @@ members: ["Husky", "늑발", "도루룽", "스켈톤"]
 tags: ["18금", "성적묘사:중간", "로맨스", "공포", "미스터리"]
 logo_url: /assets/games/tsr_logo.png
 banner_url: /assets/games/tsr.jpg
+tutorial: |
+  [렌파이 패치 하는 법](/guide) 를 참고해주세요.
 license: ["나눔폰트"]
 updated: 20250331
 

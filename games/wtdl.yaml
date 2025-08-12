@@ -15,4 +15,6 @@ tags: ["코메디", "일상물", "마법", "임시공개"]
 members: ["늑발"]
 banner_url: /assets/games/wtdl.jpg
 license: ["나눔폰트", "학교안심 나들이", "갈무리", "프리텐다드"]
+tutorial: |
+  [렌파이 패치 하는 법](/guide) 를 참고해주세요.
 hidden: true

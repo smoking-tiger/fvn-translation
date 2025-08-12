@@ -7,7 +7,7 @@ import * as m from './metadata';
 interface ListItem extends Pick<GameInfoType, 'title' | 'banner_url' | 'logo_url' | 'tags'> {
   name: string;
   kr_title?: string;
-  patched?: boolean;
+  mode?: 'wip' | 'official' | null;
   hidden?: boolean;
 }
 
@@ -20,6 +20,11 @@ export function loadList() {
   fs.readdirSync(cwd).forEach((filename) => {
     const txt = fs.readFileSync(resolve(cwd, filename), 'utf-8');
     const conf = load(txt) as GameInfoType;
+    let mode = conf.patch_url ? null : 'wip' as ListItem['mode'];
+    if (conf.patch_url === 'official') {
+      mode = 'official';
+    }
+
     list.push({
       name: filename.substring(0, filename.length - 5),
       title: conf.title,
@@ -27,7 +32,7 @@ export function loadList() {
       banner_url: conf.banner_url,
       logo_url: conf.logo_url,
       tags: conf.tags,
-      patched: !!conf.patch_url,
+      mode,
       hidden: conf.hidden,
     });
     conf.tags.forEach((tag) => {
@@ -37,7 +42,7 @@ export function loadList() {
   });
 
   list.sort((a, b) => {
-    if (a.patched !== b.patched) return a.patched ? -1 : 1;
+    if (a.mode !== b.mode) return a.mode === 'wip' ? 1 : -1;
     return a.name > b.name ? 1 : -1;
   });
   return { list, tags: Array.from(tags) } as { list: ListItem[]; tags: string[]; }; 

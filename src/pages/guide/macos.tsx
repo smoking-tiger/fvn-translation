@@ -5,9 +5,9 @@ import type { Route } from './+types/index';
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "털겜번역단: 패치 하는 법 > MacOS" },
-    { name: 'og:title', content: '털겜번역단: 패치 하는 법 > MacOS' },
-    { name: 'twitter:title', content: '털겜번역단: 패치 하는 법 > MacOS' },
+    { title: "털겜번역단: 랜파이 패치 하는 법 > MacOS" },
+    { name: 'og:title', content: '털겜번역단: 랜파이 패치 하는 법 > MacOS' },
+    { name: 'twitter:title', content: '털겜번역단: 랜파이 패치 하는 법 > MacOS' },
     { name: 'keywords', content: ['퍼리', '수인', '케모노', '수연시', '게임', '퍼리 비쥬얼 노벨', 'FVN', 'Furry visual Novel', '가이드', '설명', 'MacOS'].join(',') },
     { name: 'card:site', content: 'summary' },
     { name: 'image:site', content: 'https://kemovn.cc/assets/fallback_logo.png' },

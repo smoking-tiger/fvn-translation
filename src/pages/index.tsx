@@ -15,7 +15,7 @@ export default function Layout() {
     <div className="container mx-auto p-2 pt-8 space-y-5 pb-16">
       <section>
         <h2 className="text-2xl font-semibold py-2">털겜번역단</h2>
-        <p>털겜번역단은 각종 퍼리 게임(수연시, 퍼리가 주인 한글 미번역 게임)의 팬 번역을 모아 소개합니다.</p>
+        <p>털겜번역단은 각종 퍼리 게임(수연시, 퍼리가 주인 한글 미번역 게임)의 팬 번역 및 한국어로 즐길 수 있는 퍼리 게임을 모아 소개합니다.</p>
         <p>털겜번역단이 소개하는 게임의 번역자나 개발지원은 각 게임마다 따로 소개되어있습니다.</p>
         <p>각 게임을 한글로 즐길 수 있게 해 주신 분들에게 응원의 한마디 부탁드립니다.</p>
       </section>
@@ -29,9 +29,15 @@ export default function Layout() {
       <section>
         <h2 className="text-2xl font-semibold py-2">사이트 업데이트</h2>
         <small className="block opacity-75">
+          공식 한글화 게임, 국산 게임의 소개도 함께 포함하도록 수정했습니다
+        </small>
+        <small className="block opacity-75">
           2025년 7월부터 서버 역할이 지급안되던 문제를 수정했습니다
         </small>
       </section>
+      <small className="block opacity-75">
+        본 사이트 일부 이미지는 <a className="underline" href="https://www.irasutoya.com/p/letter.html" target="_blank">いらすとや</a> 의 자료를 사용하고있습니다.
+      </small>
     </div>
   );
 }

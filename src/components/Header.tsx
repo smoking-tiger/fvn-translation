@@ -35,12 +35,11 @@ export default function Header() {
           <IconLogo className="size-8" width="32" height="32" />
         </ButtonLink>
         <div className="space-x-2">
-          <ButtonNav className={({ isActive }) => isActive ? 'text-red' : ''} to="/guide">패치 하는 법</ButtonNav>
           <ButtonNav
             className={({ isActive }) => isActive ? 'text-red' : ''}
             to={{ pathname: '/games', search: search.toString() }}
           >
-            게임 목록
+            게임 소개
           </ButtonNav>
         </div>
         <div className="space-x-2">

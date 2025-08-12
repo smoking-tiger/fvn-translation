@@ -13,6 +13,8 @@ members: ["도루룽", "Husky"]
 tags: ["18금", "SF", "로맨스", "성적묘사"]
 banner_url: /assets/games/interea.mp4
 license: ["나눔폰트"]
+tutorial: |
+  [렌파이 패치 하는 법](/guide) 를 참고해주세요.
 updated: 20250222
 
 changelog: |
