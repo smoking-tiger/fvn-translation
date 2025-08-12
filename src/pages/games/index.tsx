@@ -127,7 +127,7 @@ export default function GameList() {
           </li>
           <li className="flex items-center">
             <img className="mr-1" width="28" src="/assets/sorry_wip.png" />
-            <span>= 한글화 작업중</span>
+            <span>= 유저 한패 작업중</span>
           </li>
         </ul>
       </header>
