@@ -115,9 +115,21 @@ export default function GameList() {
 
   return (
     <div className="container mx-auto p-2">
-      <header className="flex items-end pt-2 pb-4">
-        <h1 className="text-3xl">게임 소개</h1>
-        <small className="ml-3 opacity-65">{`(${listItems.length} / ${list.length})`}</small>
+      <header className="flex justify-between pt-2 pb-4">
+        <div className="flex items-end">
+          <h1 className="text-3xl">게임 소개</h1>
+          <small className="ml-3 opacity-65">{`(${listItems.length} / ${list.length})`}</small>
+        </div>
+        <ul className="flex opacity-65 space-x-1">
+          <li className="flex items-center">
+            <img className="mr-1" width="30" src="/assets/kuma.png" />
+            <span>= 공식한글화</span>
+          </li>
+          <li className="flex items-center">
+            <img className="mr-1" width="28" src="/assets/sorry_wip.png" />
+            <span>= 한글화 작업중</span>
+          </li>
+        </ul>
       </header>
       <header>
         <div className="flex flex-nowrap whitespace-nowrap items-center pb-2 space-x-2 max-w-full overflow-x-auto">

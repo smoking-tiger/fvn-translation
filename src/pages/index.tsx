@@ -15,13 +15,13 @@ export default function Layout() {
     <div className="container mx-auto p-2 pt-8 space-y-5 pb-16">
       <section>
         <h2 className="text-2xl font-semibold py-2">털겜번역단</h2>
-        <p>털겜번역단은 각종 퍼리 게임(수연시, 퍼리가 주인 한글 미번역 게임)의 팬 번역 및 한국어로 즐길 수 있는 퍼리 게임을 모아 소개합니다.</p>
-        <p>털겜번역단이 소개하는 게임의 번역자나 개발지원은 각 게임마다 따로 소개되어있습니다.</p>
-        <p>각 게임을 한글로 즐길 수 있게 해 주신 분들에게 응원의 한마디 부탁드립니다.</p>
+        <p>처음에는 퍼리 게임 (주로 수연시)를 번역해 배포및 홍보하는 사이트로 만들어졌으나, 한국어로 즐길 수 있는 퍼리 게임을 소개하는 목적으로 변경되었습니다.</p>
+        <p>여전히, 한패 배포도 담당하고(혹은 위탁 받고) 있어, 털겜번역단이 소개하는 게임의 번역자나 개발지원은 각 게임마다 따로 소개되어있습니다.</p>
+        <p>각 게임을 한국어로 즐길 수 있게 해 주신 분들에게 응원의 한마디 부탁드립니다.</p>
       </section>
       <section>
         <h2 className="text-2xl font-semibold py-2">커뮤니티</h2>
-        <p>디스코드 서버에서 최신 배포와 소식을 알아보세요.</p>
+        <p>디스코드 서버에서 최신 배포와 소식을 알아보거나, 후기를 서로 공유해보아요.</p>
         <a className="inline-block" href=" https://discord.gg/cmd2kcKHsY" target="_blank">
           <img className="size-12" src="/assets/icons/discord_icon.png" alt="discord" />
         </a>
