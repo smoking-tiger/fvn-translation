@@ -9,7 +9,7 @@ desc: |
   이 게임은 회차 요소가 있습니다. 실패했다고 실망하지 말고, 끝까지 보는 것도 하나의 방법입니다!
 
 url: https://store.steampowered.com/app/1735700/Back_to_the_Dawn/
-patch_url: https://files.kemovn.cc/BTTD_r23.zip
+patch_url: https://files.kemovn.cc/BTTD_r24.zip
 status: 필독!!!
 status_note: |
   감옥이 배경인 만큼, 신체적 / 정신적 폭력의 묘사가 있습니다. 15세 미만은 플레이를 자제해주시기 바랍니다.
@@ -37,6 +37,10 @@ tutorial: |
 
 
 changelog: |
+  #### r24 (2025-08-24)
+
+  - 각종 번역 이슈 수정
+
   #### r23 (2025-08-15)
 
   - 여러가지 호칭 통일 안된 부분 수정
