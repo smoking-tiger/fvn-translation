@@ -5,7 +5,8 @@ desc: |
 
   트라이벌 헌터는 여러 고전 게임들에서 영감을 받은 액션 플랫포머 게임입니다. 주인공은 전설의 수호신, "먼치" 가 되어 적들을 사냥하고 잡아먹을수 있습니다. 
   포만감 게이지를 채우는 정도에 따라 주인공의 크기가 변화합니다. 이 에너지를 활용하여 자신을 회복시키거나 강력한 마법 공격을 사용할 수도 있어요!
-
+status: 개발자 메세지
+status_note: |
   트라이벌 헌터에 대해 더 알고싶으면 (혹은 스팀이외의 플렛폼으로 구매를 원하시면) [linktree](https://linktr.ee/sodasorbet) 를 확인해보세요!
 url: https://store.steampowered.com/app/1379870/Tribal_Hunter/?l=koreana
 patreon_url: https://www.patreon.com/tribalhunter
