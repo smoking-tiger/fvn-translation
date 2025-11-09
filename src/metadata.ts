@@ -60,4 +60,5 @@ export const license = {
   '학교안심 나들이': 'https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202408200000000000002',
   '갈무리': 'https://quiple.dev/galmuri',
   '프리젠테이션': 'https://freesentation.blog',
+  '배달의민족폰트': 'https://www.woowahan.com/fonts/license',
 } as Record<string, string>;
