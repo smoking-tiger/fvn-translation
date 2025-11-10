@@ -16,7 +16,7 @@ import IconDownload from 'components/Icons/Download';
 import IconSteam from 'components/Icons/Steam';
 import Tooltip from 'components/Tooltip';
 
-import type { Route } from './+types/:name';
+import type { Route } from './+types/[name]';
 import { useMemo } from 'react';
 
 export async function loader({ params }: Route.LoaderArgs) {
