@@ -7,8 +7,10 @@ desc: |
   좀 더 깊이 파고들어보자
 url: https://nikkonator5000.itch.io/burrows
 patch_url: https://files.kemovn.cc/Burrows_r1.zip
-status: 주의
+status: 일부 한글화 및 주의
 status_note: |
+  현재 일부 루트만 한글화가 되어있으니 자세한건 패치노트에서 확인하시길 바랍니다.
+
   이 게임은 자살, 자해, 성폭력, 폭력 묘사, 우울증 및 기타 정신 질환 등의 표현이 포함되어있습니다.
   플레이 하기 전에 반드시 주의해 주시길 바랍니다.
 members: ["도루룽", "Husky"]
