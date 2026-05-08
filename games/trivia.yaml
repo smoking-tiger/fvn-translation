@@ -1,0 +1,16 @@
+title: Trivia About You
+kr_title: 트리비아 어바웃 유
+desc: |
+  "Trivia About You" 는 카롤에 집에서 수인 캐릭터들이 서로간의 의미깊은 시간을 보내는 로맨스 비주얼 노벨입니다. 가게로 이사하면서, 당신은 3명의 매력적인 수인 캐릭터들과 룸메이트가 됩니다. 봄에서 가을까지의 일상을 지내면서, 당신은 천천히 그들과 깊은 인연을 쌓게 됩니다.
+url: https://store.steampowered.com/app/3196180/Trivia_About_You/?l=koreana
+patch_url: https://files.kemovn.cc/TriviaAboutYou_r2.exe
+members: ["파미도"]
+tags: ["18금", "성적묘사", "로맨스", "일상"]
+tutorial: |
+  설치 방법은 [패치 원문](https://gall.dcinside.com/board/view/?id=jumper&no=3719482) 를 참고해주세요.
+banner_url: /assets/games/trivia.jpg
+
+changelog: |
+  #### r2 (2026-05-08)
+
+  - 한패 배포 (26-04-29 [배포페이지](https://gall.dcinside.com/board/view/?id=jumper&no=3719482)를 털겜번역단으로 이전)
