@@ -1,0 +1,21 @@
+title: Dinocop
+kr_title: 다이노캅
+desc: |
+  공룡들이 다시 살아났지만, 경찰이 되고 싶어 하는 공룡은 단 한 마리도 없었습니다. 그래서 인간들은 당신을 만들어냈죠. 바로 다이노캅입니다.\
+  백악기 호텔의 투숙객들을 조사하고, 고깃덩어리 같은 사건의 진상을 파헤치세요. 그 과정에서 당신은 존재의 근본을 뒤흔드는 심오한 딜레마에 직면하게 됩니다.\
+  도대체 누가 공룡 권리 컨벤션에 인간 고기를 가져온 걸까요?
+
+url: https://store.steampowered.com/app/3187010/Dinocop/
+patch_url: https://files.kemovn.cc/Dinocop_r1.zip
+members: ["늑발"]
+tags: ["유머", "추리", "탐정", "공룡"]
+logo_url: /assets/games/dinocop_logo.jpg
+banner_url: /assets/games/dinocop.jpeg
+tutorial: |
+  zip파일의 압축을 풀고, 게임 exe파일이 있는 곳에 압축해제를 하세요.\
+  현재 윈도우버전만 패치를 배포하고있습니다.
+
+changelog: |
+  #### r1 (2026-10-14)
+
+  - 기본 동작 검수 버전 배포
