@@ -10,7 +10,7 @@ patch_url: https://files.kemovn.cc/Dinocop_r1.zip
 members: ["늑발"]
 tags: ["유머", "추리", "탐정", "공룡"]
 logo_url: /assets/games/dinocop_logo.jpg
-banner_url: /assets/games/dinocop.jpeg
+banner_url: /assets/games/dinocop.jpg
 tutorial: |
   zip파일의 압축을 풀고, 게임 exe파일이 있는 곳에 압축해제를 하세요.\
   현재 윈도우버전만 패치를 배포하고있습니다.
