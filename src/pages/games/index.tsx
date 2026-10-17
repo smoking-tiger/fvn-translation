@@ -59,7 +59,7 @@ export default function GameList() {
   const removeTag = useCallback((tag: string) => {
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev);
-      let list = new Set((prev.get('tags') || '').split(','));
+      const list = new Set((prev.get('tags') || '').split(','));
       list.delete(tag);
       if (list.size === 0) {
         next.delete('tags');
@@ -76,16 +76,6 @@ export default function GameList() {
       next.delete('explict');
     } else {
       next.set('explict', '1');
-    }
-    return next;
-  }), [setSearchParams]);
-
-  const handleHidden = useCallback(() => setSearchParams((prev) => {
-    const next = new URLSearchParams(prev);
-    if (next.has('hidden')) {
-      next.delete('hidden');
-    } else {
-      next.set('hidden', '1');
     }
     return next;
   }), [setSearchParams]);
@@ -164,11 +154,11 @@ export default function GameList() {
           <Button
             className={useMemo(() => clsx(
               'flex items-center border-1',
-              showExplict ? 'bg-amber-100 border-amber-600 dark:bg-amber-900' : 'border-stone-800 dark:border-stone-200',
+              showExplict ? 'bg-amber-200 border-amber-600 dark:bg-amber-900' : 'border-stone-800 dark:border-stone-200',
             ), [showExplict])}
             onClick={handleExplict}
           >
-            {showExplict ? '성적 묘사 표시 중' : '성적 묘사 숨김 중'}
+            {showExplict ? '성적 묘사 표시 중' : '성적 묘사 제외 중'}
           </Button>
         </div>
       </header>
@@ -179,7 +169,7 @@ export default function GameList() {
             to={{ pathname: item.name, search: searchStr }}
             className="relative p-2 hover:opacity-65"
           >
-            <figure className="relative overflow-hidden w-64 h-64 rounded-xl shadow-xl">
+            <figure className={clsx('relative overflow-hidden w-64 h-64 rounded-xl shadow-xl', item.nsfw ? 'ring-1 ring-amber-600 dark:ring-amber-500' : '')}>
               {item.banner_url?.endsWith('.mp4') ? (
                   <video autoPlay loop muted playsInline className={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')}>
                     <source src={item.banner_url} type="video/mp4" />

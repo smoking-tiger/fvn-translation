@@ -8,6 +8,7 @@ interface ListItem extends Pick<GameInfoType, 'title' | 'banner_url' | 'logo_url
   name: string;
   kr_title?: string;
   mode?: 'wip' | 'official' | null;
+  nsfw?: boolean;
   hidden?: boolean;
 }
 
@@ -33,6 +34,7 @@ export function loadList() {
       logo_url: conf.logo_url,
       tags: conf.tags,
       mode,
+      nsfw: conf.tags.find((item) => item.startsWith('성적묘사')) != null,
       hidden: conf.hidden,
     });
     conf.tags.forEach((tag) => {
@@ -45,7 +47,7 @@ export function loadList() {
     if (a.mode !== b.mode) return a.mode === 'wip' ? 1 : -1;
     return a.name > b.name ? 1 : -1;
   });
-  return { list, tags: Array.from(tags) } as { list: ListItem[]; tags: string[]; }; 
+  return { list, tags: Array.from(tags) } as { list: ListItem[]; tags: string[]; };
 }
 
 export function loadGame(name: string) {
