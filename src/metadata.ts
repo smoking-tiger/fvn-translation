@@ -62,4 +62,5 @@ export const license = {
   '갈무리': 'https://quiple.dev/galmuri',
   '프리젠테이션': 'https://freesentation.blog',
   '배달의민족폰트': 'https://www.woowahan.com/fonts/license',
+  '도스폰트': 'https://github.com/hurss/fonts',
 } as Record<string, string>;
