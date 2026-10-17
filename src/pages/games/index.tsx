@@ -168,16 +168,7 @@ export default function GameList() {
             ), [showExplict])}
             onClick={handleExplict}
           >
-            {showExplict ? '성적 묘사 표시' : '성적 묘사 숨김'}
-          </Button>
-          <Button
-            className={useMemo(() => clsx(
-              'flex items-center border-1',
-              showHidden ? 'bg-indigo-100 border-indigo-600 dark:bg-indigo-900' : 'border-stone-800 dark:border-stone-200',
-            ), [showHidden])}
-            onClick={handleHidden}
-          >
-            {showHidden ? '임시 공개 표시' : '임시 공개 숨김'}
+            {showExplict ? '성적 묘사 표시 중' : '성적 묘사 숨김 중'}
           </Button>
         </div>
       </header>

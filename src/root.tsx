@@ -35,7 +35,7 @@ export function clientLoader() {
   const getCurrentModeStatus = () => {
       const status = window.localStorage.getItem(THEME_STORAGE_KEY);
       if (status) return status === '1';
-    
+
       return window.matchMedia?.(COLOR_SCHEME_QUERY).matches || false;
   };
   const isDark = getCurrentModeStatus();
@@ -67,7 +67,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <style type="text/css">{'@media (prefers-color-scheme: dark) {.loading body { background-color:#171819; color:#efefef;}} .loading header { background-color:#171819; color:#efefef; }'}</style>
         <Meta />
-        <meta name="robot" content="index,follow" />
+        <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
         <Links />
       </head>
