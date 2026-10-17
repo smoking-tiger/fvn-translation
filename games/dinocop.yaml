@@ -6,7 +6,7 @@ desc: |
   도대체 누가 공룡 권리 컨벤션에 인간 고기를 가져온 걸까요?
 
 url: https://store.steampowered.com/app/3187010/Dinocop/
-patch_url: https://files.kemovn.cc/Dinocop_r1.zip
+patch_url: https://files.kemovn.cc/Dinocop_r2.zip
 members: ["늑발"]
 tags: ["유머", "추리", "탐정", "공룡"]
 logo_url: /assets/games/dinocop_logo.jpg
@@ -16,6 +16,10 @@ tutorial: |
   현재 윈도우버전만 패치를 배포하고있습니다.
 
 changelog: |
+  #### r2 (2026-10-17)
+
+  - 일부 번역 때문에, 각종 버그가 발생한 문제가 있어, 수정했습니다.
+
   #### r1 (2026-10-14)
 
   - v1.2.0.5 기본 동작 검수 버전 배포
