@@ -1,0 +1,18 @@
+title: Sam & Max Save the World
+kr_title: 샘과 맥스 세상을 구하다
+desc: |
+  런던의 거리 아래, 꼬리를 빼앗긴 성난 생쥐가 신을 향한 복수에 나선다. 작디작은 세계에서 펼쳐지는 장대한 RPG!
+
+url: https://store.steampowered.com/app/1440440/Sam__Max_Save_the_World/
+status: 작업중
+status_note: |
+  검수 중입니다.
+members: ["늑발"]
+tags: ["어드밴처", "유머", "추리", "탐정"]
+license: ["도스폰트"]
+logo_url: /assets/games/smstw_logo.png
+banner_url: /assets/games/smstw.jpg
+tutorial: |
+  게임 실행 파일(.exe)이 있는 폴더에 압축을 풀어 그대로 넣어주세요.\
+  4개의 파일이 Archives 폴더에 들어있는 걸 확인 하시고,\
+  게임을 실행해 SETTINGS > Language에서 Korean을 선택하시고 (영어 기준 좌측 2번) 뒤로 버튼을 눌러 적용해주세요.
