@@ -1,14 +1,16 @@
 title: Remember the Flowers
 kr_title: 리맴버 더 플라워
 desc: |
-  이 이야기는 기억을 잃은 한 남자의 이야기.  
-  희미해저 가는 기억 속에서, 그는 새로운 세계인 듯한 곳에서 깨어난다.  
-  그가 확신하는 유일한 것은 고향으로 돌아가고 싶다는 강한 열망 뿐이었다.  
+  이 이야기는 기억을 잃은 한 남자의 이야기.
+  희미해저 가는 기억 속에서, 그는 새로운 세계인 듯한 곳에서 깨어난다.
+  그가 확신하는 유일한 것은 고향으로 돌아가고 싶다는 강한 열망 뿐이었다.
   남은 의문은 단 하나, 그의 고향은 어떻게 되었는가?
 url: https://jerichowo.itch.io/remember-the-flowers
+patch_url: https://files.kemovn.cc/rtf_r1.zip
 status: 작업중
 status_note: |
-  한글화 작업 중 입니다.
+  검수가 완료되지 않은 게임입니다.
+  에코, TSR작업 이후에 검수 예정이기에, 현제 작업까지 검수하고, 전체적으로 다듬기만 한 버전을 임시 배포합니다.
 members: ["레드벨", "도루룽", "Husky", "늑발"]
 tags: ["SF", "18금"]
 logo_url: /assets/games/rtf_logo.png
@@ -17,3 +19,8 @@ license: ["나눔폰트"]
 tutorial: |
   [렌파이 패치 하는 법](/guide) 를 참고해주세요.
 updated: 20250322
+
+changelog: |
+  #### r1 (2026-10-18)
+
+  - 초반부 검수 버전 임시 배포
