@@ -63,4 +63,5 @@ export const license = {
   '프리젠테이션': 'https://freesentation.blog',
   '배달의민족폰트': 'https://www.woowahan.com/fonts/license',
   '도스폰트': 'https://github.com/hurss/fonts',
+  'G마켓폰트': 'https://corp.gmarket.com/fonts/',
 } as Record<string, string>;
