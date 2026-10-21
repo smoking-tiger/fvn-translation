@@ -117,7 +117,7 @@ export default function GameInfo() {
             {info.url?.includes('store.steampowered.com') ? (
               <Tooltip label="스팀" position="top">
                 <AnchorButton className="inline-flex items-center" href={info.url} target="_blank">
-                  <IconSteam className="size-4" />
+                  <IconSteam className="size-4 not-dark:text-white" />
                 </AnchorButton>
               </Tooltip>
             ) : null}
