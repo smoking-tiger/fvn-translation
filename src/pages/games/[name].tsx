@@ -71,7 +71,7 @@ export default function GameInfo() {
         <div className="relative container h-128 mx-auto shadow-lg">
           {info.banner_url?.endsWith('.mp4') ? (
             <div className="absolute top-0 left-0 right-0 bottom-0 overflow-y-hidden">
-              <video autoPlay muted loop playsInline className="object-cover w-full min-h-128">
+              <video autoPlay muted loop playsInline className="object-cover object-center w-full min-h-128">
                 <source src={info.banner_url} type="video/mp4" />
               </video>
             </div>
@@ -79,7 +79,7 @@ export default function GameInfo() {
             <figure
               className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden"
             >
-              <img className="object-cover w-full min-h-128" src={info.banner_url} loading="lazy" alt={info.title} />
+              <img className="object-cover object-center w-full min-h-128" src={info.banner_url} loading="lazy" alt={info.title} />
             </figure>
           )}
           <div className="absolute top-0 container mx-auto">
@@ -231,4 +231,3 @@ function GameTitle({ title, fallback }: { title?: string; fallback: string; }) {
     </h1>
   );
 }
-
