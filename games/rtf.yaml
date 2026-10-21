@@ -10,7 +10,6 @@ patch_url: https://files.kemovn.cc/rtf_r1.zip
 status: 작업중
 status_note: |
   검수가 완료되지 않은 게임입니다.
-  에코, TSR작업 이후에 검수 예정이기에, 현제 작업까지 검수하고, 전체적으로 다듬기만 한 버전을 임시 배포합니다.
 members: ["레드벨", "도루룽", "Husky", "늑발"]
 tags: ["SF", "18금"]
 logo_url: /assets/games/rtf_logo.png
