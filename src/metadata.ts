@@ -64,4 +64,5 @@ export const license = {
   '배달의민족폰트': 'https://www.woowahan.com/fonts/license',
   '도스폰트': 'https://github.com/hurss/fonts',
   'G마켓폰트': 'https://corp.gmarket.com/fonts/',
+  '서울서체': 'https://www.seoul.go.kr/seoul/font.do',
 } as Record<string, string>;
