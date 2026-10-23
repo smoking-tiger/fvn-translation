@@ -18,9 +18,6 @@ desc: |
 
 url: https://store.steampowered.com/app/1440440/Sam__Max_Save_the_World/
 patch_url: https://files.kemovn.cc/SM_StW_r1.zip
-status: 작업중
-status_note: |
-  검수 중입니다.
 members: ["늑발"]
 tags: ["어드밴처", "유머", "추리", "탐정"]
 license: ["학교안심 나들이", "떡상체", "서울서체", "나눔폰트"]
@@ -30,3 +27,8 @@ tutorial: |
   게임 실행 파일(.exe)이 있는 폴더에 압축을 풀어 그대로 넣어주세요.\
   4개의 파일이 Archives 폴더에 들어있는 걸 확인 하시고,\
   게임을 실행해 SETTINGS > Language에서 Korean을 선택하시고 (영어 기준 좌측 2번) 뒤로 버튼을 눌러 적용해주세요.
+
+changelog: |
+  #### r1 (2026-10-23)
+
+  - 한글화 패치 배포
