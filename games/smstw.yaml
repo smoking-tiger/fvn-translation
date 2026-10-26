@@ -17,7 +17,7 @@ desc: |
   샘과 맥스의 동네에서 시작해 백악관 앞 잔디밭을 거쳐 인터넷 속으로, 끝내 달까지 이어지는 이 기묘한 수수께끼는 진상이 드러날수록 더욱 황당하고 우스꽝스럽게 흘러간다.
 
 url: https://store.steampowered.com/app/1440440/Sam__Max_Save_the_World/
-patch_url: https://files.kemovn.cc/SM_StW_r2.zip
+patch_url: https://files.kemovn.cc/SM_StW_r3.zip
 members: ["늑발"]
 tags: ["어드밴처", "유머", "추리", "탐정"]
 license: ["학교안심 나들이", "떡상체", "서울서체", "나눔폰트"]
@@ -29,6 +29,11 @@ tutorial: |
   게임을 실행해 SETTINGS > Language에서 Korean을 선택하시고 (영어 기준 좌측 2번) 뒤로 버튼을 눌러 적용해주세요.
 
 changelog: |
+  #### r3 (2026-10-26)
+
+  - 몇가지 말투를 다듬었습니다
+  - 영어기준에 맞게 폰트 크기 및 줄 높이를 조절했습니다
+
   #### r2 (2026-10-24)
 
   - 몇가지 패러디 표현을 다듬었습니다
