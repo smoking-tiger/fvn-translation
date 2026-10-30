@@ -8,6 +8,7 @@ import IconPlus from 'components/Icons/Plus';
 import IconClose from 'components/Icons/Close';
 
 import type { Route } from "./+types/index";
+import Tag from 'components/Tag';
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -32,16 +33,6 @@ export default function GameList() {
 
   const showExplict = search.has('explict');
   const showHidden = search.has('hidden');
-
-  const unselected = useMemo(() => {
-    const arr = [] as string[];
-    tags.forEach((tag) => {
-      if (tagList.includes(tag)) return;
-      arr.push(tag);
-    });
-    arr.sort();
-    return arr;
-  }, [tagList, tags]);
 
   const addTag = useCallback((tag: string) => {
     setSearchParams((prev) => {
@@ -101,6 +92,17 @@ export default function GameList() {
     });
   }, [filteres, tagList]);
 
+  const availableTags = useMemo(() => {
+    const arr: string[] = [];
+    listItems.forEach((item) => arr.push(...item.tags));
+
+    const unique = new Set(arr);
+    tagList.forEach((tag) => {
+      if (unique.has(tag)) unique.delete(tag);
+    });
+    return Array.from(unique);
+  }, [tagList, listItems]);
+
   const searchStr = useMemo(() => search.toString(), [search]);
 
   return (
@@ -123,29 +125,27 @@ export default function GameList() {
       </header>
       <header>
         <div className="flex flex-nowrap whitespace-nowrap items-center pb-2 space-x-2 max-w-full overflow-x-auto">
-          {tagList.map((tag) => (
-            <Button
-              key={tag}
-              className="flex items-center border-stone-100 border-1 bg-stone-200 dark:border-stone-800 dark:bg-stone-700"
-              onClick={() => removeTag(tag)}
-            >
-              {tag}
-              <IconClose className="w-4 h-4 ml-1" />
-            </Button>
-          ))}
-          {tagList.length < tags.length ? (
+          <span>태그 검색:</span>
+          <div className="flex items-center space-x-1">
+            {tagList.map((tag) => (
+              <Button key={tag} className="flex items-center py-1 px-1 text-left" onClick={() => removeTag(tag)}>
+                <Tag name={tag} />
+                <IconClose className="ml-0.5 size-3" />
+              </Button>
+            ))}
+          </div>
+          {availableTags.length ? (
             <Popover
               label={(
-                <Button className="flex items-center">
+                <Button className="flex items-center rounded-full border p-1 mr-2">
                   <IconPlus className="w-4 h-4" />
-                  태그 검색
                 </Button>
               )}
             >
-              <div className="p-2 bg-stone-100 dark:bg-stone-800 rounded" style={{ maxWidth: '565px' }}>
-                {unselected.map((tag) => (
-                  <Button key={tag} onClick={() => addTag(tag)}>
-                    {tag}
+              <div className="p-2 bg-stone-100 dark:bg-stone-800 rounded overflow-y-auto max-h-60">
+                {availableTags.map((tag) => (
+                  <Button key={tag} className="block w-full text-left" onClick={() => addTag(tag)}>
+                    <Tag name={tag} />
                   </Button>
                 ))}
               </div>
@@ -153,7 +153,7 @@ export default function GameList() {
           ) : null}
           <Button
             className={useMemo(() => clsx(
-              'flex items-center border-1',
+              'flex items-center border-1 text-sm px-2',
               showExplict ? 'bg-amber-200 border-amber-600 dark:bg-amber-900' : 'border-stone-800 dark:border-stone-200',
             ), [showExplict])}
             onClick={handleExplict}

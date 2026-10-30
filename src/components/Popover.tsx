@@ -51,7 +51,7 @@ export default function Popover({ label, children, position, ...rest }: Props) {
       <Portal disabled={!isMounted}>
         <FloatingOverlay data-testid="vs-popover-shadow" onClick={() => setOpen(false)} autoFocus>
           <div role="region" ref={refs.setFloating} style={floatingStyles}>
-            <div {...getFloatingProps({ ...rest })}>
+            <div {...getFloatingProps({ style: styles, ...rest })}>
               {children}
             </div>
           </div>

@@ -1,4 +1,3 @@
-import { useLoaderData } from "react-router";
 import type { Route } from "./+types/index";
 
 export function meta({}: Route.MetaArgs) {
@@ -10,7 +9,6 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Layout() {
-  const member = useLoaderData<Route.ComponentProps['loaderData']>();
   return (
     <div className="container mx-auto p-2 pt-8 space-y-5 pb-16">
       <section>

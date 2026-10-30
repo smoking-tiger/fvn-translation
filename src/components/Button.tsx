@@ -1,13 +1,13 @@
 import { useMemo, type ButtonHTMLAttributes, type AnchorHTMLAttributes } from 'react';
 import { type LinkProps, type NavLinkProps, Link, NavLink } from 'react-router';
 import clsx from 'clsx/lite';
+import { twMerge } from 'tailwind-merge';
 
 export function getButtonStyle(className?: string) {
-  return clsx(
+  return twMerge(clsx(
     'cursor-pointer p-2 px-3 rounded-lg hover:bg-stone-300 dark:hover:bg-stone-600',
-    'disabled:opacity-50 disabled:pointer-events-none disabled:select-none',
-    className,
-  );
+    'disabled:opacity-50 disabled:pointer-events-none disabled:select-none'
+  ), className);
 }
 
 export default function Button({ className, ...rest }: ButtonHTMLAttributes<HTMLButtonElement>) {
@@ -42,4 +42,3 @@ export function ButtonNav({ className, ...rest }: NavLinkProps) {
     />
   );
 }
-

@@ -30,7 +30,7 @@ function getMode(name: string) {
   if (name === '18금') return '19';
   if (name === '국산') return 'kor';
   if (name === '공식한글화') return 'official';
-  if (name.startsWith('성적묘사')) return 'sexual';
   if (name === '동성애') return 'bara';
+  if (name.startsWith('성적묘사')) return 'sexual';
   return null;
 }

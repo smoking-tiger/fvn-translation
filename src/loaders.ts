@@ -43,7 +43,13 @@ export function loadList() {
     });
   });
 
-  list.sort((a, b) => a.name > b.name ? 1 : -1);
+  list.sort((a, b) => {
+    const aIsWip = a.mode === 'wip';
+    const bIsWip = b.mode === 'wip';
+    if (aIsWip !== bIsWip) return aIsWip ? 1 : -1;
+    return a.name.localeCompare(b.name);
+  });
+
   return { list, tags: Array.from(tags) } as { list: ListItem[]; tags: string[]; };
 }
 
