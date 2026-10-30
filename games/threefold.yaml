@@ -1,0 +1,18 @@
+title: Threefold Recital
+kr_title: 삼상기담
+desc: |
+  《삼상기담》은 동양 판타지 세계를 배경으로, 오랜 황금기를 지나 혼란에 휩싸인 대도시 블루스케일스의 이야기를 그립니다. 마법과 현대 기술, 고대 기술이 뒤섞이면서 도시의 통치 체계는 새로운 도전에 직면하고, 인간과 수인, 용족 사이의 갈등은 점점 깊어져 갑니다. 그리고 그 이면에서는 거대한 위기가 서서히 다가오고 있습니다...
+
+url: https://store.steampowered.com/app/3084280/Threefold_Recital/
+patch_url: https://blog.naver.com/sihan_one/223761549333
+status: 주의
+status_note: |
+    본 게임을 번역해주신 시한님께 감사드리며,
+    한패 설치 방법 및 게임의 번역/문의는 해당 블로그에 문의해주시기 바랍니다.
+tags: ["추리", "미스테리", "탐정"]
+banner_url: /assets/games/threefold.jpg
+
+changelog: |
+  #### r1 (2026-10-30)
+
+  - 한패 소개 추가
