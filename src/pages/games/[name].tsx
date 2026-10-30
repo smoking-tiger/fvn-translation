@@ -1,4 +1,4 @@
-import { Button, AnchorButton, IconExternalLink, ChevronLeft, IconAlert, IconMegaphone, Member, Tag, IconItchIO, IconPatreon, IconDownload, IconSteam, Tooltip } from '../../components';
+import { BackgroundVideo, Button, AnchorButton, IconExternalLink, ChevronLeft, IconAlert, IconMegaphone, Member, Tag, IconItchIO, IconPatreon, IconDownload, IconSteam, Tooltip } from '../../components';
 import { useSearchParams } from '../../navigation';
 import type { GameData } from '../../content';
 
@@ -48,7 +48,7 @@ export default function GameInfo(props: { data: GameData }) {
         <div class="relative container h-128 mx-auto shadow-lg">
           {info().banner_url?.endsWith('.mp4') ? (
             <div class="absolute top-0 left-0 right-0 bottom-0 overflow-y-hidden">
-              <video src={info().banner_url} autoplay muted loop playsinline class="object-cover object-center w-full min-h-128" />
+              <BackgroundVideo src={info().banner_url} class="object-cover object-center w-full min-h-128" />
             </div>
           ) : (
             <figure

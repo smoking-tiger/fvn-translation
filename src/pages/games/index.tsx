@@ -1,4 +1,4 @@
-import { Button, Popover, IconPlus, IconClose, Tag } from '../../components';
+import { BackgroundVideo, Button, Popover, IconPlus, IconClose, Tag } from '../../components';
 import { createMemo } from 'solid-js';
 import clsx from 'clsx';
 
@@ -148,7 +148,7 @@ export default function GameList(props: { data: GameListData }) {
           >
             <figure class={clsx('relative overflow-hidden w-64 h-64 rounded-xl shadow-xl', item.nsfw ? 'ring-1 ring-amber-600 dark:ring-amber-500' : '')}>
               {item.banner_url?.endsWith('.mp4') ? (
-                  <video src={item.banner_url} autoplay loop muted playsinline class={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')} />
+                  <BackgroundVideo src={item.banner_url} class={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')} />
               ) : (
                 <img class={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')} src={item.banner_url} alt={item.name} />
               )}

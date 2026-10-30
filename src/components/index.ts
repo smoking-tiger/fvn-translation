@@ -1,3 +1,4 @@
+export { default as BackgroundVideo } from './BackgroundVideo';
 export { AnchorButton, default as Button } from './Button';
 export { default as Header } from './Header';
 export { default as IconAlert } from './Icons/Alert';
