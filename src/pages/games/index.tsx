@@ -102,16 +102,6 @@ export default function GameList(props: { data: GameListData }) {
           <h1 class="text-3xl">게임 소개</h1>
           <small class="ml-3 opacity-65">{`(${listItems().length} / ${list().length})`}</small>
         </div>
-        <ul class="flex opacity-65 space-x-1">
-          <li class="flex items-center">
-            <img class="mr-1" width="30" src="/assets/kuma.png" />
-            <span>= 공식한글화</span>
-          </li>
-          <li class="flex items-center">
-            <img class="mr-1" width="28" src="/assets/sorry_wip.png" />
-            <span>= 작업중</span>
-          </li>
-        </ul>
       </header>
       <header>
         <div class="flex flex-nowrap whitespace-nowrap items-center pb-2 space-x-2 max-w-full overflow-x-auto">
@@ -158,9 +148,7 @@ export default function GameList(props: { data: GameListData }) {
           >
             <figure class={clsx('relative overflow-hidden w-64 h-64 rounded-xl shadow-xl', item.nsfw ? 'ring-1 ring-amber-600 dark:ring-amber-500' : '')}>
               {item.banner_url?.endsWith('.mp4') ? (
-                  <video autoplay loop muted playsinline class={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')}>
-                    <source src={item.banner_url} type="video/mp4" />
-                  </video>
+                  <video src={item.banner_url} autoplay loop muted playsinline class={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')} />
               ) : (
                 <img class={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')} src={item.banner_url} alt={item.name} />
               )}
@@ -170,6 +158,16 @@ export default function GameList(props: { data: GameListData }) {
             <GameTitle title={item.kr_title} fallback={item.title} />
           </a>
         ))}
+      </ul>
+      <ul class="flex mt-4 justify-end opacity-65 space-x-1">
+        <li class="flex items-center">
+          <img class="mr-1" width="30" src="/assets/kuma.png" />
+          <span>= 공식한글화</span>
+        </li>
+        <li class="flex items-center">
+          <img class="mr-1" width="28" src="/assets/sorry_wip.png" />
+          <span>= 작업중</span>
+        </li>
       </ul>
     </div>
   );
