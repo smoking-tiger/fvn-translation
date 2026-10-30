@@ -1,7 +1,7 @@
 title: Khemia
 kr_title: 케미아
 desc: |
-  케미아는 아다스트라의 시퀄입니다.  
+  케미아는 아다스트라의 시퀄입니다.
   멘헤라? 주인공 스키피오와 능글능글한 네페루의 케미를 감상해봐요.
 url: https://echoproject.itch.io/khemia
 patch_url: https://files.kemovn.cc/Khemia_r1.zip
@@ -10,7 +10,7 @@ status_note: |
   원작이 아직 개발 완료가 되지 않은 상태입니다.
   한글 패치는 현재 공개중인 버전(0.1 버전)까지 완료된 상태입니다.
 members: ["도루룽", "Husky"]
-tags: ["18금", "성적묘사", "SF", "로맨스", "판타지"]
+tags: ["18금", "동성애", "성적묘사", "SF", "로맨스", "판타지"]
 logo_url: /assets/games/khemia_logo.png
 banner_url: /assets/games/khemia.jpg
 license: ["나눔폰트"]

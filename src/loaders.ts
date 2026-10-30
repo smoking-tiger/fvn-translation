@@ -43,10 +43,7 @@ export function loadList() {
     });
   });
 
-  list.sort((a, b) => {
-    if (a.mode !== b.mode) return a.mode === 'wip' ? 1 : -1;
-    return a.name > b.name ? 1 : -1;
-  });
+  list.sort((a, b) => a.name > b.name ? 1 : -1);
   return { list, tags: Array.from(tags) } as { list: ListItem[]; tags: string[]; };
 }
 

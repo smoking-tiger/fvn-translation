@@ -45,7 +45,7 @@ export function meta({ data }: Route.MetaArgs) {
     {
       name: 'keywords',
       content: [
-        '퍼리', '수인', '케모노', '수연시', '퍼리 비쥬얼 노벨', '한글', '한국어', '한글화', '한패', '한국어 패치',
+        '퍼리', '수인', '케모노', '수연시', '털겜', '털연시', '한글', '한국어', '한글화', '한패', '한국어 패치', '한글패치', '한글 패치',
         data.title.trim(), data.kr_title?.trim(), ...(data.tags || []),
       ].filter(Boolean).join(',')
     },
@@ -186,7 +186,15 @@ export default function GameInfo() {
           <div className="p-2 pb-4">
             <h3 className="text-xl font-semibold pb-2">번역에 참여주해주신 분들</h3>
             <div className="flex items-center pr-2 space-x-1 flex-wrap">
-              {info.members.map(({ name, ...rest }, i) => <Member key={name} name={name} data={rest} />)}
+              {info.members.map(({ name, ...rest }) => <Member key={name} name={name} data={rest} />)}
+            </div>
+          </div>
+        ) : null}
+        {info.changelog ? (
+          <div className="p-2 pb-4">
+            <h3 className="text-xl font-semibold pb-2">패치노트</h3>
+            <div className="bg-stone-100 overflow-y-auto dark:bg-stone-800 dark:text-stone-200 py-2 px-4 rounded prose dark:prose-invert" style={{ maxHeight: '500px' }}>
+              <Markdown remarkPlugins={plugins}>{info.changelog}</Markdown>
             </div>
           </div>
         ) : null}
@@ -207,14 +215,6 @@ export default function GameInfo() {
                 </li>
               ))}
             </ul>
-          </div>
-        ) : null}
-        {info.changelog ? (
-          <div className="p-2 pb-4">
-            <h3 className="text-xl font-semibold pb-2">패치노트</h3>
-            <div className="bg-stone-100 overflow-y-auto dark:bg-stone-800 dark:text-stone-200 py-2 px-4 rounded prose dark:prose-invert" style={{ maxHeight: '500px' }}>
-              <Markdown remarkPlugins={plugins}>{info.changelog}</Markdown>
-            </div>
           </div>
         ) : null}
       </section>
