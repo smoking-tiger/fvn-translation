@@ -1,44 +1,19 @@
-import { useMemo, type ButtonHTMLAttributes, type AnchorHTMLAttributes } from 'react';
-import { type LinkProps, type NavLinkProps, Link, NavLink } from 'react-router';
-import clsx from 'clsx/lite';
+import { omit } from 'solid-js';
+import type { JSX } from '@solidjs/web';
+import { NavAnchor, type NavAnchorProps } from '../navigation';
 import { twMerge } from 'tailwind-merge';
 
-export function getButtonStyle(className?: string) {
-  return twMerge(clsx(
-    'cursor-pointer p-2 px-3 rounded-lg hover:bg-stone-300 dark:hover:bg-stone-600',
-    'disabled:opacity-50 disabled:pointer-events-none disabled:select-none'
-  ), className);
-}
+const base = 'cursor-pointer p-2 px-3 rounded-lg hover:bg-stone-300 dark:hover:bg-stone-600 disabled:opacity-50 disabled:pointer-events-none disabled:select-none';
+export function getButtonStyle(className?: string) { return twMerge(base, className); }
+type ButtonProps = Omit<JSX.ButtonHTMLAttributes<HTMLButtonElement>, 'class'> & { class?: string };
+type AnchorProps = Omit<JSX.AnchorHTMLAttributes<HTMLAnchorElement>, 'class'> & { class?: string };
 
-export default function Button({ className, ...rest }: ButtonHTMLAttributes<HTMLButtonElement>) {
-  const name = useMemo(() => getButtonStyle(className), [className]);
-  return <button className={name} {...rest} />;
+export default function Button(props: ButtonProps) {
+  return <button {...omit(props, 'class')} class={getButtonStyle(props.class)} />;
 }
-
-export function AnchorButton({ className, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement>) {
-  const name = useMemo(() => getButtonStyle(className), [className]);
-  return <a className={name} {...rest} />;
+export function AnchorButton(props: AnchorProps) {
+  return <a {...omit(props, 'class')} class={getButtonStyle(props.class)} />;
 }
-
-export function ButtonLink({ className, ...rest }: LinkProps) {
-  const name = useMemo(() => getButtonStyle(className), [className]);
-  return <Link className={name} {...rest} />;
-}
-
-export function ButtonNav({ className, ...rest }: NavLinkProps) {
-  const name = useMemo(() => getButtonStyle(), []);
-  return (
-    <NavLink
-      className={(props) => {
-        if (typeof className === 'function') {
-          const n = className(props);
-          return clsx(name, n);
-        } else if (typeof className === 'string') {
-          return clsx(name, className);
-        }
-        return name;
-      }}
-      {...rest}
-    />
-  );
+export function ButtonNav(props: NavAnchorProps) {
+  return <NavAnchor {...omit(props, 'class')} class={(state) => getButtonStyle(typeof props.class === 'function' ? props.class(state) : props.class)} />;
 }

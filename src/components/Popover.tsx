@@ -1,62 +1,31 @@
-import { Children, cloneElement, useState } from 'react';
-import type { HTMLAttributes, ReactElement, ReactNode } from 'react';
-import {
-  useFloating, useInteractions, useClick, useId, useTransitionStyles,
-  shift, offset as offsetUi, flip, FloatingOverlay, autoUpdate,
-} from '@floating-ui/react';
-import type { Placement } from '@floating-ui/core';
+import { createSignal, createUniqueId, onSettled, Show } from 'solid-js';
+import type { JSX } from '@solidjs/web';
+import type { Placement } from '@floating-ui/dom';
+import { FloatingPanel } from './Tooltip';
+import Button from './Button';
 
-import Portal from './Portal';
-
-interface Props extends HTMLAttributes<HTMLDivElement> {
-  label: ReactElement;
-  children?: ReactNode;
-  position?: Placement;
-}
-
-export default function Popover({ label, children, position, ...rest }: Props) {
-  const [open, setOpen] = useState(false);
-  const nodeId = useId();
-
-  const { refs, floatingStyles, context } = useFloating({
-    nodeId,
-    placement: position,
-    middleware: [
-      shift(),
-      flip({ fallbackAxisSideDirection: 'end' }),
-      offsetUi({ mainAxis: 0, crossAxis: 6 }),
-    ],
-    open,
-    onOpenChange: setOpen,
-    whileElementsMounted: autoUpdate,
+export default function Popover(props: { label: JSX.Element; children: JSX.Element; position?: Placement }) {
+  const [open, setOpen] = createSignal(false);
+  const id = createUniqueId();
+  let anchor!: HTMLSpanElement;
+  onSettled(() => {
+    const outside = (event: Event) => {
+      if (event.target instanceof Node && !anchor.contains(event.target) && !document.getElementById(id)?.contains(event.target)) setOpen(false);
+    };
+    const escape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setOpen(false); anchor.querySelector('button')?.focus(); }
+    };
+    document.addEventListener('pointerdown', outside);
+    document.addEventListener('focusin', outside);
+    document.addEventListener('keydown', escape);
+    return () => {
+      document.removeEventListener('pointerdown', outside);
+      document.removeEventListener('focusin', outside);
+      document.removeEventListener('keydown', escape);
+    };
   });
-
-  const { isMounted, styles } = useTransitionStyles(context, {
-    duration: 150,
-    initial: { opacity: 0, transform: 'scale(0.8)' },
-  });
-
-  const { getFloatingProps, getReferenceProps } = useInteractions([
-    useClick(context, { enabled: true }),
-  ]);
-
-  return (
-    <>
-      {cloneElement(Children.only(label), getReferenceProps({
-        ref: refs.setReference,
-        tabIndex: 0,
-        role: 'button',
-        'aria-expanded': open,
-      }))}
-      <Portal disabled={!isMounted}>
-        <FloatingOverlay data-testid="vs-popover-shadow" onClick={() => setOpen(false)} autoFocus>
-          <div role="region" ref={refs.setFloating} style={floatingStyles}>
-            <div {...getFloatingProps({ style: styles, ...rest })}>
-              {children}
-            </div>
-          </div>
-        </FloatingOverlay>
-      </Portal>
-    </>
-  );
+  return <span ref={anchor} class="inline-flex">
+    <Button class="flex items-center rounded-full border p-1 mr-2" aria-expanded={open() ? "true" : "false"} aria-controls={id} aria-label="태그 선택" onClick={() => setOpen((value) => !value)}>{props.label}</Button>
+    <Show when={open()}><FloatingPanel reference={anchor} position={props.position} id={id} role="region" close={() => setOpen(false)}>{props.children}</FloatingPanel></Show>
+  </span>;
 }

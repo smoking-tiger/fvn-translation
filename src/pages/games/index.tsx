@@ -1,40 +1,30 @@
-import { useCallback, useMemo } from 'react';
-import { Link, useSearchParams, useLoaderData } from 'react-router';
+import { Button, Popover, IconPlus, IconClose, Tag } from '../../components';
+import { createMemo } from 'solid-js';
 import clsx from 'clsx';
 
-import Button from 'components/Button';
-import Popover from 'components/Popover';
-import IconPlus from 'components/Icons/Plus';
-import IconClose from 'components/Icons/Close';
+import { useSearchParams } from '../../navigation';
+import type { GameListData } from '../../content';
 
-import type { Route } from "./+types/index";
-import Tag from 'components/Tag';
-
-export function meta({}: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "털겜번역단: 게임 소개" },
   ];
 }
 
-export async function loader() {
-  const { loadList } = await import('../../loaders');
-  return loadList();
-}
-
-export default function GameList() {
-  const { list, tags } = useLoaderData<Route.ComponentProps['loaderData']>();
+export default function GameList(props: { data: GameListData }) {
+  const list = () => props.data.list;
   const [search, setSearchParams] = useSearchParams();
 
-  const tagList = useMemo<string[]>(() => {
-    const arr = search.get('tags');
+  const tagList = createMemo<string[]>(() => {
+    const arr = search().get('tags');
     if (!arr) return [];
     return arr.split(',');
-  }, [search]);
+  });
 
-  const showExplict = search.has('explict');
-  const showHidden = search.has('hidden');
+  const showExplict = () => search().has('explict');
+  const showHidden = () => search().has('hidden');
 
-  const addTag = useCallback((tag: string) => {
+  const addTag = ((tag: string) => {
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev);
       let list = (prev.get('tags') || '').split(',');
@@ -45,9 +35,9 @@ export default function GameList() {
       next.set('tags', list.join(','));
       return next;
     });
-  }, [setSearchParams]);
+  });
 
-  const removeTag = useCallback((tag: string) => {
+  const removeTag = ((tag: string) => {
     setSearchParams((prev) => {
       const next = new URLSearchParams(prev);
       const list = new Set((prev.get('tags') || '').split(','));
@@ -59,9 +49,9 @@ export default function GameList() {
       }
       return next;
     });
-  }, [setSearchParams]);
+  });
 
-  const handleExplict = useCallback(() => setSearchParams((prev) => {
+  const handleExplict = (() => setSearchParams((prev) => {
     const next = new URLSearchParams(prev);
     if (next.has('explict')) {
       next.delete('explict');
@@ -69,82 +59,80 @@ export default function GameList() {
       next.set('explict', '1');
     }
     return next;
-  }), [setSearchParams]);
+  }));
 
-  const filteres = useMemo(() => {
-    if (showExplict && showHidden) return list;
-    return list.filter((item) => {
-      if (item.tags.find((tag) => tag.startsWith('성적묘사')) && !showExplict) return item.hidden && !showHidden;
-      if (item.hidden && !showHidden) return false;
+  const filteres = createMemo(() => {
+    if (showExplict() && showHidden()) return list();
+    return list().filter((item) => {
+      if (item.tags.find((tag) => tag.startsWith('성적묘사')) && !showExplict()) return false;
+      if (item.hidden && !showHidden()) return false;
       return true;
     });
-  }, [list, showExplict, showHidden]);
+  });
 
-  const listItems = useMemo(() => {
-    if (!tagList.length) return filteres;
-    return filteres.filter((item) => {
+  const listItems = createMemo(() => {
+    if (!tagList().length) return filteres();
+    return filteres().filter((item) => {
       if (!item.tags.length) return false;
       const itemTags = new Set(item.tags);
-      for (let i = 0, len = tagList.length; i < len; i += 1) {
-        if (!itemTags.has(tagList[i])) return false;
+      for (let i = 0, len = tagList().length; i < len; i += 1) {
+        if (!itemTags.has(tagList()[i])) return false;
       }
       return true;
     });
-  }, [filteres, tagList]);
+  });
 
-  const availableTags = useMemo(() => {
+  const availableTags = createMemo(() => {
     const arr: string[] = [];
-    listItems.forEach((item) => arr.push(...item.tags));
+    listItems().forEach((item) => arr.push(...item.tags));
 
     const unique = new Set(arr);
-    tagList.forEach((tag) => {
+    tagList().forEach((tag) => {
       if (unique.has(tag)) unique.delete(tag);
     });
     return Array.from(unique);
-  }, [tagList, listItems]);
+  });
 
-  const searchStr = useMemo(() => search.toString(), [search]);
+  const searchStr = createMemo(() => search().toString());
 
   return (
-    <div className="container mx-auto p-2">
-      <header className="flex justify-between pt-2 pb-4">
-        <div className="flex items-end">
-          <h1 className="text-3xl">게임 소개</h1>
-          <small className="ml-3 opacity-65">{`(${listItems.length} / ${list.length})`}</small>
+    <div class="container mx-auto p-2">
+      <header class="flex justify-between pt-2 pb-4">
+        <div class="flex items-end">
+          <h1 class="text-3xl">게임 소개</h1>
+          <small class="ml-3 opacity-65">{`(${listItems().length} / ${list().length})`}</small>
         </div>
-        <ul className="flex opacity-65 space-x-1">
-          <li className="flex items-center">
-            <img className="mr-1" width="30" src="/assets/kuma.png" />
+        <ul class="flex opacity-65 space-x-1">
+          <li class="flex items-center">
+            <img class="mr-1" width="30" src="/assets/kuma.png" />
             <span>= 공식한글화</span>
           </li>
-          <li className="flex items-center">
-            <img className="mr-1" width="28" src="/assets/sorry_wip.png" />
+          <li class="flex items-center">
+            <img class="mr-1" width="28" src="/assets/sorry_wip.png" />
             <span>= 작업중</span>
           </li>
         </ul>
       </header>
       <header>
-        <div className="flex flex-nowrap whitespace-nowrap items-center pb-2 space-x-2 max-w-full overflow-x-auto">
+        <div class="flex flex-nowrap whitespace-nowrap items-center pb-2 space-x-2 max-w-full overflow-x-auto">
           <span>태그 검색:</span>
-          <div className="flex items-center space-x-1">
-            {tagList.map((tag) => (
-              <Button key={tag} className="flex items-center py-1 px-1 text-left" onClick={() => removeTag(tag)}>
+          <div class="flex items-center space-x-1">
+            {tagList().map((tag) => (
+              <Button class="flex items-center py-1 px-1 text-left" onClick={() => removeTag(tag)}>
                 <Tag name={tag} />
-                <IconClose className="ml-0.5 size-3" />
+                <IconClose class="ml-0.5 size-3" />
               </Button>
             ))}
           </div>
-          {availableTags.length ? (
+          {availableTags().length ? (
             <Popover
               label={(
-                <Button className="flex items-center rounded-full border p-1 mr-2">
-                  <IconPlus className="w-4 h-4" />
-                </Button>
+                <IconPlus class="w-4 h-4" />
               )}
             >
-              <div className="p-2 bg-stone-100 dark:bg-stone-800 rounded overflow-y-auto max-h-60">
-                {availableTags.map((tag) => (
-                  <Button key={tag} className="block w-full text-left" onClick={() => addTag(tag)}>
+              <div class="p-2 bg-stone-100 dark:bg-stone-800 rounded overflow-y-auto max-h-60">
+                {availableTags().map((tag) => (
+                  <Button class="block w-full text-left" onClick={() => addTag(tag)}>
                     <Tag name={tag} />
                   </Button>
                 ))}
@@ -152,48 +140,43 @@ export default function GameList() {
             </Popover>
           ) : null}
           <Button
-            className={useMemo(() => clsx(
-              'flex items-center border-1 text-sm px-2',
-              showExplict ? 'bg-amber-200 border-amber-600 dark:bg-amber-900' : 'border-stone-800 dark:border-stone-200',
-            ), [showExplict])}
+            class={clsx(
+              'flex items-center border text-sm px-2',
+              showExplict() ? 'bg-amber-200 border-amber-600 dark:bg-amber-900' : 'border-stone-800 dark:border-stone-200',
+            )}
             onClick={handleExplict}
           >
-            {showExplict ? '성적 묘사 표시 중' : '성적 묘사 제외 중'}
+            {showExplict() ? '성적 묘사 표시 중' : '성적 묘사 제외 중'}
           </Button>
         </div>
       </header>
-      <ul className="flex flex-wrap space-x-2 justify-center xl:justify-start">
-        {listItems.map((item) => (
-          <Link
-            key={item.name}
-            to={{ pathname: item.name, search: searchStr }}
-            className="relative p-2 hover:opacity-65"
+      <ul class="flex flex-wrap space-x-2 justify-center xl:justify-start">
+        {listItems().map((item) => (
+          <a
+            href={`/games/${item.name}${searchStr() ? `?${searchStr()}` : ""}`}
+            class="relative p-2 hover:opacity-65"
           >
-            <figure className={clsx('relative overflow-hidden w-64 h-64 rounded-xl shadow-xl', item.nsfw ? 'ring-1 ring-amber-600 dark:ring-amber-500' : '')}>
+            <figure class={clsx('relative overflow-hidden w-64 h-64 rounded-xl shadow-xl', item.nsfw ? 'ring-1 ring-amber-600 dark:ring-amber-500' : '')}>
               {item.banner_url?.endsWith('.mp4') ? (
-                  <video autoPlay loop muted playsInline className={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')}>
+                  <video autoplay loop muted playsinline class={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')}>
                     <source src={item.banner_url} type="video/mp4" />
                   </video>
               ) : (
-                <img className={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')} src={item.banner_url} alt={item.name} />
+                <img class={clsx('min-h-64 w-auto object-cover', item.mode !== 'wip' ? '' : 'opacity-50')} src={item.banner_url} alt={item.name} />
               )}
-              {item.mode === 'wip' ? <img className="absolute bottom-5 right-2" width="85" src="/assets/sorry_wip.png" alt="작업중" /> : null}
+              {item.mode === 'wip' ? <img class="absolute bottom-5 right-2" width="85" src="/assets/sorry_wip.png" alt="작업중" /> : null}
             </figure>
-            {item.mode === 'official' ? <img className="absolute -top-0.5 -right-0.5" width="50" src="/assets/kuma.png" alt="공식한글화" /> : null}
+            {item.mode === 'official' ? <img class="absolute -top-0.5 -right-0.5" width="50" src="/assets/kuma.png" alt="공식한글화" /> : null}
             <GameTitle title={item.kr_title} fallback={item.title} />
-          </Link>
+          </a>
         ))}
       </ul>
     </div>
   );
 }
 
-function GameTitle({ title, fallback }: { title?: string; fallback: string; }) {
-  if (!title) return <span className="block pt-1">{fallback}</span>;
-  return (
-    <span className="block pt-1">
-      <span className="block leading-1.5 pt-1">{title}</span>
-      <small className="opacity-35">{fallback}</small>
-    </span>
-  );
+function GameTitle(props: { title?: string; fallback: string }) {
+  return <span class="block pt-1">
+    {props.title ? <><span class="block leading-1.5 pt-1">{props.title}</span><small class="opacity-35">{props.fallback}</small></> : props.fallback}
+  </span>;
 }

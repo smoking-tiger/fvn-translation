@@ -1,25 +1,12 @@
-import Markdown from 'react-markdown'
-import remarkGfm from 'remark-gfm';
+---
+label: "iOS"
+title: "털겜번역단: 렌파이 패치 하는 법 > iOS"
+description: "iOS에서 렌파이 게임에 한국어 패치를 적용하는 방법입니다."
+order: 3
+keywords: ["퍼리", "수인", "케모노", "게임", "FVN", "가이드", "한글패치", "iOS"]
+image: "https://kemovn.cc/fallback_icon.png"
+---
 
-import type { Route } from './+types/index';
-
-export function meta({}: Route.MetaArgs) {
-  return [
-    { title: "털겜번역단: 랜파이 패치 하는 법 > iOS" },
-    { name: 'og:title', content: '털겜번역단: 랜파이 패치 하는 법 > iOS' },
-    { name: 'twitter:title', content: '털겜번역단: 랜파이 패치 하는 법 > iOS' },
-    { name: 'keywords', content: ['퍼리', '수인', '케모노', '수연시', '게임', '퍼리 비쥬얼 노벨', 'FVN', 'Furry visual Novel', '가이드', '설명', 'iOS'].join(',') },
-    { name: 'card:site', content: 'summary' },
-    { name: 'image:site', content: 'https://kemovn.cc/assets/fallback_logo.png' },
-    { name: 'twitter:image', content: 'https://kemovn.cc/assets/fallback_logo.png' },
-  ];
-}
-
-export default function IOSGuide() {
-  return (
-    <div className="prose dark:prose-invert w-full p-2">
-      <Markdown remarkPlugins={[remarkGfm]}>
-        {`
 ## iOS 한글 패치 방법
 
 ### 1. 어플 다운로드
@@ -102,8 +89,3 @@ game 폴더에 가서,
 각자 게임에 들어가, [Korean]을 선택해 한글로 즐겨주세요.
 
 ![final](/assets/guide/final.jpg)
-        `}
-      </Markdown>
-    </div>
-  );
-}

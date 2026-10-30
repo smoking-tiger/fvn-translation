@@ -1,32 +1,32 @@
-import type { HTMLAttributes } from 'react';
+import type { JSX } from '@solidjs/web';
 
 import Tooltip from './Tooltip';
 import clsx from 'clsx';
 import IconLogo from './Icons/Logo';
 
-interface Props extends HTMLAttributes<HTMLSpanElement> {
+interface Props extends JSX.HTMLAttributes<HTMLSpanElement> {
   name: string;
   data: MemberType;
   full?: boolean;
 }
 
-export default function Member({ name, data, full, ...rest }: Props) {
+export default function Member(props: Props) {
   return (
     <Tooltip
       label={(
-        <div className="flex py-1">
-          <figure className="size-16 mr-2">
-            {data.avatar ? (
-              <img className="rounded-lg object-fit" src={data.avatar} alt={name} />
+        <div class="flex py-1">
+          <figure class="size-16 mr-2">
+            {props.data.avatar ? (
+              <img class="rounded-lg object-fit" src={props.data.avatar} alt={props.name} />
             ) : (
-              <IconLogo className="rounded-lg object-fit" />
+              <IconLogo class="rounded-lg object-fit" />
             )}
           </figure>
-          <div className="flex flex-col">
-            <span className="font-semibold text-xl">{name}</span>
-            <span className="opacity-75">{data.role || '번역가'}</span>
-            {full && data.message ? (
-              <p className="max-w-65 whitespace-pre-wrap">{data.message}</p>
+          <div class="flex flex-col">
+            <span class="font-semibold text-xl">{props.name}</span>
+            <span class="opacity-75">{props.data.role || '번역가'}</span>
+            {props.full && props.data.message ? (
+              <p class="max-w-65 whitespace-pre-wrap">{props.data.message}</p>
             ) : null}
           </div>
         </div>
@@ -34,16 +34,15 @@ export default function Member({ name, data, full, ...rest }: Props) {
       position="top"
     >
       <span
-        className={clsx(
+        class={clsx(
           'relative flex shrink-0 overflow-hidden rounded-2xl',
-          full ? 'size-20' : 'size-10',
+          props.full ? 'size-20' : 'size-10',
         )}
-        {...rest}
       >
-        {data.avatar ? (
-          <img className="aspect-square h-full w-full" src={data.avatar} alt={name} />
+        {props.data.avatar ? (
+          <img class="aspect-square h-full w-full" src={props.data.avatar} alt={props.name} />
         ) : (
-          <IconLogo className="aspect-square h-full w-full" />
+          <IconLogo class="aspect-square h-full w-full" />
         )}
       </span>
     </Tooltip>

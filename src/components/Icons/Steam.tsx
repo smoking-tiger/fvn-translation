@@ -1,6 +1,6 @@
-import type { SVGAttributes } from 'react';
+import type { JSX } from '@solidjs/web';
 
-export default function IconSteam(props: SVGAttributes<SVGSVGElement>) {
+export default function IconSteam(props: JSX.SvgSVGAttributes<SVGSVGElement>) {
   return (
   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 65 65" {...props}>
     <path d="M1.3 41.2A32 32 0 1 0 0 29.9c2.1 3.5 3 5.6 1.3 11.3z" fill="currentColor" />

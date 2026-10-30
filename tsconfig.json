@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
     "target": "ESNext",
     "module": "ESNext",
     "lib": [
@@ -19,12 +18,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "rootDirs": [".", "./.react-router/types"],
-    "types": ["bun-types", "vite/client"],
+    "jsx": "preserve",
+    "types": [
+      "bun"
+    ],
+    "jsxImportSource": "@solidjs/web"
   },
   "include": [
     "src",
-    ".react-router/types/**/*"
+    "scripts"
   ]
 }
