@@ -19,7 +19,7 @@ desc: |
 url: https://store.steampowered.com/app/1440440/Sam__Max_Save_the_World/
 patch_url: https://files.kemovn.cc/SM_StW_r3.zip
 members: ["늑발"]
-tags: ["어드밴처", "유머", "추리", "탐정"]
+tags: ["어드밴처", "유머", "추리", "탐정", "포인트앤클릭"]
 license: ["학교안심 나들이", "떡상체", "서울서체", "나눔폰트"]
 logo_url: /assets/games/smstw_logo.png
 banner_url: /assets/games/smstw.jpg
