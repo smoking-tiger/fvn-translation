@@ -72,12 +72,13 @@ export async function routes(requestedPath?: string) {
     name: file.slice(0, -5),
     info: Bun.YAML.parse(await Bun.file(resolve(project, 'games', file)).text()) as GameInfoType,
   })));
-  const list: GameListData['list'] = games.map(({ name, info }) => ({
+  let list: GameListData['list'] = games.map(({ name, info }) => ({
     name, title: info.title, kr_title: info.kr_title, banner_url: info.banner_url, logo_url: info.logo_url,
     tags: info.tags, hidden: info.hidden, nsfw: info.tags.some((tag) => tag.startsWith('성적묘사')),
     mode: info.patch_url === 'official' ? 'official' : info.patch_url ? null : 'wip',
   }));
-  list.filter((item) => !item.hidden).sort((a, b) => Number(a.mode === 'wip') - Number(b.mode === 'wip') || a.name.localeCompare(b.name));
+  list = list.filter((item) => !item.hidden);
+  list.sort((a, b) => Number(a.mode === 'wip') - Number(b.mode === 'wip') || a.name.localeCompare(b.name));
 
   const guideRoutes = !requestedPath || requestedPath === '/guide' || requestedPath.startsWith('/guide/')
     ? await loadGuides(requestedPath) : [];
