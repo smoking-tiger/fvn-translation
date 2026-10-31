@@ -77,7 +77,7 @@ export async function routes(requestedPath?: string) {
     tags: info.tags, hidden: info.hidden, nsfw: info.tags.some((tag) => tag.startsWith('성적묘사')),
     mode: info.patch_url === 'official' ? 'official' : info.patch_url ? null : 'wip',
   }));
-  list.sort((a, b) => Number(a.mode === 'wip') - Number(b.mode === 'wip') || a.name.localeCompare(b.name));
+  list.filter((item) => !item.hidden).sort((a, b) => Number(a.mode === 'wip') - Number(b.mode === 'wip') || a.name.localeCompare(b.name));
 
   const guideRoutes = !requestedPath || requestedPath === '/guide' || requestedPath.startsWith('/guide/')
     ? await loadGuides(requestedPath) : [];
