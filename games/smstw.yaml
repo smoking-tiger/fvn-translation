@@ -19,7 +19,8 @@ banner_url: /assets/games/smstw.jpg
 tutorial: |
   게임 실행 파일(.exe)이 있는 폴더에 압축을 풀어 그대로 넣어주세요.\
   4개의 파일이 Archives 폴더에 들어있는 걸 확인 하시고,\
-  게임을 실행해 SETTINGS > Language에서 Korean을 선택하시고 (영어 기준 좌측 2번) 뒤로 버튼을 눌러 적용해주세요.
+  게임을 실행해 SETTINGS > Language에서 Korean을 선택하시고 (영어 기준 좌측 2번) 뒤로 버튼을 눌러 적용해주세요.\
+  적용 후, 자막이 켜져있는지 확인해주세요.
 
 changelog: |
   #### r3 (2026-10-26)
