@@ -83,14 +83,17 @@ export default function GameList(props: { data: GameListData }) {
   });
 
   const availableTags = createMemo(() => {
-    const arr: string[] = [];
-    listItems().forEach((item) => arr.push(...item.tags));
-
-    const unique = new Set(arr);
-    tagList().forEach((tag) => {
-      if (unique.has(tag)) unique.delete(tag);
+    const hits = new Map<string, number>();
+    listItems().forEach((item) => {
+      new Set(item.tags).forEach((tag) => {
+        hits.set(tag, (hits.get(tag) ?? 0) + 1);
+      });
     });
-    return Array.from(unique);
+
+    tagList().forEach((tag) => hits.delete(tag));
+    return Array.from(hits)
+      .sort((a, b) => b[1] - a[1])
+      .map(([tag]) => tag);
   });
 
   const searchStr = createMemo(() => search().toString());
