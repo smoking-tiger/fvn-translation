@@ -9,6 +9,11 @@ image: "https://kemovn.cc/fallback_icon.png"
 
 ## PC 한글 패치 방법
 
+#### 배포 파일이 rpa 파일인 경우
+
+이하 가이드에서, game/tl폴더가 아닌 game폴더에 rpa파일을 넣으시면 됩니다.
+
+
 ### 1. 게임을 다운로드 받기.
 게임이 PC판인지 꼭 확인해주세요!
 

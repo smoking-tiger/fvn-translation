@@ -14,6 +14,10 @@ image: "https://kemovn.cc/fallback_icon.png"
 1. 안드로이드 기기에 게임 설치 후 컴퓨터와 안드로이드 기기를 직접 연결하여 파일 탐색기에서 한글패치 파일을 Android/data/게임폴더/files/game/tl 폴더에 넣기
 2. Joiplay 어플 설치 후 PC버전 게임 폴더에 한글패치 파일을 game/tl에 넣고 구동하기
 
+#### 배포 파일이 rpa 파일인 경우
+
+game/tl폴더가 아닌 game폴더에 rpa파일을 넣으시면 됩니다.
+
 ### 1. 사전 준비
 
 #### 1. 개발자 모드 켜기
